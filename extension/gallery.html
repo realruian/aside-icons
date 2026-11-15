@@ -24,8 +24,8 @@
 <main>
   <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
 
-  <section class="card mine" aria-labelledby="mine-title">
-    <div class="card-head">
+  <section class="section mine" aria-labelledby="mine-title">
+    <div class="section-head">
       <div>
         <h2 id="mine-title">我的固定区</h2>
         <p class="hint" id="mine-hint">点一个图标，在右边换版本。这里按实际大小显示。</p>
@@ -41,20 +41,20 @@
     </div>
     <div class="quick">
       <span class="field-label">一键设置我的网站</span>
-      <button type="button" class="btn" data-bulk="mine:optimized">全部用优化版</button>
-      <button type="button" class="btn" data-bulk="mine:iphone">全部用 iPhone 版</button>
-      <button type="button" class="btn" data-bulk="mine:mac">全部用 Mac 版</button>
-      <button type="button" class="btn" data-bulk="mine:original">全部恢复原版</button>
+      <button type="button" class="btn ghost" data-bulk="mine:optimized">全部用优化版</button>
+      <button type="button" class="btn ghost" data-bulk="mine:iphone">全部用 iPhone 版</button>
+      <button type="button" class="btn ghost" data-bulk="mine:mac">全部用 Mac 版</button>
+      <button type="button" class="btn ghost" data-bulk="mine:original">全部恢复原版</button>
     </div>
   </section>
 
-  <section class="card all" aria-labelledby="all-title">
-    <div class="card-head">
+  <section class="section all" aria-labelledby="all-title">
+    <div class="section-head">
       <div>
         <h2 id="all-title">全部网站</h2>
         <p class="hint" id="count"></p>
       </div>
-      <button type="button" class="btn" data-bulk="all:optimized">全部网站用优化版</button>
+      <button type="button" class="btn ghost" data-bulk="all:optimized">全部网站用优化版</button>
     </div>
     <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
     <div id="categories" class="chips" role="tablist" aria-label="类别"></div>

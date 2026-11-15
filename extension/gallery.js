@@ -40,6 +40,12 @@ function globe(){
   svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.5');svg.setAttribute('aria-hidden','true');
   svg.innerHTML='<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/>';return svg;
 }
+function starIcon(filled){
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
+  svg.setAttribute('fill',filled?'currentColor':'none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.6');svg.setAttribute('stroke-linejoin','round');
+  svg.innerHTML='<path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/>';return svg;
+}
 const sizedCache=new Map();
 function sized(path,size){
   if(size==='large')return Promise.resolve(path);
@@ -127,7 +133,7 @@ function renderRow(e){
     paint(btn,e,v,{applySize:false});row.append(btn);
   }
   const star=document.createElement('button');star.type='button';star.className='star';star.dataset.star=e.id;
-  const mine=isMine(e.id);star.textContent=mine?'★':'☆';star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
+  const mine=isMine(e.id);star.append(starIcon(mine));star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
   star.title=mine?'从我的固定区移除':'加入我的固定区';star.setAttribute('aria-label',star.title+'：'+e.label);
   row.append(star);return row;
 }

@@ -1,0 +1,6 @@
+node_modules/
+tests/node_modules/
+work/
+archive/
+dist/
+.DS_Store

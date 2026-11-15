@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aside · 图标设置</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">ASIDE</div>
+    <h1>图标设置</h1>
+    <p class="intro">选好每个网站的图标和整体大小后，点底部的「保存并应用」。</p>
+    <div class="summary"><span id="count"></span><span class="local-note">保存在本机</span></div>
+  </header>
+  <div id="connection" class="notice" role="status" aria-live="polite">正在读取设置…</div>
+
+  <section class="panel" aria-label="通用设置">
+    <div class="setting">
+      <div class="setting-text"><h2>图标替换</h2><p id="enabled-text">正在读取…</p></div>
+      <div class="setting-actions">
+        <button id="scan" type="button" class="secondary">一键刷新图标</button>
+        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-label="图标替换" disabled><span></span></button>
+      </div>
+    </div>
+    <div class="setting">
+      <div class="setting-text"><h2>图标大小</h2><p>「大」让图标铺满整个图标位，和网站原图一样大；「特大」再把图案放大一圈，边缘会裁掉一点。只作用于 iPhone、Mac、优化版。</p></div>
+      <div class="segmented" id="size" role="radiogroup" aria-label="图标大小"></div>
+    </div>
+    <div class="pin-preview-wrap">
+      <div class="pin-preview-label">预览 · 模拟 Aside 固定区</div>
+      <div id="pin-preview" class="pin-preview" aria-hidden="true"></div>
+    </div>
+    <details id="tab-status">
+      <summary id="tab-summary">已打开的网页</summary>
+      <ul id="status"></ul>
+    </details>
+  </section>
+
+  <div class="controls">
+    <label class="search-label"><span class="sr-only">搜索网站名称或域名</span><input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off"></label>
+    <label><span class="sr-only">网站类别</span><select id="category"><option value="">全部类别</option></select></label>
+    <span id="visible-count" aria-live="polite"></span>
+  </div>
+  <div class="column-head" aria-hidden="true"><span>网站</span><span>原版</span><span>iPhone</span><span>Mac</span><span>优化版</span></div>
+  <div id="sites"></div>
+  <p id="empty" hidden>没有找到匹配的网站。</p>
+  <footer>“原版”会恢复网站自己的图标；预览为本地参考，可能与网站更新后的图标不同。没有对应 App 版本的选项会显示“暂无”；优化版未完成的条目会显示“暂未制作”。<br>保存后已打开的网页立即更新；关闭的固定项会在下次打开时更新。</footer>
+</main>
+<div class="savebar" id="savebar">
+  <div class="savebar-inner">
+    <span id="bar-text" aria-live="polite">所有更改已保存</span>
+    <button id="discard" type="button" class="secondary" hidden>放弃更改</button>
+    <button id="save" type="button" class="primary" disabled>已保存</button>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<script src="library.js"></script>
+<script src="resize.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>

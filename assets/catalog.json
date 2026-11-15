@@ -1,0 +1,3105 @@
+[
+  {
+    "id": "onedrive",
+    "label": "OneDrive",
+    "category": "办公",
+    "domains": [
+      "onedrive.live.com",
+      "onedrive.com",
+      "onedrive.cloud.microsoft"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/onedrive.png"
+      },
+      "mac": {
+        "path": "icons/mac/onedrive.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/onedrive.png",
+        "source": "SVG Logos · microsoft-onedrive",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "squarespace",
+    "label": "Squarespace",
+    "category": "设计",
+    "domains": [
+      "squarespace.com",
+      "www.squarespace.com",
+      "account.squarespace.com"
+    ],
+    "exactDomains": true,
+    "variants": {
+      "original": {
+        "preview": "icons/original/squarespace.png",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/5134cbefe4b0c6fb04df8065/1541453017272-VW5DX9K6F21C7VZZTZYR/sqsp-favicon.ico?content-type=image%2Fx-icon"
+      },
+      "iphone": {
+        "path": "icons/iphone/squarespace.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "adobe",
+    "label": "Adobe Creative Cloud",
+    "category": "设计",
+    "domains": [
+      "www.adobe.com",
+      "creativecloud.adobe.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/adobe.png",
+        "sourceUrl": "https://www.adobe.com/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "copilot",
+    "label": "Microsoft Copilot",
+    "category": "AI 工具",
+    "domains": [
+      "copilot.microsoft.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/copilot.png",
+        "sourceUrl": "https://copilot.microsoft.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/copilot.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/copilot.png",
+        "source": "Lobe Icons · copilot-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "notebooklm",
+    "label": "NotebookLM",
+    "category": "AI 工具",
+    "domains": [
+      "notebooklm.google.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/notebooklm.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/notebooklm.png",
+        "source": "Lobe Icons · notebooklm.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "teams",
+    "label": "Microsoft Teams",
+    "category": "办公",
+    "domains": [
+      "teams.microsoft.com",
+      "teams.live.com",
+      "teams.cloud.microsoft"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/teams.png",
+        "sourceUrl": "https://teams.public.onecdn.static.microsoft/evergreen-assets/icons/microsoft_teams_logo_refresh_v2025.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/teams.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/teams.png",
+        "source": "SVG Logos · microsoft-teams",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "kling",
+    "label": "可灵AI",
+    "category": "AI 工具",
+    "domains": [
+      "klingai.com",
+      "klingai.kuaishou.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/kling.png",
+        "sourceUrl": "https://p4-kling.klingai.com/kcdn/cdn-kcdn112452/kling-homepage-aio/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/kling.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/kling.png",
+        "source": "Lobe Icons · kling-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "microsoft365",
+    "label": "Microsoft 365",
+    "category": "办公",
+    "domains": [
+      "microsoft365.com",
+      "www.office.com",
+      "m365.cloud.microsoft"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/microsoft365.png",
+        "sourceUrl": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/favicon-copilot-brand-refresh-23392c1f66.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "jimeng",
+    "label": "即梦",
+    "category": "常用",
+    "domains": [
+      "jimeng.jianying.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/jimeng.png",
+        "sourceUrl": "https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/jimeng.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/jimeng.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "yuanbao",
+    "label": "腾讯元宝",
+    "category": "AI 工具",
+    "domains": [
+      "yuanbao.tencent.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/yuanbao.png",
+        "sourceUrl": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon_new@32.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/yuanbao.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/yuanbao.png",
+        "source": "Lobe Icons · yuanbao-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "aistudio",
+    "label": "Google AI Studio",
+    "category": "AI 工具",
+    "domains": [
+      "aistudio.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/aistudio.png",
+        "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/ai_studio/v1/web-32dp/logo_ai_studio_color_1x_web_32dp.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/aistudio.png",
+        "source": "Lobe Icons · aistudio.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "google-calendar",
+    "label": "Google Calendar",
+    "category": "办公",
+    "domains": [
+      "calendar.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-calendar.png",
+        "sourceUrl": "https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_14.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-calendar.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-calendar.png",
+        "source": "SVG Logos · google-calendar",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "proton-mail",
+    "label": "Proton Mail",
+    "category": "办公",
+    "domains": [
+      "mail.proton.me",
+      "mail.protonmail.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/proton-mail.png",
+        "sourceUrl": "https://mail.proton.me/assets/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/proton-mail.png"
+      },
+      "mac": {
+        "path": "icons/mac/proton-mail.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "photoshop",
+    "label": "Photoshop",
+    "category": "设计",
+    "domains": [
+      "photoshop.adobe.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/photoshop.png",
+        "sourceUrl": "https://photoshop.adobe.com/favicon-32x32.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/photoshop.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "firebase",
+    "label": "Firebase",
+    "category": "开发",
+    "domains": [
+      "firebase.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/firebase.png",
+        "sourceUrl": "https://www.gstatic.com/devrel-devsite/prod/v579d635a54d6e1f40caad46ce407560c5106c8915e5ff7e6341f5b13eb245c5a/firebase/images/favicon.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "azure",
+    "label": "Microsoft Azure",
+    "category": "开发",
+    "domains": [
+      "azure.com",
+      "azure.microsoft.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/azure.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "steam",
+    "label": "Steam",
+    "category": "生活",
+    "domains": [
+      "steampowered.com",
+      "steamcommunity.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/steam.png",
+        "sourceUrl": "https://store.steampowered.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/steam.png"
+      },
+      "mac": {
+        "path": "icons/mac/steam.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/steam.png",
+        "source": "Simple Icons · steam",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "gemini",
+    "label": "Gemini",
+    "category": "AI 工具",
+    "domains": [
+      "gemini.google.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/gemini.png"
+      },
+      "mac": {
+        "path": "icons/mac/gemini.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/gemini.png",
+        "source": "Lobe Icons · gemini-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "qwen",
+    "label": "千问",
+    "category": "AI 工具",
+    "domains": [
+      "qwen.ai",
+      "tongyi.aliyun.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/qwen.png",
+        "sourceUrl": "https://img.alicdn.com/imgextra/i4/O1CN01OXv3EM1FN8t9W4P79_!!6000000000474-2-tps-80-80.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/qwen.png"
+      },
+      "mac": {
+        "path": "icons/mac/qwen.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/qwen.png",
+        "source": "Lobe Icons · qwen-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "firefly",
+    "label": "Adobe Firefly",
+    "category": "AI 工具",
+    "domains": [
+      "firefly.adobe.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/firefly.png",
+        "sourceUrl": "https://firefly.adobe.com/releases/7a639869dfadbea6ab620756a9ca5f6eb768ec0a/assets/fi_favicon_32-Mz96Nj_h.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "google-photos",
+    "label": "Google Photos",
+    "category": "办公",
+    "domains": [
+      "photos.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-photos.png",
+        "sourceUrl": "https://www.gstatic.com/social/photosui/images/logo/2025/favicon_alldp.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-photos.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-photos.png",
+        "source": "SVG Logos · google-photos",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "wordpress",
+    "label": "WordPress",
+    "category": "设计",
+    "domains": [
+      "wordpress.com",
+      "wordpress.org",
+      "www.wordpress.com",
+      "www.wordpress.org"
+    ],
+    "exactDomains": true,
+    "variants": {
+      "original": {
+        "preview": "icons/original/wordpress.png",
+        "sourceUrl": "https://s1.wp.com/i/favicon.ico?v=1713425267"
+      },
+      "iphone": {
+        "path": "icons/iphone/wordpress.png"
+      },
+      "mac": {
+        "path": "icons/mac/wordpress.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "stackoverflow",
+    "label": "Stack Overflow",
+    "category": "开发",
+    "domains": [
+      "stackoverflow.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/stackoverflow.png",
+        "sourceUrl": "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/stackoverflow.png",
+        "source": "SVG Logos · stackoverflow-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "stackexchange",
+    "label": "Stack Exchange",
+    "category": "开发",
+    "domains": [
+      "stackexchange.com"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "kimi",
+    "label": "Kimi",
+    "category": "AI 工具",
+    "domains": [
+      "kimi.com",
+      "kimi.moonshot.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/kimi.png",
+        "sourceUrl": "https://www.kimi.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/kimi.png"
+      },
+      "mac": {
+        "path": "icons/mac/kimi.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/kimi.png",
+        "source": "Lobe Icons · kimi.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "google-drive",
+    "label": "Google Drive",
+    "category": "办公",
+    "domains": [
+      "drive.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-drive.png",
+        "sourceUrl": "https://ssl.gstatic.com/images/branding/productlogos/drive_2026/v2/ico/drive_2026_32dp.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-drive.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-drive.png",
+        "source": "SVG Logos · google-drive",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-fonts",
+    "label": "Google Fonts",
+    "category": "设计",
+    "domains": [
+      "fonts.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-fonts.png",
+        "sourceUrl": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "googlecloud",
+    "label": "Google Cloud",
+    "category": "开发",
+    "domains": [
+      "cloud.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/googlecloud.png",
+        "sourceUrl": "https://www.gstatic.com/cgc/supercloud_favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/googlecloud.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "digitalocean",
+    "label": "DigitalOcean",
+    "category": "开发",
+    "domains": [
+      "digitalocean.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/digitalocean.png",
+        "sourceUrl": "https://www.digitalocean.com/_do-www-marketing/9221ebb1/_next/static/media/favicon.00b9c167.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "google-sheets",
+    "label": "Google Sheets",
+    "category": "办公",
+    "domains": [
+      "docs.google.com"
+    ],
+    "paths": [
+      "/spreadsheets/"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-sheets.png",
+        "sourceUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-sheets.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-slides",
+    "label": "Google Slides",
+    "category": "办公",
+    "domains": [
+      "docs.google.com"
+    ],
+    "paths": [
+      "/presentation/"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-slides.png",
+        "sourceUrl": "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-slides.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-docs",
+    "label": "Google Docs",
+    "category": "办公",
+    "domains": [
+      "docs.google.com"
+    ],
+    "paths": [
+      "/document/"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-docs.png",
+        "sourceUrl": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-docs.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "gmail",
+    "label": "Gmail",
+    "category": "常用",
+    "domains": [
+      "mail.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/gmail.png",
+        "sourceUrl": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/gmail.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/gmail.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "chatgpt",
+    "label": "ChatGPT",
+    "category": "AI 工具",
+    "domains": [
+      "chatgpt.com",
+      "chat.openai.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/chatgpt.png",
+        "sourceUrl": "https://chatgpt.com/unauth-mweb/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/chatgpt.png"
+      },
+      "mac": {
+        "path": "icons/mac/chatgpt.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/chatgpt.png",
+        "source": "Lobe Icons · openai.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "mistral",
+    "label": "Mistral Le Chat",
+    "category": "AI 工具",
+    "domains": [
+      "chat.mistral.ai"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/mistral.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/mistral.png",
+        "source": "Lobe Icons · mistral-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-meet",
+    "label": "Google Meet",
+    "category": "办公",
+    "domains": [
+      "meet.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-meet.png",
+        "sourceUrl": "https://www.gstatic.com/meet/icons/favicon-2026-v2.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-meet.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-meet.png",
+        "source": "SVG Logos · google-meet",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-keep",
+    "label": "Google Keep",
+    "category": "办公",
+    "domains": [
+      "keep.google.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-keep.png",
+        "sourceUrl": "https://www.gstatic.com/keep/icon_2020q4v2_128.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-keep.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-keep.png",
+        "source": "SVG Logos · google-keep",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "proton-drive",
+    "label": "Proton Drive",
+    "category": "办公",
+    "domains": [
+      "drive.proton.me"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/proton-drive.png",
+        "sourceUrl": "https://drive.proton.me/assets/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/proton-drive.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "xiaohongshu",
+    "label": "小红书",
+    "category": "社交",
+    "domains": [
+      "xiaohongshu.com",
+      "rednote.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/xiaohongshu.png",
+        "sourceUrl": "https://fe-video-qc.xhscdn.com/fe-platform/ed8fe781ce9e16c1bfac2cd962f0721edabe2e49.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/xiaohongshu.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/xiaohongshu.png",
+        "source": "Simple Icons · xiaohongshu",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "applemusic",
+    "label": "Apple Music",
+    "category": "影音",
+    "domains": [
+      "music.apple.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/applemusic.png",
+        "sourceUrl": "https://music.apple.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/applemusic.png"
+      },
+      "mac": {
+        "path": "icons/mac/applemusic.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/applemusic.png",
+        "source": "Simple Icons · applemusic",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "tripadvisor",
+    "label": "Tripadvisor",
+    "category": "生活",
+    "domains": [
+      "tripadvisor.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tripadvisor.png",
+        "sourceUrl": "https://www.tripadvisor.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/tripadvisor.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "hailuo",
+    "label": "海螺AI",
+    "category": "AI 工具",
+    "domains": [
+      "hailuoai.com",
+      "hailuoai.video"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/hailuo.png",
+        "sourceUrl": "https://hailuoai.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/hailuo.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/hailuo.png",
+        "source": "Lobe Icons · hailuo-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "midjourney",
+    "label": "Midjourney",
+    "category": "AI 工具",
+    "domains": [
+      "midjourney.com"
+    ],
+    "variants": {
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/midjourney.png",
+        "source": "Lobe Icons · midjourney.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "huggingface",
+    "label": "Hugging Face",
+    "category": "AI 工具",
+    "domains": [
+      "huggingface.co"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/huggingface.png",
+        "sourceUrl": "https://huggingface.co/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/huggingface.png",
+        "source": "Lobe Icons · huggingface-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "artstation",
+    "label": "ArtStation",
+    "category": "设计",
+    "domains": [
+      "artstation.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/artstation.png",
+        "sourceUrl": "https://www.artstation.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/artstation.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "cloudflare",
+    "label": "Cloudflare",
+    "category": "开发",
+    "domains": [
+      "cloudflare.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/cloudflare.png",
+        "sourceUrl": "https://www.cloudflare.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/cloudflare.png",
+        "source": "SVG Logos · cloudflare-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "aws",
+    "label": "AWS",
+    "category": "开发",
+    "domains": [
+      "aws.amazon.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/aws.png",
+        "sourceUrl": "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/aws.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "codesandbox",
+    "label": "CodeSandbox",
+    "category": "开发",
+    "domains": [
+      "codesandbox.io"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "soundcloud",
+    "label": "SoundCloud",
+    "category": "影音",
+    "domains": [
+      "soundcloud.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/soundcloud.png",
+        "sourceUrl": "https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-c93ce58b59.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/soundcloud.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/soundcloud.png",
+        "source": "Simple Icons · soundcloud",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "instagram",
+    "label": "Instagram",
+    "category": "常用",
+    "domains": [
+      "instagram.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/instagram.png",
+        "sourceUrl": "https://static.cdninstagram.com/rsrc.php/yw/r/icwX0xAk0pz.webp"
+      },
+      "iphone": {
+        "path": "icons/iphone/instagram.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/instagram.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "perplexity",
+    "label": "Perplexity",
+    "category": "AI 工具",
+    "domains": [
+      "perplexity.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/perplexity.png",
+        "sourceUrl": "https://www.perplexity.ai/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/perplexity.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/perplexity.png",
+        "source": "Lobe Icons · perplexity.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "elevenlabs",
+    "label": "ElevenLabs",
+    "category": "AI 工具",
+    "domains": [
+      "elevenlabs.io"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/elevenlabs.png",
+        "sourceUrl": "https://elevenlabs.io/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "replicate",
+    "label": "Replicate",
+    "category": "AI 工具",
+    "domains": [
+      "replicate.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/replicate.png",
+        "sourceUrl": "https://static.replicateassets.com/fe/ad7fe3a706abfe81d42a93a7659b4395ee36d386/favicon-CKiqAkf2.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "cherrystudio",
+    "label": "Cherry Studio",
+    "category": "AI 工具",
+    "domains": [
+      "cherry-ai.com"
+    ],
+    "variants": {
+      "original": {},
+      "mac": {
+        "path": "icons/mac/cherrystudio.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "bitbucket",
+    "label": "Bitbucket",
+    "category": "开发",
+    "domains": [
+      "bitbucket.org"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/bitbucket.png",
+        "sourceUrl": "https://bitbucket.org/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "wechat",
+    "label": "微信",
+    "category": "社交",
+    "domains": [
+      "wechat.com",
+      "weixin.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/wechat.png",
+        "sourceUrl": "https://newres.wechat.com/t/fed_upload/25d133b0-63d9-4102-857c-5cc84c752232/NTI4MWU5.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/wechat.png"
+      },
+      "mac": {
+        "path": "icons/mac/wechat.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/wechat.png",
+        "source": "Simple Icons · wechat",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "wikipedia",
+    "label": "Wikipedia",
+    "category": "生活",
+    "domains": [
+      "wikipedia.org"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/wikipedia.png",
+        "sourceUrl": "https://www.wikipedia.org/static/favicon/wikipedia.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/wikipedia.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/wikipedia.png",
+        "source": "Simple Icons · wikipedia",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "epicgames",
+    "label": "Epic Games",
+    "category": "生活",
+    "domains": [
+      "epicgames.com"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "bilibili",
+    "label": "哔哩哔哩",
+    "category": "常用",
+    "domains": [
+      "bilibili.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/bilibili.png",
+        "sourceUrl": "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/bilibili.png"
+      },
+      "mac": {
+        "path": "icons/mac/bilibili.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/bilibili.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "deepseek",
+    "label": "DeepSeek",
+    "category": "AI 工具",
+    "domains": [
+      "deepseek.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/deepseek.png",
+        "sourceUrl": "https://www.deepseek.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/deepseek.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/deepseek.png",
+        "source": "Lobe Icons · deepseek-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "minimax",
+    "label": "MiniMax",
+    "category": "AI 工具",
+    "domains": [
+      "minimax.io",
+      "minimaxi.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/minimax.png",
+        "sourceUrl": "https://www.minimax.io/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/minimax.png",
+        "source": "Lobe Icons · minimax-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "runway",
+    "label": "Runway",
+    "category": "AI 工具",
+    "domains": [
+      "runwayml.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/runway.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/runway.png",
+        "source": "Lobe Icons · runway.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "stability",
+    "label": "Stability AI",
+    "category": "AI 工具",
+    "domains": [
+      "stability.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/stability.png",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/Favicon_small.png?format=100w&content-type=image%2Fpng"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "windsurf",
+    "label": "Windsurf",
+    "category": "AI 工具",
+    "domains": [
+      "windsurf.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/windsurf.png",
+        "sourceUrl": "https://windsurf.com/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "airtable",
+    "label": "Airtable",
+    "category": "办公",
+    "domains": [
+      "airtable.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/airtable.png",
+        "sourceUrl": "https://www.airtable.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/airtable.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "evernote",
+    "label": "Evernote",
+    "category": "办公",
+    "domains": [
+      "evernote.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/evernote.png",
+        "sourceUrl": "https://evernote.com/images/evernote-logo-icon.svg"
+      },
+      "iphone": {
+        "path": "icons/iphone/evernote.png"
+      },
+      "mac": {
+        "path": "icons/mac/evernote.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "typeform",
+    "label": "Typeform",
+    "category": "办公",
+    "domains": [
+      "typeform.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/typeform.png",
+        "sourceUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/68b6f02860110a77834d228b_favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "dribbble",
+    "label": "Dribbble",
+    "category": "设计",
+    "domains": [
+      "dribbble.com"
+    ],
+    "variants": {
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/dribbble.png",
+        "source": "Simple Icons · dribbble",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "unsplash",
+    "label": "Unsplash",
+    "category": "设计",
+    "domains": [
+      "unsplash.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/unsplash.png",
+        "sourceUrl": "https://unsplash.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/unsplash.png"
+      },
+      "mac": {
+        "path": "icons/mac/unsplash.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/unsplash.png",
+        "source": "Simple Icons · unsplash",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "supabase",
+    "label": "Supabase",
+    "category": "开发",
+    "domains": [
+      "supabase.com"
+    ],
+    "variants": {
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/supabase.png",
+        "source": "SVG Logos · supabase-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "telegram",
+    "label": "Telegram",
+    "category": "社交",
+    "domains": [
+      "telegram.org",
+      "t.me"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/telegram.png",
+        "sourceUrl": "https://telegram.org/img/favicon-32x32.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/telegram.png"
+      },
+      "mac": {
+        "path": "icons/mac/telegram.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/telegram.png",
+        "source": "Simple Icons · telegram",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "category": "社交",
+    "domains": [
+      "linkedin.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/linkedin.png",
+        "sourceUrl": "https://www.linkedin.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/linkedin.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/linkedin.png",
+        "source": "SVG Logos · linkedin-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "facebook",
+    "label": "Facebook",
+    "category": "社交",
+    "domains": [
+      "facebook.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/facebook.png",
+        "sourceUrl": "https://facebook.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/facebook.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/facebook.png",
+        "source": "SVG Logos · facebook",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "whatsapp",
+    "label": "WhatsApp",
+    "category": "社交",
+    "domains": [
+      "whatsapp.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/whatsapp.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/whatsapp.png",
+        "source": "Simple Icons · whatsapp",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "dingtalk",
+    "label": "钉钉",
+    "category": "办公",
+    "domains": [
+      "dingtalk.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/dingtalk.png",
+        "sourceUrl": "https://gw.alicdn.com/imgextra/i3/O1CN014ZbI6ZTEhdC0ttN2_!!6000000003783-2-tps-444-444.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/dingtalk.png"
+      },
+      "mac": {
+        "path": "icons/mac/dingtalk.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "jianying",
+    "label": "剪映",
+    "category": "设计",
+    "domains": [
+      "jianying.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/jianying.png",
+        "sourceUrl": "https://lf3-s.vlabstatic.com/obj/vilab-static/ies/ulike/web/resource/fe_official/assets/imgs/lv/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/jianying.png"
+      },
+      "mac": {
+        "path": "icons/mac/jianying.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "x",
+    "label": "X",
+    "category": "常用",
+    "domains": [
+      "x.com",
+      "twitter.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/x.png",
+        "sourceUrl": "https://x.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/x.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/x.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "youtube",
+    "label": "YouTube",
+    "category": "常用",
+    "domains": [
+      "youtube.com",
+      "youtu.be"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/youtube.png",
+        "sourceUrl": "https://www.youtube.com/s/desktop/bb2198ae/img/favicon_144x144.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/youtube.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/youtube.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "luma",
+    "label": "Luma",
+    "category": "AI 工具",
+    "domains": [
+      "lumalabs.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/luma.png",
+        "sourceUrl": "https://lumalabs.ai/favicons/favicon-black.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "ideogram",
+    "label": "Ideogram",
+    "category": "AI 工具",
+    "domains": [
+      "ideogram.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/ideogram.png",
+        "sourceUrl": "https://ideogram.ai/favicon.png?v=new-brand-20261020"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "vidu",
+    "label": "Vidu",
+    "category": "AI 工具",
+    "domains": [
+      "vidu.com",
+      "vidu.cn",
+      "vidu.studio"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/vidu.png",
+        "sourceUrl": "https://www.vidu.com/logo.svg"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "comfyui",
+    "label": "ComfyUI",
+    "category": "AI 工具",
+    "domains": [
+      "comfy.org",
+      "comfyui.org"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/comfyui.png",
+        "sourceUrl": "https://comfy.org/favicon-96x96.png"
+      },
+      "mac": {
+        "path": "icons/mac/comfyui.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "civitai",
+    "label": "Civitai",
+    "category": "AI 工具",
+    "domains": [
+      "civitai.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/civitai.png",
+        "sourceUrl": "https://civitai.com/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "lmstudio",
+    "label": "LM Studio",
+    "category": "AI 工具",
+    "domains": [
+      "lmstudio.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/lmstudio.png",
+        "sourceUrl": "https://lmstudio.ai/assets/marketing/logo-192x192.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "dropbox",
+    "label": "Dropbox",
+    "category": "办公",
+    "domains": [
+      "dropbox.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/dropbox.png",
+        "sourceUrl": "https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/dropbox.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/dropbox.png",
+        "source": "SVG Logos · dropbox",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "obsidian",
+    "label": "Obsidian",
+    "category": "办公",
+    "domains": [
+      "obsidian.md"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/obsidian.png",
+        "sourceUrl": "https://obsidian.md/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/obsidian.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/obsidian.png",
+        "source": "SVG Logos · obsidian-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "todoist",
+    "label": "Todoist",
+    "category": "办公",
+    "domains": [
+      "todoist.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/todoist.png",
+        "sourceUrl": "https://www.todoist.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/todoist.png"
+      },
+      "mac": {
+        "path": "icons/mac/todoist.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "clickup",
+    "label": "ClickUp",
+    "category": "办公",
+    "domains": [
+      "clickup.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/clickup.png",
+        "sourceUrl": "https://clickup.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/clickup.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "behance",
+    "label": "Behance",
+    "category": "设计",
+    "domains": [
+      "behance.net"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/behance.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/behance.png",
+        "source": "Simple Icons · behance",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "webflow",
+    "label": "Webflow",
+    "category": "设计",
+    "domains": [
+      "webflow.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/webflow.png",
+        "sourceUrl": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/686d53ceda66a40cb6b6d546_favicon.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/webflow.png",
+        "source": "Simple Icons · webflow",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "pixabay",
+    "label": "Pixabay",
+    "category": "设计",
+    "domains": [
+      "pixabay.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/pixabay.png",
+        "sourceUrl": "https://www.pixabay.com/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "freepik",
+    "label": "Freepik",
+    "category": "设计",
+    "domains": [
+      "freepik.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/freepik.png",
+        "sourceUrl": "https://media.magnific.com/magnific-favicons/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "netlify",
+    "label": "Netlify",
+    "category": "开发",
+    "domains": [
+      "netlify.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/netlify.png",
+        "sourceUrl": "https://www.netlify.com/favicon/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/netlify.png",
+        "source": "SVG Logos · netlify-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "railway",
+    "label": "Railway",
+    "category": "开发",
+    "domains": [
+      "railway.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/railway.png",
+        "sourceUrl": "https://railway.com/favicon-32x32.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "discord",
+    "label": "Discord",
+    "category": "社交",
+    "domains": [
+      "discord.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/discord.png",
+        "sourceUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/discord.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/discord.png",
+        "source": "Simple Icons · discord",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "netflix",
+    "label": "Netflix",
+    "category": "影音",
+    "domains": [
+      "netflix.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/netflix.png",
+        "sourceUrl": "https://www.netflix.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/netflix.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/netflix.png",
+        "source": "SVG Logos · netflix-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "spotify",
+    "label": "Spotify",
+    "category": "影音",
+    "domains": [
+      "spotify.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/spotify.png",
+        "sourceUrl": "https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/spotify.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/spotify.png",
+        "source": "SVG Logos · spotify-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "booking",
+    "label": "Booking.com",
+    "category": "生活",
+    "domains": [
+      "booking.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/booking.png",
+        "sourceUrl": "https://cf.bstatic.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/booking.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "tencent-docs",
+    "label": "腾讯文档",
+    "category": "办公",
+    "domains": [
+      "docs.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tencent-docs.png",
+        "sourceUrl": "https://docs.idqqimg.com/tim/docs/desktop/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/tencent-docs.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "douyin",
+    "label": "抖音",
+    "category": "常用",
+    "domains": [
+      "douyin.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/douyin.png",
+        "sourceUrl": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/douyin.png"
+      },
+      "mac": {
+        "path": "icons/mac/douyin.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/douyin.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "doubao",
+    "label": "豆包",
+    "category": "AI 工具",
+    "domains": [
+      "doubao.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/doubao.png",
+        "sourceUrl": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/new-doubao/64x64.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/doubao.png"
+      },
+      "mac": {
+        "path": "icons/mac/doubao.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/doubao.png",
+        "source": "Lobe Icons · doubao-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "recraft",
+    "label": "Recraft",
+    "category": "AI 工具",
+    "domains": [
+      "recraft.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/recraft.png",
+        "sourceUrl": "https://www.recraft.ai/apps/icon.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "tripo",
+    "label": "Tripo",
+    "category": "AI 工具",
+    "domains": [
+      "tripo3d.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tripo.png",
+        "sourceUrl": "https://www.tripo3d.ai/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "cursor",
+    "label": "Cursor",
+    "category": "AI 工具",
+    "domains": [
+      "cursor.com",
+      "cursor.sh"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/cursor.png",
+        "sourceUrl": "https://cursor.com/marketing-static/icon-192x192-light.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/cursor.png",
+        "source": "Lobe Icons · cursor.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "notion",
+    "label": "Notion",
+    "category": "办公",
+    "domains": [
+      "notion.so",
+      "notion.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/notion.png",
+        "sourceUrl": "https://www.notion.com/front-static/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/notion.png"
+      },
+      "mac": {
+        "path": "icons/mac/notion.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/notion.png",
+        "source": "SVG Logos · notion-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "trello",
+    "label": "Trello",
+    "category": "办公",
+    "domains": [
+      "trello.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/trello.png",
+        "sourceUrl": "https://trello.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/trello.png"
+      },
+      "mac": {
+        "path": "icons/mac/trello.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/trello.png",
+        "source": "Simple Icons · trello",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "linear",
+    "label": "Linear",
+    "category": "办公",
+    "domains": [
+      "linear.app"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/linear.png",
+        "sourceUrl": "https://linear.app/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/linear.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/linear.png",
+        "source": "Simple Icons · linear",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "framer",
+    "label": "Framer",
+    "category": "设计",
+    "domains": [
+      "framer.com"
+    ],
+    "variants": {
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/framer.png",
+        "source": "Simple Icons · framer",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "sketch",
+    "label": "Sketch",
+    "category": "设计",
+    "domains": [
+      "sketch.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/sketch.png",
+        "sourceUrl": "https://www.sketch.com/images/metadata/icon-32.png"
+      },
+      "mac": {
+        "path": "icons/mac/sketch.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "pexels",
+    "label": "Pexels",
+    "category": "设计",
+    "domains": [
+      "pexels.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/pexels.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "github",
+    "label": "GitHub",
+    "category": "开发",
+    "domains": [
+      "github.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/github.png",
+        "sourceUrl": "https://github.githubassets.com/favicons/favicon.svg"
+      },
+      "iphone": {
+        "path": "icons/iphone/github.png"
+      },
+      "mac": {
+        "path": "icons/mac/github.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/github.png",
+        "source": "Simple Icons · github",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "gitlab",
+    "label": "GitLab",
+    "category": "开发",
+    "domains": [
+      "gitlab.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/gitlab.png",
+        "sourceUrl": "https://about.gitlab.com/images/ico/favicon-32x32.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/gitlab.png",
+        "source": "SVG Logos · gitlab-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "vercel",
+    "label": "Vercel",
+    "category": "开发",
+    "domains": [
+      "vercel.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/vercel.png",
+        "sourceUrl": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/vercel.png",
+        "source": "Simple Icons · vercel",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "docker",
+    "label": "Docker",
+    "category": "开发",
+    "domains": [
+      "docker.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/docker.png",
+        "sourceUrl": "https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-32x32.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/docker.png",
+        "source": "SVG Logos · docker-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "render",
+    "label": "Render",
+    "category": "开发",
+    "domains": [
+      "render.com"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "codepen",
+    "label": "CodePen",
+    "category": "开发",
+    "domains": [
+      "codepen.io"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "replit",
+    "label": "Replit",
+    "category": "开发",
+    "domains": [
+      "replit.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/replit.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "reddit",
+    "label": "Reddit",
+    "category": "社交",
+    "domains": [
+      "reddit.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/reddit.png",
+        "sourceUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/reddit.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/reddit.png",
+        "source": "Simple Icons · reddit",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "douban",
+    "label": "豆瓣",
+    "category": "社交",
+    "domains": [
+      "douban.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/douban.png",
+        "sourceUrl": "https://www.douban.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/douban.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "taobao",
+    "label": "淘宝",
+    "category": "生活",
+    "domains": [
+      "taobao.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/taobao.png",
+        "sourceUrl": "https://gw.alicdn.com/imgextra/i4/O1CN01qOI6vB1zaqrBKbyFr_!!6000000006731-73-tps-64-64.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/taobao.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/taobao.png",
+        "source": "Simple Icons · taobao",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "alipay",
+    "label": "支付宝",
+    "category": "生活",
+    "domains": [
+      "alipay.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/alipay.png",
+        "sourceUrl": "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/alipay.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/alipay.png",
+        "source": "Simple Icons · alipay",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "paypal",
+    "label": "PayPal",
+    "category": "生活",
+    "domains": [
+      "paypal.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/paypal.png",
+        "sourceUrl": "https://www.paypal.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/paypal.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/paypal.png",
+        "source": "SVG Logos · paypal",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "ebay",
+    "label": "eBay",
+    "category": "生活",
+    "domains": [
+      "ebay.com",
+      "ebay.co.uk",
+      "ebay.de"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/ebay.png",
+        "sourceUrl": "https://www.ebay.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/ebay.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "airbnb",
+    "label": "Airbnb",
+    "category": "生活",
+    "domains": [
+      "airbnb.com",
+      "airbnb.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/airbnb.png",
+        "sourceUrl": "https://www.airbnb.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/airbnb.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/airbnb.png",
+        "source": "Simple Icons · airbnb",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "capcut",
+    "label": "CapCut",
+    "category": "设计",
+    "domains": [
+      "capcut.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/capcut.png",
+        "sourceUrl": "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/common/images/lv_web-2.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/capcut.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "libtv",
+    "label": "LibTV",
+    "category": "常用",
+    "domains": [
+      "liblib.tv"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/libtv.png",
+        "sourceUrl": "https://www.liblib.tv/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/libtv.png"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "claude",
+    "label": "Claude",
+    "category": "AI 工具",
+    "domains": [
+      "claude.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/claude.png",
+        "sourceUrl": "https://claude.ai/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/claude.png"
+      },
+      "mac": {
+        "path": "icons/mac/claude.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/claude.png",
+        "source": "Lobe Icons · claude-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "slack",
+    "label": "Slack",
+    "category": "办公",
+    "domains": [
+      "slack.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/slack.png",
+        "sourceUrl": "https://a.slack-edge.com/9cc0056/img/icons/favicon-32.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/slack.png"
+      },
+      "mac": {
+        "path": "icons/mac/slack.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/slack.png",
+        "source": "SVG Logos · slack-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "asana",
+    "label": "Asana",
+    "category": "办公",
+    "domains": [
+      "asana.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/asana.png",
+        "sourceUrl": "https://asana.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/asana.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "figma",
+    "label": "Figma",
+    "category": "设计",
+    "domains": [
+      "figma.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/figma.png",
+        "sourceUrl": "https://www.figma.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/figma.png"
+      },
+      "mac": {
+        "path": "icons/mac/figma.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/figma.png",
+        "source": "SVG Logos · figma",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "npm",
+    "label": "npm",
+    "category": "开发",
+    "domains": [
+      "npmjs.com"
+    ],
+    "variants": {
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/npm.png",
+        "source": "Simple Icons · npm",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "weibo",
+    "label": "微博",
+    "category": "社交",
+    "domains": [
+      "weibo.com",
+      "weibo.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/weibo.png",
+        "sourceUrl": "https://weibo.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/weibo.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/weibo.png",
+        "source": "Simple Icons · sinaweibo",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "zhihu",
+    "label": "知乎",
+    "category": "社交",
+    "domains": [
+      "zhihu.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/zhihu.png",
+        "sourceUrl": "https://static.zhihu.com/heifetz/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/zhihu.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/zhihu.png",
+        "source": "Simple Icons · zhihu",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "quora",
+    "label": "Quora",
+    "category": "社交",
+    "domains": [
+      "quora.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/quora.png",
+        "sourceUrl": "https://www.quora.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/quora.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "twitch",
+    "label": "Twitch",
+    "category": "影音",
+    "domains": [
+      "twitch.tv"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/twitch.png",
+        "sourceUrl": "https://assets.twitch.tv/assets/favicon-32-5c61aa63605bca4f740d.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/twitch.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/twitch.png",
+        "source": "Simple Icons · twitch",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "vimeo",
+    "label": "Vimeo",
+    "category": "影音",
+    "domains": [
+      "vimeo.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/vimeo.png",
+        "sourceUrl": "https://vimeo.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/vimeo.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/vimeo.png",
+        "source": "Simple Icons · vimeo",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "feishu",
+    "label": "飞书",
+    "category": "办公",
+    "domains": [
+      "feishu.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/feishu.png",
+        "sourceUrl": "https://www.feishu.cn/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/feishu.png"
+      },
+      "mac": {
+        "path": "icons/mac/feishu.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "canva",
+    "label": "Canva 可画",
+    "category": "设计",
+    "domains": [
+      "canva.com",
+      "canva.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/canva.png",
+        "sourceUrl": "https://static.canva.com/domain-assets/canva/static/images/android-192x192-2.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/canva.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "grok",
+    "label": "Grok",
+    "category": "AI 工具",
+    "domains": [
+      "grok.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/grok.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/grok.png",
+        "source": "Lobe Icons · grok.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "manus",
+    "label": "Manus",
+    "category": "AI 工具",
+    "domains": [
+      "manus.im"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/manus.png",
+        "sourceUrl": "https://manus.im/favicon.ico?favicon.0xxlzaf8ul9ey.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/manus.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/manus.png",
+        "source": "Lobe Icons · manus.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "pika",
+    "label": "Pika",
+    "category": "AI 工具",
+    "domains": [
+      "pika.art"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/pika.png",
+        "sourceUrl": "https://pika.art/favicon.ico?favicon.03qzqgaru0by8.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "suno",
+    "label": "Suno",
+    "category": "AI 工具",
+    "domains": [
+      "suno.com",
+      "suno.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/suno.png",
+        "sourceUrl": "https://cdn-o.suno.com/favicon-192x192.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/suno.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/suno.png",
+        "source": "Lobe Icons · suno.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "udio",
+    "label": "Udio",
+    "category": "AI 工具",
+    "domains": [
+      "udio.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/udio.png",
+        "sourceUrl": "https://www.udio.com/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "meshy",
+    "label": "Meshy",
+    "category": "AI 工具",
+    "domains": [
+      "meshy.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/meshy.png",
+        "sourceUrl": "https://www.meshy.ai:443/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "sora",
+    "label": "Sora",
+    "category": "AI 工具",
+    "domains": [
+      "sora.com"
+    ],
+    "variants": {
+      "original": {}
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "zoom",
+    "label": "Zoom",
+    "category": "办公",
+    "domains": [
+      "zoom.us",
+      "zoom.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/zoom.png",
+        "sourceUrl": "https://st1.zoom.us/homepage/20261112-1031/primary/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/zoom.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/zoom.png",
+        "source": "SVG Logos · zoom-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "miro",
+    "label": "Miro",
+    "category": "办公",
+    "domains": [
+      "miro.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/miro.png",
+        "sourceUrl": "https://miro.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/miro.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/miro.png",
+        "source": "Simple Icons · miro",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "imdb",
+    "label": "IMDb",
+    "category": "影音",
+    "domains": [
+      "imdb.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/imdb.png",
+        "sourceUrl": "https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/imdb.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "kdocs",
+    "label": "金山文档",
+    "category": "办公",
+    "domains": [
+      "kdocs.cn"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/kdocs.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "poe",
+    "label": "Poe",
+    "category": "AI 工具",
+    "domains": [
+      "poe.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/poe.png",
+        "sourceUrl": "https://poe.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/poe.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/poe.png",
+        "source": "Lobe Icons · poe-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "dify",
+    "label": "Dify",
+    "category": "AI 工具",
+    "domains": [
+      "dify.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/dify.png",
+        "sourceUrl": "https://dify.ai/favicon.svg"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "coda",
+    "label": "Coda / Superhuman Docs",
+    "category": "办公",
+    "domains": [
+      "coda.io"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/coda.png",
+        "sourceUrl": "https://cdn.coda.io/icons/png/color/coda-32.png"
+      },
+      "iphone": {
+        "path": "icons/iphone/coda.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "wix",
+    "label": "Wix",
+    "category": "设计",
+    "domains": [
+      "wix.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/wix.png",
+        "sourceUrl": "https://www.wix.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/wix.png"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "wps",
+    "label": "WPS Office",
+    "category": "办公",
+    "domains": [
+      "wps.cn",
+      "wps.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/wps.png",
+        "sourceUrl": "https://www.wps.cn/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/wps.png"
+      },
+      "mac": {
+        "path": "icons/mac/wps.png"
+      }
+    },
+    "defaultVariant": "mac"
+  },
+  {
+    "id": "fal",
+    "label": "fal",
+    "category": "AI 工具",
+    "domains": [
+      "fal.ai"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/fal.png",
+        "sourceUrl": "https://fal.ai/favicon.ico"
+      }
+    },
+    "defaultVariant": "original"
+  }
+]

@@ -1,0 +1,534 @@
+[
+  {
+    "id": "google-drive",
+    "source": "SVG Logos · google-drive",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "google-calendar",
+    "source": "SVG Logos · google-calendar",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "google-meet",
+    "source": "SVG Logos · google-meet",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "google-photos",
+    "source": "SVG Logos · google-photos",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "google-keep",
+    "source": "SVG Logos · google-keep",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.6
+  },
+  {
+    "id": "notion",
+    "source": "SVG Logos · notion-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "slack",
+    "source": "SVG Logos · slack-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "zoom",
+    "source": "SVG Logos · zoom-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.8
+  },
+  {
+    "id": "dropbox",
+    "source": "SVG Logos · dropbox",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "trello",
+    "source": "Simple Icons · trello",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#0052CC",
+    "scale": 0.62
+  },
+  {
+    "id": "linear",
+    "source": "Simple Icons · linear",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#5E6AD2",
+    "scale": 0.6
+  },
+  {
+    "id": "obsidian",
+    "source": "SVG Logos · obsidian-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#1E1E1E",
+    "scale": 0.62
+  },
+  {
+    "id": "miro",
+    "source": "Simple Icons · miro",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FFD02F",
+    "scale": 0.62
+  },
+  {
+    "id": "teams",
+    "source": "SVG Logos · microsoft-teams",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "onedrive",
+    "source": "SVG Logos · microsoft-onedrive",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.72
+  },
+  {
+    "id": "figma",
+    "source": "SVG Logos · figma",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "dribbble",
+    "source": "Simple Icons · dribbble",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#EA4C89",
+    "scale": 0.64
+  },
+  {
+    "id": "behance",
+    "source": "Simple Icons · behance",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1769FF",
+    "scale": 0.66
+  },
+  {
+    "id": "framer",
+    "source": "Simple Icons · framer",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.52
+  },
+  {
+    "id": "webflow",
+    "source": "Simple Icons · webflow",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#146EF5",
+    "scale": 0.64
+  },
+  {
+    "id": "unsplash",
+    "source": "Simple Icons · unsplash",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.5
+  },
+  {
+    "id": "github",
+    "source": "Simple Icons · github",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#181717",
+    "scale": 0.68
+  },
+  {
+    "id": "gitlab",
+    "source": "SVG Logos · gitlab-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "vercel",
+    "source": "Simple Icons · vercel",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.52
+  },
+  {
+    "id": "docker",
+    "source": "SVG Logos · docker-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "cloudflare",
+    "source": "SVG Logos · cloudflare-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "supabase",
+    "source": "SVG Logos · supabase-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#1C1C1C",
+    "scale": 0.58
+  },
+  {
+    "id": "stackoverflow",
+    "source": "SVG Logos · stackoverflow-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.6
+  },
+  {
+    "id": "npm",
+    "source": "Simple Icons · npm",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#CB3837",
+    "scale": 0.7
+  },
+  {
+    "id": "netlify",
+    "source": "SVG Logos · netlify-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "chatgpt",
+    "source": "Lobe Icons · openai.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.64
+  },
+  {
+    "id": "claude",
+    "source": "Lobe Icons · claude-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#F4F3EE",
+    "scale": 0.66
+  },
+  {
+    "id": "gemini",
+    "source": "Lobe Icons · gemini-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.68
+  },
+  {
+    "id": "deepseek",
+    "source": "Lobe Icons · deepseek-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "kimi",
+    "source": "Lobe Icons · kimi.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "doubao",
+    "source": "Lobe Icons · doubao-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.72
+  },
+  {
+    "id": "qwen",
+    "source": "Lobe Icons · qwen-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "perplexity",
+    "source": "Lobe Icons · perplexity.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#20808D",
+    "scale": 0.62
+  },
+  {
+    "id": "cursor",
+    "source": "Lobe Icons · cursor.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "grok",
+    "source": "Lobe Icons · grok.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "midjourney",
+    "source": "Lobe Icons · midjourney.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.76
+  },
+  {
+    "id": "huggingface",
+    "source": "Lobe Icons · huggingface-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.76
+  },
+  {
+    "id": "copilot",
+    "source": "Lobe Icons · copilot-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "mistral",
+    "source": "Lobe Icons · mistral-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "notebooklm",
+    "source": "Lobe Icons · notebooklm.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.64
+  },
+  {
+    "id": "aistudio",
+    "source": "Lobe Icons · aistudio.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "poe",
+    "source": "Lobe Icons · poe-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.68
+  },
+  {
+    "id": "yuanbao",
+    "source": "Lobe Icons · yuanbao-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "hailuo",
+    "source": "Lobe Icons · hailuo-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.68
+  },
+  {
+    "id": "kling",
+    "source": "Lobe Icons · kling-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.7
+  },
+  {
+    "id": "minimax",
+    "source": "Lobe Icons · minimax-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "suno",
+    "source": "Lobe Icons · suno.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "runway",
+    "source": "Lobe Icons · runway.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.6
+  },
+  {
+    "id": "manus",
+    "source": "Lobe Icons · manus.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "xiaohongshu",
+    "source": "Simple Icons · xiaohongshu",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF2442",
+    "scale": 0.8
+  },
+  {
+    "id": "wechat",
+    "source": "Simple Icons · wechat",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#07C160",
+    "scale": 0.66
+  },
+  {
+    "id": "telegram",
+    "source": "Simple Icons · telegram",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#26A5E4",
+    "scale": 0.66
+  },
+  {
+    "id": "discord",
+    "source": "Simple Icons · discord",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#5865F2",
+    "scale": 0.66
+  },
+  {
+    "id": "reddit",
+    "source": "Simple Icons · reddit",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF4500",
+    "scale": 0.72
+  },
+  {
+    "id": "linkedin",
+    "source": "SVG Logos · linkedin-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "facebook",
+    "source": "SVG Logos · facebook",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "whatsapp",
+    "source": "Simple Icons · whatsapp",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#25D366",
+    "scale": 0.66
+  },
+  {
+    "id": "zhihu",
+    "source": "Simple Icons · zhihu",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#0084FF",
+    "scale": 0.62
+  },
+  {
+    "id": "weibo",
+    "source": "Simple Icons · sinaweibo",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "spotify",
+    "source": "SVG Logos · spotify-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#000000",
+    "scale": 0.7
+  },
+  {
+    "id": "netflix",
+    "source": "SVG Logos · netflix-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#000000",
+    "scale": 0.56
+  },
+  {
+    "id": "twitch",
+    "source": "Simple Icons · twitch",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#9146FF",
+    "scale": 0.6
+  },
+  {
+    "id": "applemusic",
+    "source": "Simple Icons · applemusic",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FA243C",
+    "scale": 0.6
+  },
+  {
+    "id": "soundcloud",
+    "source": "Simple Icons · soundcloud",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF5500",
+    "scale": 0.72
+  },
+  {
+    "id": "vimeo",
+    "source": "Simple Icons · vimeo",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1AB7EA",
+    "scale": 0.62
+  },
+  {
+    "id": "taobao",
+    "source": "Simple Icons · taobao",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF5000",
+    "scale": 0.7
+  },
+  {
+    "id": "alipay",
+    "source": "Simple Icons · alipay",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1677FF",
+    "scale": 0.66
+  },
+  {
+    "id": "wikipedia",
+    "source": "Simple Icons · wikipedia",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.72
+  },
+  {
+    "id": "steam",
+    "source": "Simple Icons · steam",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#171A21",
+    "scale": 0.7
+  },
+  {
+    "id": "airbnb",
+    "source": "Simple Icons · airbnb",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF5A5F",
+    "scale": 0.6
+  },
+  {
+    "id": "paypal",
+    "source": "SVG Logos · paypal",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.6
+  }
+]

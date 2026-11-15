@@ -1,0 +1,17 @@
+{
+  "name": "aside-icons",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:library": "node scripts/build-library.mjs",
+    "build:optimized": "node scripts/build-optimized.mjs",
+    "test": "for f in tests/*.test.cjs; do node $f || exit 1; done",
+    "release": "bash scripts/release.sh"
+  },
+  "dependencies": {
+    "@iconify-json/logos": "^1.2.20",
+    "@lobehub/icons-static-svg": "^1.102.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "simple-icons": "^16.37.0"
+  }
+}

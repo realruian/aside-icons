@@ -177,6 +177,10 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/microsoft365.png",
         "sourceUrl": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/favicon-copilot-brand-refresh-23392c1f66.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/microsoft365.png",
+        "source": "由 original/microsoft365.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "original"
@@ -309,6 +313,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/photoshop.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/photoshop.png",
+        "source": "手绘矢量（按品牌标志简化）"
       }
     },
     "defaultVariant": "iphone"
@@ -442,6 +450,10 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/firefly.png",
         "sourceUrl": "https://firefly.adobe.com/releases/7a639869dfadbea6ab620756a9ca5f6eb768ec0a/assets/fi_favicon_32-Mz96Nj_h.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/firefly.png",
+        "source": "手绘矢量（按品牌标志简化）"
       }
     },
     "defaultVariant": "original"
@@ -1483,6 +1495,10 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/typeform.png",
         "sourceUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/68b6f02860110a77834d228b_favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/typeform.png",
+        "source": "手绘矢量（按品牌标志简化）"
       }
     },
     "defaultVariant": "original"
@@ -1657,6 +1673,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/dingtalk.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/dingtalk.png",
+        "source": "由 iphone/dingtalk.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "mac"
@@ -1678,6 +1698,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/jianying.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/jianying.png",
+        "source": "由 iphone/jianying.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "mac"
@@ -2150,6 +2174,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/booking.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/booking.png",
+        "source": "手绘矢量（按品牌标志简化）"
       }
     },
     "defaultVariant": "iphone"
@@ -2168,6 +2196,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/tencent-docs.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/tencent-docs.png",
+        "source": "由 iphone/tencent-docs.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "iphone"
@@ -3015,6 +3047,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/feishu.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/feishu.png",
+        "source": "由 iphone/feishu.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "mac"
@@ -3034,6 +3070,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/canva.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/canva.png",
+        "source": "手绘矢量（按品牌标志简化）"
       }
     },
     "defaultVariant": "iphone"
@@ -3263,6 +3303,10 @@ const ICON_LIBRARY=Object.freeze([
       "original": {},
       "iphone": {
         "path": "icons/iphone/kdocs.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/kdocs.png",
+        "source": "由 iphone/kdocs.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "iphone"
@@ -3374,6 +3418,10 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/wps.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/wps.png",
+        "source": "由 iphone/wps.png 抠出标志重新排版"
       }
     },
     "defaultVariant": "mac"

@@ -943,5 +943,53 @@
     "sourceUrl": "https://github.com/simple-icons/simple-icons",
     "bg": "#F5C518",
     "scale": 0.74
+  },
+  {
+    "id": "photoshop",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "firefly",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "booking",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "canva",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "typeform",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "microsoft365",
+    "source": "由 original/microsoft365.png 抠出标志重新排版"
+  },
+  {
+    "id": "feishu",
+    "source": "由 iphone/feishu.png 抠出标志重新排版"
+  },
+  {
+    "id": "dingtalk",
+    "source": "由 iphone/dingtalk.png 抠出标志重新排版"
+  },
+  {
+    "id": "tencent-docs",
+    "source": "由 iphone/tencent-docs.png 抠出标志重新排版"
+  },
+  {
+    "id": "kdocs",
+    "source": "由 iphone/kdocs.png 抠出标志重新排版"
+  },
+  {
+    "id": "wps",
+    "source": "由 iphone/wps.png 抠出标志重新排版"
+  },
+  {
+    "id": "jianying",
+    "source": "由 iphone/jianying.png 抠出标志重新排版"
   }
 ]

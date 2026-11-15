@@ -129,7 +129,7 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
     const asset=vm.runInContext('ICON_LIBRARY.find(e=>e.id==='+JSON.stringify(id)+').variants.optimized.path',x.context);assert.equal(asset,'icons/optimized/'+id+'.png');assert.ok(fs.existsSync('extension/'+asset));
     assert.equal((await x.call('setIconChoice',{id,variant:'optimized'})).effectiveChoices[id],'optimized');
    }
-   const denied=await x.call('setIconChoice',{id:'feishu',variant:'optimized'});assert.match(denied.error,/没有可用/);
+   const denied=await x.call('setIconChoice',{id:'nonexistent-site',variant:'optimized'});assert.match(denied.error,/没有可用/);
    const reloaded=setup({stored:x.stored(),useRealCatalog:true});const after=await reloaded.settings();for(const id of ready)assert.equal(after.effectiveChoices[id],'optimized');
    for(const [id,value] of Object.entries(s.effectiveChoices))if(!ready.includes(id))assert.equal(after.effectiveChoices[id],value,'untouched default '+id);
   }

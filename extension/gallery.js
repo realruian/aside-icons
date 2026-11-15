@@ -64,83 +64,91 @@ function paint(box,e,v,{applySize=true}={}){
   sized(path,currentSize()).then(src=>{if(img.isConnected||!img.src)img.src=src});
 }
 
-// ---------- pinned area ----------
-function renderPins(){
-  const pins=$('#pins'),ids=myIds();
-  if(!selectedId||!byId.has(selectedId))selectedId=ids[0]||null;
-  const nodes=ids.map(id=>{
-    const e=byId.get(id),b=document.createElement('button');
-    b.type='button';b.className='pin';b.dataset.id=id;b.title=e.label;b.setAttribute('role','option');
-    b.setAttribute('aria-selected',String(id===selectedId));b.tabIndex=id===selectedId?0:-1;b.setAttribute('aria-label',`${e.label}：${labels[current(e)]}`);
-    b.classList.toggle('is-dirty',Object.prototype.hasOwnProperty.call(draft,id));
-    paint(b,e,current(e));return b;
-  });
-  const add=document.createElement('button');add.type='button';add.className='pin add';add.textContent='+';add.title='从下方列表用 ☆ 添加网站';
-  add.addEventListener('click',()=>{$('#search').focus();showToast('在下方列表点 ☆ 把网站加入我的固定区。')});
-  const extra=[];
-  if(!ids.length){const p=document.createElement('div');p.className='pins-empty';p.textContent='还没有记录到你的固定网站。打开一次固定的网页，或在下方列表点 ☆ 添加。';extra.push(p)}
-  // Only pins live inside the listbox; the empty note and "+" sit beside it in the same grid.
-  pins.replaceChildren(...nodes);$('#pins-box').replaceChildren(pins,...extra,add);
-  $('#mine-hint').textContent=ids.length?'左边按实际大小显示。点一个图标，在右边选版本：上面是大图，下面小格是实际效果。':'';
+// ---------- rows + inline picker ----------
+// Every site, pinned or not, is one row; clicking it discloses its versions underneath.
+const PAGE=20;
+let openRow=null,limit=PAGE,pinsSeeded=false;
+function chevron(){
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 12 12');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.8');svg.setAttribute('aria-hidden','true');svg.setAttribute('class','chev');
+  svg.innerHTML='<path d="m4.5 2.5 3.5 3.5-3.5 3.5"/>';return svg;
 }
-function renderEditor(){
-  const box=$('#editor'),e=byId.get(selectedId);
-  if(!e){box.innerHTML='<p class="editor-empty">选择一个网站来更换图标。</p>';return}
-  const dirty=Object.prototype.hasOwnProperty.call(draft,e.id);
-  const head=document.createElement('div');head.className='editor-head';
-  const h=document.createElement('h3');h.textContent=e.label;
-  const d=document.createElement('span');d.className='domain';d.textContent=e.domains[0];
-  const rm=document.createElement('button');rm.type='button';rm.className='link';
-  rm.textContent=isMine(e.id)?'从我的固定区移除':'加入我的固定区';
-  rm.addEventListener('click',()=>toggleMine(e.id));rm.disabled=!canEdit();
-  head.append(h,d,rm);
-  const opts=document.createElement('div');opts.className='options';
-  for(const v of variantsOf(e)){
-    const o=document.createElement('button');o.type='button';o.className='option';o.dataset.id=e.id;o.dataset.variant=v;
-    const sel=current(e)===v;o.setAttribute('aria-pressed',String(sel));o.classList.toggle('is-dirty',sel&&dirty);o.disabled=!canEdit();
-    const big=document.createElement('span');big.className='big';paint(big,e,v,{applySize:false});
-    const real=document.createElement('span');real.className='real';real.title='实际显示大小';paint(real,e,v);
-    const name=document.createElement('span');name.className='name';name.textContent=labels[v]+(sel?(dirty?' · 未保存':' · 当前'):'');
-    o.append(big,real,name);opts.append(o);
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n}
+function isDirty(id){return Object.prototype.hasOwnProperty.call(draft,id)}
+function siteRow(e,kind,open){
+  const dirty=isDirty(e.id),v=current(e);
+  const row=el('div',`site ${kind==='pin'?'pin':'row'}`);row.dataset.id=e.id;row.dataset.current=v;row.classList.toggle('is-dirty',dirty);
+  const btn=el('button','site-btn');btn.type='button';btn.dataset.kind=kind;btn.setAttribute('aria-expanded',String(open));
+  btn.setAttribute('aria-controls',`picker-${kind}-${e.id}`);
+  const icon=el('span','site-icon');paint(icon,e,v,{applySize:false});
+  const name=el('span','site-name');name.append(el('b','',e.label),el('span','',e.domains.join(' · ')));
+  const value=el('span','value');value.append(el('span','vtext',(dirty?'未保存 · ':'')+labels[v]),chevron());
+  btn.append(icon,name,value);row.append(btn);
+  if(kind==='row'){
+    const mine=isMine(e.id),star=el('button','star');star.type='button';star.dataset.star=e.id;star.append(starIcon(mine));
+    star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
+    star.title=mine?'从我的固定区移除':'加入我的固定区';star.setAttribute('aria-label',star.title+'：'+e.label);
+    row.append(star);
   }
-  box.replaceChildren(head,opts);
+  return open?[row,picker(e,kind)]:[row];
 }
+function picker(e,kind){
+  const dirty=isDirty(e.id),v=current(e);
+  const box=el('div','picker');box.id=`picker-${kind}-${e.id}`;box.setAttribute('role','radiogroup');box.setAttribute('aria-label',`${e.label} 的图标版本`);
+  for(const x of variantsOf(e)){
+    const sel=x===v,o=el('button','option');o.type='button';o.dataset.id=e.id;o.dataset.variant=x;
+    o.setAttribute('role','radio');o.setAttribute('aria-checked',String(sel));o.tabIndex=sel?0:-1;o.disabled=!canEdit();o.classList.toggle('is-dirty',sel&&dirty);
+    const big=el('span','big');paint(big,e,x,{applySize:false});
+    const real=el('span','real');real.title='固定区实际大小';paint(real,e,x);
+    o.append(big,real,el('span','name',labels[x]+(x===saved(e)?' · 当前':'')),el('span','radio'));
+    box.append(o);
+  }
+  if(kind==='pin'){
+    const foot=el('div','picker-foot'),rm=el('button','link danger','从固定区移除');rm.type='button';rm.dataset.remove=e.id;rm.disabled=!canEdit();
+    foot.append(rm);box.append(foot);
+  }
+  return box;
+}
+
+// ---------- my pinned area ----------
+function renderPins(){
+  const ids=myIds();
+  if(!pinsSeeded&&ids.length){selectedId=ids[0];pinsSeeded=true}
+  if(selectedId&&!ids.includes(selectedId))selectedId=null;
+  const nodes=ids.flatMap(id=>siteRow(byId.get(id),'pin',id===selectedId));
+  if(!ids.length){const empty=el('div','item');const l=el('div','label');l.append(el('b','','还没有固定的网站'),el('span','','打开一次固定的网页，或在下方「全部网站」里点 ☆ 添加。'));empty.append(l);nodes.push(empty)}
+  else{
+    const item=el('div','item'),l=el('div','label');l.append(el('b','','全部固定网站统一使用'));
+    const sel=el('select');sel.id='bulk-variant';sel.setAttribute('aria-label','统一使用的版本');
+    for(const v of VARIANTS){const o=el('option','',labels[v]);o.value=v;o.selected=v===bulkChoice;sel.append(o)}sel.disabled=!canEdit();
+    const go=el('button','btn','应用');go.type='button';go.id='bulk-apply';go.disabled=!canEdit();
+    item.append(l,sel,go);nodes.push(item);
+  }
+  $('#pins').replaceChildren(...nodes);
+  $('#mine-count').textContent=ids.length?`${ids.length} 个网站`:'';
+  $('#mine-hint').textContent=ids.length?'点一个网站展开版本；小灰格里是它在固定区的实际大小。在「全部网站」里点 ☆ 可以加入固定区。':'';
+}
+let bulkChoice='optimized';
 
 // ---------- all sites ----------
 function renderCategories(){
   const cats=['',...new Set(list.map(x=>x.category))];
   $('#categories').replaceChildren(...cats.map(c=>{
-    const b=document.createElement('button');b.type='button';b.className='chip';b.dataset.cat=c;b.setAttribute('role','tab');
-    b.textContent=c||'全部';b.setAttribute('aria-selected',String(c===category));b.setAttribute('aria-controls','sites');b.tabIndex=c===category?0:-1;return b;
+    const b=el('button','chip',c||'全部');b.type='button';b.dataset.cat=c;b.setAttribute('role','tab');
+    b.setAttribute('aria-selected',String(c===category));b.setAttribute('aria-controls','sites');b.tabIndex=c===category?0:-1;return b;
   }));
 }
 function visibleSites(){
   const q=$('#search').value.trim().toLocaleLowerCase();
   return list.filter(x=>(!category||x.category===category)&&(!q||[x.label,x.id,...x.domains].join(' ').toLocaleLowerCase().includes(q)));
 }
-function renderRow(e){
-  const row=document.createElement('div');row.className='row';row.dataset.id=e.id;
-  const dirty=Object.prototype.hasOwnProperty.call(draft,e.id);row.classList.toggle('is-dirty',dirty);
-  const icon=document.createElement('span');icon.className='row-icon';paint(icon,e,current(e));
-  const name=document.createElement('div');name.className='row-name';name.title='在上方编辑';
-  const b=document.createElement('b');b.textContent=e.label;const s=document.createElement('span');s.textContent=e.domains.join(' · ');name.append(b,s);
-  row.append(icon,name);
-  for(const v of VARIANTS){
-    const btn=document.createElement('button');btn.type='button';btn.className='vbtn';btn.dataset.id=e.id;btn.dataset.variant=v;
-    if(!available(e,v)){btn.classList.add('placeholder');btn.disabled=true;btn.setAttribute('aria-hidden','true');row.append(btn);continue}
-    const sel=current(e)===v;btn.setAttribute('aria-pressed',String(sel));btn.classList.toggle('is-dirty',sel&&dirty);btn.disabled=!canEdit();
-    btn.title=labels[v];btn.setAttribute('aria-label',`${e.label}：${labels[v]}`);
-    paint(btn,e,v,{applySize:false});row.append(btn);
-  }
-  const star=document.createElement('button');star.type='button';star.className='star';star.dataset.star=e.id;
-  const mine=isMine(e.id);star.append(starIcon(mine));star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
-  star.title=mine?'从我的固定区移除':'加入我的固定区';star.setAttribute('aria-label',star.title+'：'+e.label);
-  row.append(star);return row;
-}
 function renderSites(){
-  const v=visibleSites();
-  $('#sites').replaceChildren(...v.map(renderRow));
-  $('#empty').hidden=v.length>0;
+  const v=visibleSites(),shown=v.slice(0,limit);
+  if(openRow&&!shown.some(e=>e.id===openRow))openRow=null;
+  const nodes=shown.flatMap(e=>siteRow(e,'row',e.id===openRow));
+  if(v.length>shown.length){const more=el('button','more',`显示更多（还有 ${v.length-shown.length} 个）`);more.type='button';more.id='more';nodes.push(more)}
+  $('#sites').replaceChildren(...nodes);
+  $('#sites').hidden=!v.length;$('#empty').hidden=v.length>0;
 }
 
 // ---------- chrome ----------
@@ -150,7 +158,7 @@ function renderTools(){
   $('#toggle').setAttribute('aria-checked',String(on));
   for(const id of ['#toggle','#refresh','#export','#import'])$(id).disabled=!canEdit();
   for(const b of document.querySelectorAll('[data-bulk]'))b.disabled=!canEdit();
-  $('#toggle-state').textContent=!isExtension?'':on?'已开启':'已关闭';
+  $('#toggle-state').textContent=!isExtension?'本地预览':on?'已开启：网页使用你选的版本':'已关闭：网页显示原图';
   for(const b of $('#size').querySelectorAll('button')){
     const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
   }
@@ -165,8 +173,8 @@ function renderBar(){
   $('#save').disabled=!ready||saving||!n;$('#save').textContent=saving?'保存中…':n?'保存并应用':'已保存';
   $('#discard').hidden=!n||saving;
 }
-function render(){renderPins();renderEditor();renderSites();renderTools();renderBar()}
-function refreshView(){renderPins();renderEditor();renderSites();renderTools();renderBar()}
+function refreshView(){renderPins();renderSites();renderTools();renderBar()}
+const render=refreshView;
 
 function banner(text,{error=false,action=null,label=''}={}){
   const b=$('#banner');if(!text){b.hidden=true;return}
@@ -212,7 +220,7 @@ if(isExtension)setInterval(async()=>{const v=await diskVersion();if(v&&loadedVer
 function choose(id,v){
   const e=byId.get(id);if(!canEdit()||!e||!available(e,v))return;
   if(v===saved(e))delete draft[id];else draft[id]=v;
-  selectedId=id;refreshView();
+  refreshView();
 }
 function chooseSize(size){
   if(!validIconSize(size)||saving||(isExtension&&!ready))return;
@@ -222,7 +230,7 @@ function toggleMine(id){
   if(!canEdit()||!byId.has(id))return;
   const base=settings.mySites||[];
   if(isMine(id)){if(added.has(id))added.delete(id);else removed.add(id);if(selectedId===id)selectedId=null}
-  else{if(removed.has(id))removed.delete(id);else if(!base.includes(id))added.add(id);selectedId=id}
+  else{if(removed.has(id))removed.delete(id);else if(!base.includes(id))added.add(id)}
   refreshView();
 }
 function bulk(value){
@@ -279,47 +287,62 @@ async function importSettings(file){
 
 // ---------- wiring ----------
 for(const [key,spec] of Object.entries(ICON_SIZES)){const b=document.createElement('button');b.type='button';b.dataset.size=key;b.setAttribute('role','radio');b.textContent=spec.label;$('#size').append(b)}
-// Arrow keys for the three single-tab-stop widgets (listbox, tablist, radiogroup).
-// Returns the index to move to, or -1 if the key isn't ours.
-function arrowIndex(ev,n,i,{cols=0,vertical=true}={}){
+// Arrow keys for single-tab-stop widgets (tablist, radiogroups). Returns the index to move to, or -1.
+function arrowIndex(ev,n,i,{vertical=true}={}){
   let j;
   if(ev.key==='Home')j=0;
   else if(ev.key==='End')j=n-1;
   else{
     const steps={ArrowRight:1,ArrowLeft:-1};
-    if(vertical){steps.ArrowDown=cols||1;steps.ArrowUp=-(cols||1)}
+    if(vertical){steps.ArrowDown=1;steps.ArrowUp=-1}
     if(!(ev.key in steps))return -1;
-    j=i+steps[ev.key];
-    j=cols?Math.max(0,Math.min(n-1,j)):(j+n)%n;
+    j=(i+steps[ev.key]+n)%n;
   }
   ev.preventDefault();
   return j;
 }
-function selectPin(id){selectedId=id;renderPins();renderEditor();$(`#pins .pin[data-id="${CSS.escape(id)}"]`)?.focus()}
-function selectCategory(c){category=c;renderCategories();renderSites();$(`#categories .chip[data-cat="${CSS.escape(c)}"]`)?.focus()}
+const focusSel=sel=>$(sel)?.focus();
+const esc=s=>globalThis.CSS?.escape?CSS.escape(s):String(s).replace(/["\\]/g,'\\$&');
+function selectCategory(c){category=c;limit=PAGE;renderCategories();renderSites();focusSel(`#categories .chip[data-cat="${esc(c)}"]`)}
+function toggleRow(kind,id){
+  if(kind==='pin'){selectedId=selectedId===id?null:id;renderPins()}
+  else{openRow=openRow===id?null:id;renderSites()}
+  focusSel(`#${kind==='pin'?'pins':'sites'} .site[data-id="${esc(id)}"] .site-btn`);
+}
+function pickVersion(o){
+  const scope=o.closest('#pins')?'#pins':'#sites';
+  choose(o.dataset.id,o.dataset.variant);
+  focusSel(`${scope} .option[data-id="${esc(o.dataset.id)}"][data-variant="${esc(o.dataset.variant)}"]`);
+}
 $('#size').addEventListener('click',ev=>{const b=ev.target.closest('button[data-size]');if(b&&!b.disabled)chooseSize(b.dataset.size)});
 $('#size').addEventListener('keydown',ev=>{
   const items=[...$('#size').querySelectorAll('button')],i=items.indexOf(ev.target);if(i<0)return;
   const j=arrowIndex(ev,items.length,i);if(j<0||items[j].disabled)return;
   chooseSize(items[j].dataset.size);items[j].focus();
 });
-$('#pins').addEventListener('click',ev=>{const b=ev.target.closest('.pin[data-id]');if(b)selectPin(b.dataset.id)});
-$('#pins').addEventListener('keydown',ev=>{
-  const items=[...$('#pins').querySelectorAll('.pin')],i=items.indexOf(ev.target);if(i<0)return;
-  const j=arrowIndex(ev,items.length,i,{cols:4});if(j>=0&&j!==i)selectPin(items[j].dataset.id);
-});
 $('#categories').addEventListener('keydown',ev=>{
   const items=[...$('#categories').querySelectorAll('.chip')],i=items.indexOf(ev.target);if(i<0)return;
   const j=arrowIndex(ev,items.length,i,{vertical:false});if(j>=0)selectCategory(items[j].dataset.cat);
 });
-$('#editor').addEventListener('click',ev=>{const b=ev.target.closest('.option[data-variant]');if(b&&!b.disabled)choose(b.dataset.id,b.dataset.variant)});
-$('#sites').addEventListener('click',ev=>{
-  const v=ev.target.closest('.vbtn[data-variant]');if(v&&!v.disabled){choose(v.dataset.id,v.dataset.variant);return}
-  const s=ev.target.closest('.star[data-star]');if(s&&!s.disabled){toggleMine(s.dataset.star);return}
-  const n=ev.target.closest('.row-name');if(n){selectedId=n.parentElement.dataset.id;renderPins();renderEditor();$('.mine').scrollIntoView({behavior:'smooth',block:'start'})}
-});
 $('#categories').addEventListener('click',ev=>{const c=ev.target.closest('.chip');if(c)selectCategory(c.dataset.cat)});
-$('#search').addEventListener('input',renderSites);
+for(const group of [$('#pins'),$('#sites')]){
+  group.addEventListener('click',ev=>{
+    const o=ev.target.closest('.option[data-variant]');if(o){if(!o.disabled)pickVersion(o);return}
+    const b=ev.target.closest('.site-btn');if(b){toggleRow(b.dataset.kind,b.closest('.site').dataset.id);return}
+    const s=ev.target.closest('.star[data-star]');if(s){if(!s.disabled)toggleMine(s.dataset.star);return}
+    const r=ev.target.closest('[data-remove]');if(r){if(!r.disabled)toggleMine(r.dataset.remove);return}
+    if(ev.target.closest('#bulk-apply'))bulk('mine:'+bulkChoice);
+    if(ev.target.closest('#more')){limit+=PAGE*2;renderSites()}
+  });
+  // Arrow keys move the choice inside a version picker (radio group semantics).
+  group.addEventListener('keydown',ev=>{
+    const o=ev.target.closest?.('.option');if(!o)return;
+    const items=[...o.parentElement.querySelectorAll('.option:not(:disabled)')],i=items.indexOf(o);if(i<0)return;
+    const j=arrowIndex(ev,items.length,i);if(j>=0)pickVersion(items[j]);
+  });
+}
+$('#pins').addEventListener('change',ev=>{if(ev.target.id==='bulk-variant')bulkChoice=ev.target.value});
+$('#search').addEventListener('input',()=>{limit=PAGE;renderSites()});
 document.addEventListener('click',ev=>{const b=ev.target.closest('[data-bulk]');if(b&&!b.disabled)bulk(b.dataset.bulk)});
 $('#toggle').addEventListener('click',()=>simple('setEnabled',{enabled:settings.enabled===false},s=>s.enabled?'图标替换已打开。':'已关闭，网页恢复原图。'));
 $('#refresh').addEventListener('click',()=>simple('refresh',{},s=>{const r=s.lastRefresh;return r?`已刷新 ${r.open} 个打开的网页。`+(r.asleep?.length?`未加载的：${r.asleep.join('、')}，点开一次就会更新。`:''):'已刷新。'}));

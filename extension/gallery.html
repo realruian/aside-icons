@@ -7,68 +7,63 @@
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand"><h1>Aside 图标</h1><span id="version"></span></div>
-    <div class="top-actions">
-      <div class="switch-group">
-        <span class="switch-label">替换图标</span>
-        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-label="替换图标" disabled><span></span></button>
-        <span id="toggle-state" class="switch-state"></span>
-      </div>
-      <button id="refresh" type="button" class="btn" disabled title="清除缓存，重画所有已打开网页的图标">刷新图标</button>
-    </div>
-  </div>
-</header>
-
 <main>
+  <header class="page-head">
+    <h1>Aside 图标 <span id="version"></span></h1>
+    <p class="lede">为每个网站选择图标版本。保存后，固定区和普通网页一起更新。</p>
+  </header>
   <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
 
-  <section class="section mine" aria-labelledby="mine-title">
-    <div class="section-head">
-      <div>
-        <h2 id="mine-title">我的固定区</h2>
-        <p class="hint" id="mine-hint">点一个图标，在右边换版本。这里按实际大小显示。</p>
+  <section aria-labelledby="general-title">
+    <h2 class="group-title" id="general-title">通用</h2>
+    <div class="group">
+      <div class="item">
+        <div class="label"><b id="toggle-label">替换网站图标</b><span id="toggle-state"></span></div>
+        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="toggle-label" disabled></button>
       </div>
-      <div class="field">
-        <span class="field-label">图标大小</span>
-        <div class="segmented" id="size" role="radiogroup" aria-label="图标大小"></div>
+      <div class="item">
+        <div class="label"><b id="size-label">固定区图标大小</b></div>
+        <div class="segmented" id="size" role="radiogroup" aria-labelledby="size-label"></div>
       </div>
-    </div>
-    <div class="mine-layout">
-      <div id="pins-box" class="pins"><div id="pins" class="pin-list" role="listbox" aria-label="我的网站" aria-orientation="horizontal"></div></div>
-      <div id="editor" class="editor" aria-live="polite"></div>
-    </div>
-    <div class="quick">
-      <span class="field-label">一键设置我的网站</span>
-      <button type="button" class="btn ghost" data-bulk="mine:optimized">全部用优化版</button>
-      <button type="button" class="btn ghost" data-bulk="mine:iphone">全部用 iPhone 版</button>
-      <button type="button" class="btn ghost" data-bulk="mine:mac">全部用 Mac 版</button>
-      <button type="button" class="btn ghost" data-bulk="mine:original">全部恢复原版</button>
+      <div class="item">
+        <div class="label"><b>刷新图标</b><span>清除缓存，重画所有已打开网页的图标</span></div>
+        <button id="refresh" type="button" class="btn" disabled>刷新</button>
+      </div>
     </div>
   </section>
 
-  <section class="section all" aria-labelledby="all-title">
-    <div class="section-head">
-      <div>
-        <h2 id="all-title">全部网站</h2>
-        <p class="hint" id="count"></p>
-      </div>
-      <button type="button" class="btn ghost" data-bulk="all:optimized">全部网站用优化版</button>
-    </div>
-    <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
+  <section aria-labelledby="mine-title">
+    <h2 class="group-title" id="mine-title">我的固定区 <span id="mine-count"></span></h2>
+    <div class="group" id="pins"></div>
+    <p class="group-note" id="mine-hint"></p>
+  </section>
+
+  <section aria-labelledby="all-title">
+    <h2 class="group-title" id="all-title">全部网站 <span id="count"></span></h2>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
+    </label>
     <div id="categories" class="chips" role="tablist" aria-label="类别"></div>
-    <div class="list-head" aria-hidden="true"><span>网站</span><span>原版</span><span>iPhone</span><span>Mac</span><span>优化版</span><span>固定区</span></div>
-    <div id="sites" class="sites" role="tabpanel" aria-label="网站列表"></div>
-    <p id="empty" class="empty" hidden>没有找到匹配的网站。</p>
+    <div class="group" id="sites" role="tabpanel" aria-label="网站列表"></div>
+    <p id="empty" class="group-note empty" hidden>没有找到匹配的网站。</p>
+    <p class="group-note"><button type="button" class="link" data-bulk="all:optimized" disabled>全部网站都用优化版</button></p>
   </section>
 
-  <footer class="foot">
-    <button id="export" type="button" class="link" disabled>导出设置</button>
-    <span>·</span>
-    <button id="import" type="button" class="link" disabled>导入设置</button>
-    <input id="import-file" type="file" accept="application/json,.json" hidden>
-  </footer>
+  <section aria-labelledby="backup-title">
+    <h2 class="group-title" id="backup-title">备份</h2>
+    <div class="group">
+      <div class="item">
+        <div class="label"><b>导出设置</b><span>保存为 JSON 文件，换电脑时导入</span></div>
+        <button id="export" type="button" class="btn" disabled>导出…</button>
+      </div>
+      <div class="item">
+        <div class="label"><b>导入设置</b><span>导入后先检查，再点保存</span></div>
+        <button id="import" type="button" class="btn" disabled>导入…</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div class="savebar" id="savebar">

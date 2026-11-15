@@ -51,7 +51,7 @@ function sized(path,size){
 function paint(box,e,v,{applySize=true}={}){
   const path=assetPath(e,v);
   if(!path){box.replaceChildren(globe());return}
-  const img=document.createElement('img');img.alt='';img.decoding='async';
+  const img=document.createElement('img');img.alt='';img.decoding='async';if(v!=='original')img.className='tile';
   img.addEventListener('error',()=>box.replaceChildren(globe()),{once:true});
   box.replaceChildren(img);
   if(v==='original'||!applySize){img.src=path;return}
@@ -73,7 +73,7 @@ function renderPins(){
   add.addEventListener('click',()=>{$('#search').focus();showToast('在下方列表点 ☆ 把网站加入我的固定区。')});
   if(!ids.length){const p=document.createElement('div');p.className='pins-empty';p.textContent='还没有记录到你的固定网站。打开一次固定的网页，或在下方列表点 ☆ 添加。';nodes.push(p)}
   pins.replaceChildren(...nodes,add);
-  $('#mine-hint').textContent=ids.length?'点一个图标来更换。这里是实际显示大小。':'';
+  $('#mine-hint').textContent=ids.length?'点一个图标，在右边换版本。这里按实际大小显示。':'';
 }
 function renderEditor(){
   const box=$('#editor'),e=byId.get(selectedId);
@@ -118,19 +118,18 @@ function renderRow(e){
   const icon=document.createElement('span');icon.className='row-icon';paint(icon,e,current(e));
   const name=document.createElement('div');name.className='row-name';name.title='在上方编辑';
   const b=document.createElement('b');b.textContent=e.label;const s=document.createElement('span');s.textContent=e.domains.join(' · ');name.append(b,s);
-  const choices=document.createElement('div');choices.className='row-choices';
+  row.append(icon,name);
   for(const v of VARIANTS){
     const btn=document.createElement('button');btn.type='button';btn.className='vbtn';btn.dataset.id=e.id;btn.dataset.variant=v;
-    if(!available(e,v)){btn.classList.add('placeholder');btn.disabled=true;btn.setAttribute('aria-hidden','true');choices.append(btn);continue}
+    if(!available(e,v)){btn.classList.add('placeholder');btn.disabled=true;btn.setAttribute('aria-hidden','true');row.append(btn);continue}
     const sel=current(e)===v;btn.setAttribute('aria-pressed',String(sel));btn.classList.toggle('is-dirty',sel&&dirty);btn.disabled=!canEdit();
     btn.title=labels[v];btn.setAttribute('aria-label',`${e.label}：${labels[v]}`);
-    const art=document.createElement('span');paint(art,e,v,{applySize:false});
-    const sm=document.createElement('small');sm.textContent=labels[v];btn.append(art,sm);choices.append(btn);
+    paint(btn,e,v,{applySize:false});row.append(btn);
   }
   const star=document.createElement('button');star.type='button';star.className='star';star.dataset.star=e.id;
   const mine=isMine(e.id);star.textContent=mine?'★':'☆';star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
   star.title=mine?'从我的固定区移除':'加入我的固定区';star.setAttribute('aria-label',star.title+'：'+e.label);
-  row.append(icon,name,choices,star);return row;
+  row.append(star);return row;
 }
 function renderSites(){
   const v=visibleSites();
@@ -143,7 +142,9 @@ function canEdit(){return ready&&!saving}
 function renderTools(){
   const on=settings.enabled!==false;
   $('#toggle').setAttribute('aria-checked',String(on));
-  for(const id of ['#toggle','#refresh','#bulk','#export','#import'])$(id).disabled=!canEdit();
+  for(const id of ['#toggle','#refresh','#export','#import'])$(id).disabled=!canEdit();
+  for(const b of document.querySelectorAll('[data-bulk]'))b.disabled=!canEdit();
+  $('#toggle-state').textContent=!isExtension?'':on?'已开启':'已关闭';
   for(const b of $('#size').querySelectorAll('button')){
     const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
   }
@@ -255,7 +256,6 @@ function exportSettings(){
   const data={app:'aside-icons',version:loadedVersion,exported:new Date().toISOString(),choices:{...settings.choices,...draft},iconSize:currentSize(),...mineLists()};
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
   a.download=`aside-icons-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000);
-  $('.more').open=false;
 }
 async function importSettings(file){
   try{
@@ -283,12 +283,12 @@ $('#sites').addEventListener('click',ev=>{
 });
 $('#categories').addEventListener('click',ev=>{const c=ev.target.closest('.chip');if(c){category=c.dataset.cat;renderCategories();renderSites()}});
 $('#search').addEventListener('input',renderSites);
-$('#bulk').addEventListener('change',ev=>{const v=ev.target.value;ev.target.value='';if(v)bulk(v)});
+document.addEventListener('click',ev=>{const b=ev.target.closest('[data-bulk]');if(b&&!b.disabled)bulk(b.dataset.bulk)});
 $('#toggle').addEventListener('click',()=>simple('setEnabled',{enabled:settings.enabled===false},s=>s.enabled?'图标替换已打开。':'已关闭，网页恢复原图。'));
 $('#refresh').addEventListener('click',()=>simple('refresh',{},s=>{const r=s.lastRefresh;return r?`已刷新 ${r.open} 个打开的网页。`+(r.asleep?.length?`未加载的：${r.asleep.join('、')}，点开一次就会更新。`:''):'已刷新。'}));
 $('#export').addEventListener('click',exportSettings);
 $('#import').addEventListener('click',()=>$('#import-file').click());
-$('#import-file').addEventListener('change',ev=>{const f=ev.target.files?.[0];ev.target.value='';$('.more').open=false;if(f)importSettings(f)});
+$('#import-file').addEventListener('change',ev=>{const f=ev.target.files?.[0];ev.target.value='';if(f)importSettings(f)});
 $('#save').addEventListener('click',saveAll);
 $('#discard').addEventListener('click',discard);
 document.addEventListener('keydown',ev=>{if((ev.metaKey||ev.ctrlKey)&&ev.key==='s'){ev.preventDefault();saveAll()}});

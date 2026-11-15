@@ -14,11 +14,17 @@ function choiceFor(d,entry){
   return supportsChoice(entry,entry.defaultVariant)?entry.defaultVariant:'original';
 }
 async function db(){return dataPromise??=(async()=>{
-  const d=await chrome.storage.local.get(['enabled','pages','cache','choices','iconSize']);
+  const d=await chrome.storage.local.get(['enabled','pages','cache','choices','iconSize','mine','updated']);
+  // Settings sync: a newer copy from another computer wins.
+  try{const s=await chrome.storage.sync?.get(['choices','iconSize','mine','updated']);if(s?.updated&&s.updated>(d.updated||0)){d.choices=s.choices;d.iconSize=s.iconSize;d.mine={...(d.mine||{}),...(s.mine||{})};d.updated=s.updated;}}catch{}
   const choices={};
   for(const entry of ICON_LIBRARY){const value=d.choices?.[entry.id];if(supportsChoice(entry,value))choices[entry.id]=value;}
-  return {enabled:d.enabled!==false,pages:d.pages||{},cache:d.cache||{},choices,iconSize:validIconSize(d.iconSize)?d.iconSize:DEFAULT_ICON_SIZE};
+  const mine={pinned:{},starred:[],hidden:[],...(d.mine||{})};
+  return {enabled:d.enabled!==false,pages:d.pages||{},cache:d.cache||{},choices,iconSize:validIconSize(d.iconSize)?d.iconSize:DEFAULT_ICON_SIZE,mine,updated:d.updated||0};
 })();}
+function pushSync(d){d.updated=Date.now();chrome.storage.sync?.set({choices:d.choices,iconSize:d.iconSize,mine:{starred:d.mine.starred,hidden:d.mine.hidden},updated:d.updated}).catch(()=>{});}
+// Single-page apps (Gmail etc.) change only the #fragment; treat that as the same document.
+const sameDoc=(a,b)=>!!a&&!!b&&a.split('#')[0]===b.split('#')[0];
 function save(d){saveQueue=saveQueue.catch(()=>{}).then(async()=>{
   // Old conversion records are kept only to restore pre-library installations.
   let used=0;
@@ -61,7 +67,7 @@ async function libraryImage(entry,variant,size='large'){
 async function connect(tabId){await chrome.scripting.executeScript({target:{tabId},files:['content.js']});}
 async function send(tabId,payload){return chrome.tabs.sendMessage(tabId,{target:'content',...payload});}
 async function restore(tab,d){
-  await connect(tab.id);const page=d.pages[tab.url];
+  await connect(tab.id);const page=d.pages[tab.url.split('#')[0]];
   const original=originalCandidate(d,page?.source)||originalCandidate(d,originalSource(d,tab.favIconUrl));
   const result=await send(tab.id,{type:'restore',url:tab.url,original,previous:isOutput(d,tab.favIconUrl)?tab.favIconUrl:null});
   if(!result?.restored)return result;
@@ -77,28 +83,29 @@ async function process(id){
       let tab;try{tab=await chrome.tabs.get(id);}catch{return;}
       if(!supported(tab.url)||tab.status==='loading'||tab.discarded)return;
       const d=await db(),entry=libraryFor(tab.url),variant=choiceFor(d,entry);
+      if(entry&&tab.pinned)rememberPinned(d,entry.id,tab.index);
       if(!d.enabled||!entry||variant==='original'){
         const restored=await restore(tab,d);
         if(d.enabled&&restored?.restored)status.set(id,{host:new URL(tab.url).hostname,state:entry?'使用原版图标 · '+entry.label:'未收录，保留原图'});
         await save(d);continue;
       }
       await connect(id);const info=await send(id,{type:'inspect'});
-      if(!info||info.url!==tab.url)return;
+      if(!info||!sameDoc(info.url,tab.url))return;
       let image;
       try{image=await libraryImage(entry,variant,d.iconSize);}catch(e){
         if(!d.enabled||choiceFor(d,entry)!==variant){job.again=true;continue;}
         await restore(tab,d);await save(d);throw e;
       }
       const candidates=info.icons.map(x=>x.url).filter(u=>originalCandidate(d,u));
-      const page=d.pages[tab.url];
+      const page=d.pages[tab.url.split('#')[0]];
       // A source is optional: a curated asset also works on a page with no
       // favicon. Explicit null prevents our own cached library image from
       // becoming the supposed original on a later visit or worker restart.
       const source=candidates.find(u=>u===tab.favIconUrl)||candidates[0]||originalCandidate(d,page?.source)||originalCandidate(d,originalSource(d,tab.favIconUrl))||(!page?originalCandidate(d,tab.favIconUrl):null);
       const current=await chrome.tabs.get(id);
-      if(current.url!==tab.url)return;
+      if(!sameDoc(current.url,tab.url))return;
       if(!d.enabled||choiceFor(d,entry)!==variant){job.again=true;continue;}
-      d.pages[tab.url]={source:source||null,restored:false,time:Date.now()};await save(d);
+      d.pages[tab.url.split('#')[0]]={source:source||null,restored:false,time:Date.now()};await save(d);
       // The user can choose another version while storage or image decoding is
       // pending. Re-check immediately before sending; per-tab jobs serialize
       // sends so an older image can never arrive after its replacement.
@@ -108,6 +115,17 @@ async function process(id){
     }while(job.again);
   })().catch(async e=>{let t;try{t=await chrome.tabs.get(id);}catch{return;}status.set(id,{host:supported(t.url)?new URL(t.url).hostname:'',state:'未应用图标库：'+e.message});}).finally(()=>{running.delete(id);if(job.again)queueMicrotask(()=>process(id));});
   return job.promise;
+}
+// Aside forgets closed pinned items from chrome.tabs, so remember which
+// catalog sites have ever been pinned (and in which order).
+function rememberPinned(d,id,index){const old=d.mine.pinned[id];if(old&&old.index===index)return;d.mine.pinned[id]={index,time:Date.now()};}
+function mySites(d){
+  const hidden=new Set(d.mine.hidden),ids=[];
+  const add=id=>{if(!hidden.has(id)&&!ids.includes(id)&&ICON_LIBRARY.some(e=>e.id===id))ids.push(id);};
+  Object.entries(d.mine.pinned).sort((a,b)=>a[1].index-b[1].index).forEach(([id])=>add(id));
+  d.mine.starred.forEach(add);
+  Object.keys(d.choices).forEach(add);
+  return ids;
 }
 async function scan(){const tabs=await chrome.tabs.query({});for(const t of tabs)if(supported(t.url))await process(t.id);}
 // One-click refresh: drop cached images and redraw every loaded page.
@@ -135,7 +153,7 @@ function controlsAllowed(sender){
 }
 async function settingsSnapshot(d){
   const tabs=(await chrome.tabs.query({})).filter(t=>supported(t.url));
-  return {enabled:d.enabled,version:chrome.runtime.getManifest().version,pinned:tabs.filter(t=>t.pinned).length,ordinary:tabs.filter(t=>!t.pinned).length,status:[...status.values()],libraryCount:ICON_LIBRARY.length,iconSize:d.iconSize,lastRefresh,pendingRestore:d.enabled?0:Object.values(d.pages).filter(p=>!p.restored).length,choices:{...d.choices},effectiveChoices:Object.fromEntries(ICON_LIBRARY.map(entry=>[entry.id,choiceFor(d,entry)]))};
+  return {enabled:d.enabled,version:chrome.runtime.getManifest().version,pinned:tabs.filter(t=>t.pinned).length,ordinary:tabs.filter(t=>!t.pinned).length,status:[...status.values()],libraryCount:ICON_LIBRARY.length,iconSize:d.iconSize,lastRefresh,mySites:mySites(d),mine:{starred:[...d.mine.starred],hidden:[...d.mine.hidden]},openPinned:[...new Set(tabs.filter(t=>t.pinned).map(t=>libraryFor(t.url)?.id).filter(Boolean))],pendingRestore:d.enabled?0:Object.values(d.pages).filter(p=>!p.restored).length,choices:{...d.choices},effectiveChoices:Object.fromEntries(ICON_LIBRARY.map(entry=>[entry.id,choiceFor(d,entry)]))};
 }
 chrome.tabs.onUpdated.addListener((id,change)=>{
   if(change.url!==undefined||change.status==='complete'||change.pinned!==undefined||change.favIconUrl){
@@ -185,6 +203,10 @@ chrome.runtime.onMessage.addListener((msg,sender,respond)=>{
       for(const [id,variant] of updates)d.choices[id]=variant;
       const sizeChanged=msg.iconSize!==undefined&&msg.iconSize!==d.iconSize;
       if(msg.iconSize!==undefined)d.iconSize=msg.iconSize;
+      const ids=new Set(ICON_LIBRARY.map(e=>e.id));
+      if(Array.isArray(msg.starred))d.mine.starred=msg.starred.filter(id=>ids.has(id));
+      if(Array.isArray(msg.hidden))d.mine.hidden=msg.hidden.filter(id=>ids.has(id));
+      pushSync(d);
       await save(d);
       // Saving always refreshes everything, so no separate step is needed.
       void sizeChanged;await refreshAll();

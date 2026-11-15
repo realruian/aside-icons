@@ -42,6 +42,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/squarespace.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/squarespace.png",
+        "source": "Simple Icons · squarespace",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -58,6 +63,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/adobe.png",
         "sourceUrl": "https://www.adobe.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/adobe.png",
+        "source": "SVG Logos · adobe-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "original"
@@ -276,6 +286,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/proton-mail.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/proton-mail.png",
+        "source": "Simple Icons · protonmail",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "mac"
@@ -309,6 +324,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/firebase.png",
         "sourceUrl": "https://www.gstatic.com/devrel-devsite/prod/v579d635a54d6e1f40caad46ce407560c5106c8915e5ff7e6341f5b13eb245c5a/firebase/images/favicon.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/firebase.png",
+        "source": "SVG Logos · firebase-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "original"
@@ -325,6 +345,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {},
       "iphone": {
         "path": "icons/iphone/azure.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/azure.png",
+        "source": "SVG Logos · azure-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "iphone"
@@ -465,6 +490,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/wordpress.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/wordpress.png",
+        "source": "Simple Icons · wordpress",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "mac"
@@ -497,7 +527,12 @@ const ICON_LIBRARY=Object.freeze([
       "stackexchange.com"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/stackexchange.png",
+        "source": "Simple Icons · stackexchange",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
     },
     "defaultVariant": "original"
   },
@@ -562,6 +597,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/google-fonts.png",
         "sourceUrl": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-fonts.png",
+        "source": "SVG Logos · google-fonts-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "original"
@@ -580,6 +620,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/googlecloud.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/googlecloud.png",
+        "source": "Lobe Icons · googlecloud-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -595,6 +640,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/digitalocean.png",
         "sourceUrl": "https://www.digitalocean.com/_do-www-marketing/9221ebb1/_next/static/media/favicon.00b9c167.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/digitalocean.png",
+        "source": "Simple Icons · digitalocean",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "original"
@@ -616,6 +666,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/google-sheets.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-sheets.png",
+        "source": "Simple Icons · googlesheets",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -637,6 +692,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/google-slides.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-slides.png",
+        "source": "Simple Icons · googleslides",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -658,6 +718,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/google-docs.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-docs.png",
+        "source": "Simple Icons · googledocs",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -790,6 +855,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/proton-drive.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/proton-drive.png",
+        "source": "Simple Icons · protondrive",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -858,6 +928,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/tripadvisor.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/tripadvisor.png",
+        "source": "Simple Icons · tripadvisor",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -937,6 +1012,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/artstation.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/artstation.png",
+        "source": "Simple Icons · artstation",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -975,6 +1055,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/aws.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/aws.png",
+        "source": "SVG Logos · aws",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "iphone"
@@ -987,7 +1072,12 @@ const ICON_LIBRARY=Object.freeze([
       "codesandbox.io"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/codesandbox.png",
+        "source": "Simple Icons · codesandbox",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
     },
     "defaultVariant": "original"
   },
@@ -1069,6 +1159,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/elevenlabs.png",
         "sourceUrl": "https://elevenlabs.io/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/elevenlabs.png",
+        "source": "Lobe Icons · elevenlabs.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1084,6 +1179,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/replicate.png",
         "sourceUrl": "https://static.replicateassets.com/fe/ad7fe3a706abfe81d42a93a7659b4395ee36d386/favicon-CKiqAkf2.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/replicate.png",
+        "source": "Lobe Icons · replicate.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1099,6 +1199,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {},
       "mac": {
         "path": "icons/mac/cherrystudio.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/cherrystudio.png",
+        "source": "Lobe Icons · cherrystudio-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "mac"
@@ -1114,6 +1219,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/bitbucket.png",
         "sourceUrl": "https://bitbucket.org/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/bitbucket.png",
+        "source": "SVG Logos · bitbucket",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "original"
@@ -1176,7 +1286,12 @@ const ICON_LIBRARY=Object.freeze([
       "epicgames.com"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/epicgames.png",
+        "source": "Simple Icons · epicgames",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
     },
     "defaultVariant": "original"
   },
@@ -1279,6 +1394,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/stability.png",
         "sourceUrl": "https://images.squarespace-cdn.com/content/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/Favicon_small.png?format=100w&content-type=image%2Fpng"
+      },
+      "optimized": {
+        "path": "icons/optimized/stability.png",
+        "source": "Lobe Icons · stability-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1294,6 +1414,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/windsurf.png",
         "sourceUrl": "https://windsurf.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/windsurf.png",
+        "source": "Lobe Icons · windsurf.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1312,6 +1437,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/airtable.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/airtable.png",
+        "source": "SVG Logos · airtable",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "iphone"
@@ -1333,6 +1463,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/evernote.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/evernote.png",
+        "source": "Simple Icons · evernote",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "mac"
@@ -1602,6 +1737,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/luma.png",
         "sourceUrl": "https://lumalabs.ai/favicons/favicon-black.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/luma.png",
+        "source": "Lobe Icons · luma-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1617,6 +1757,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/ideogram.png",
         "sourceUrl": "https://ideogram.ai/favicon.png?v=new-brand-20261020"
+      },
+      "optimized": {
+        "path": "icons/optimized/ideogram.png",
+        "source": "Lobe Icons · ideogram.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1634,6 +1779,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/vidu.png",
         "sourceUrl": "https://www.vidu.com/logo.svg"
+      },
+      "optimized": {
+        "path": "icons/optimized/vidu.png",
+        "source": "Lobe Icons · vidu-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1653,6 +1803,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/comfyui.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/comfyui.png",
+        "source": "Lobe Icons · comfyui-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "mac"
@@ -1668,6 +1823,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/civitai.png",
         "sourceUrl": "https://civitai.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/civitai.png",
+        "source": "Lobe Icons · civitai-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1683,6 +1843,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/lmstudio.png",
         "sourceUrl": "https://lmstudio.ai/assets/marketing/logo-192x192.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/lmstudio.png",
+        "source": "Lobe Icons · lmstudio.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -1750,6 +1915,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/todoist.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/todoist.png",
+        "source": "Simple Icons · todoist",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "mac"
@@ -1768,6 +1938,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/clickup.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/clickup.png",
+        "source": "SVG Logos · clickup-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "iphone"
@@ -1823,6 +1998,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/pixabay.png",
         "sourceUrl": "https://www.pixabay.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/pixabay.png",
+        "source": "Simple Icons · pixabay",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "original"
@@ -1838,6 +2018,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/freepik.png",
         "sourceUrl": "https://media.magnific.com/magnific-favicons/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/freepik.png",
+        "source": "Simple Icons · freepik",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "original"
@@ -1873,6 +2058,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/railway.png",
         "sourceUrl": "https://railway.com/favicon-32x32.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/railway.png",
+        "source": "Simple Icons · railway",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "original"
@@ -2043,6 +2233,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/recraft.png",
         "sourceUrl": "https://www.recraft.ai/apps/icon.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/recraft.png",
+        "source": "Lobe Icons · recraft.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -2058,6 +2253,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/tripo.png",
         "sourceUrl": "https://www.tripo3d.ai/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/tripo.png",
+        "source": "Lobe Icons · tripo-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -2190,6 +2390,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "mac": {
         "path": "icons/mac/sketch.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/sketch.png",
+        "source": "SVG Logos · sketch",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "mac"
@@ -2205,6 +2410,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {},
       "iphone": {
         "path": "icons/iphone/pexels.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/pexels.png",
+        "source": "Simple Icons · pexels",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2303,7 +2513,12 @@ const ICON_LIBRARY=Object.freeze([
       "render.com"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/render.png",
+        "source": "Simple Icons · render",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
     },
     "defaultVariant": "original"
   },
@@ -2315,7 +2530,12 @@ const ICON_LIBRARY=Object.freeze([
       "codepen.io"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/codepen.png",
+        "source": "SVG Logos · codepen-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
     },
     "defaultVariant": "original"
   },
@@ -2330,6 +2550,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {},
       "iphone": {
         "path": "icons/iphone/replit.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/replit.png",
+        "source": "Lobe Icons · replit-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2371,6 +2596,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/douban.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/douban.png",
+        "source": "Simple Icons · douban",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2460,6 +2690,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/ebay.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/ebay.png",
+        "source": "Simple Icons · ebay",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2502,6 +2737,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/capcut.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/capcut.png",
+        "source": "Lobe Icons · capcut.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2590,6 +2830,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/asana.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/asana.png",
+        "source": "SVG Logos · asana-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
       }
     },
     "defaultVariant": "iphone"
@@ -2698,6 +2943,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/quora.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/quora.png",
+        "source": "Simple Icons · quora",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -2842,6 +3092,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/pika.png",
         "sourceUrl": "https://pika.art/favicon.ico?favicon.03qzqgaru0by8.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/pika.png",
+        "source": "Lobe Icons · pika.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -2881,6 +3136,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/udio.png",
         "sourceUrl": "https://www.udio.com/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/udio.png",
+        "source": "Lobe Icons · udio-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -2896,6 +3156,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/meshy.png",
         "sourceUrl": "https://www.meshy.ai:443/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/meshy.png",
+        "source": "Lobe Icons · meshy-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -2908,7 +3173,12 @@ const ICON_LIBRARY=Object.freeze([
       "sora.com"
     ],
     "variants": {
-      "original": {}
+      "original": {},
+      "optimized": {
+        "path": "icons/optimized/sora.png",
+        "source": "Lobe Icons · sora-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
     },
     "defaultVariant": "original"
   },
@@ -2973,6 +3243,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/imdb.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/imdb.png",
+        "source": "Simple Icons · imdb",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -3026,6 +3301,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/dify.png",
         "sourceUrl": "https://dify.ai/favicon.svg"
+      },
+      "optimized": {
+        "path": "icons/optimized/dify.png",
+        "source": "Lobe Icons · dify-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"
@@ -3044,6 +3324,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/coda.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/coda.png",
+        "source": "Simple Icons · coda",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -3062,6 +3347,11 @@ const ICON_LIBRARY=Object.freeze([
       },
       "iphone": {
         "path": "icons/iphone/wix.png"
+      },
+      "optimized": {
+        "path": "icons/optimized/wix.png",
+        "source": "Simple Icons · wix",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
       }
     },
     "defaultVariant": "iphone"
@@ -3099,6 +3389,11 @@ const ICON_LIBRARY=Object.freeze([
       "original": {
         "preview": "icons/original/fal.png",
         "sourceUrl": "https://fal.ai/favicon.ico"
+      },
+      "optimized": {
+        "path": "icons/optimized/fal.png",
+        "source": "Lobe Icons · fal-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
       }
     },
     "defaultVariant": "original"

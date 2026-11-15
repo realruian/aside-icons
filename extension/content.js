@@ -79,14 +79,14 @@
     if(sender.id!==chrome.runtime.id||msg.target!=='content')return;
     if(msg.type==='inspect'){respond(capture());return;}
     if(msg.type==='restore'){
-      if(msg.url&&msg.url!==location.href){respond({restored:false});return;}
+      if(msg.url&&msg.url.split('#')[0]!==location.href.split('#')[0]){respond({restored:false});return;}
       const had=!!state.output||!!document.querySelector('link['+metadata+']');restore(msg);
       if(!document.querySelector(selector)&&msg.original){
         const link=document.createElement('link');link.rel='icon';link.href=msg.original;document.head?.append(link);
       }
       respond({restored:true,had});return;
     }
-    if(msg.type==='apply'&&msg.url===location.href&&processed(msg.image)){
+    if(msg.type==='apply'&&msg.url&&msg.url.split('#')[0]===location.href.split('#')[0]&&processed(msg.image)){
       capture();observer.disconnect();
       if(msg.original)for(const old of state.originals.values())if(old.href===msg.image||old.href===msg.previous)old.href=msg.original;
       state.output=msg.image;

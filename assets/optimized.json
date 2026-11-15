@@ -530,5 +530,418 @@
     "sourceUrl": "https://github.com/gilbarbara/logos",
     "bg": "#ffffff",
     "scale": 0.6
+  },
+  {
+    "id": "google-docs",
+    "source": "Simple Icons · googledocs",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#4285F4",
+    "scale": 0.58
+  },
+  {
+    "id": "google-sheets",
+    "source": "Simple Icons · googlesheets",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#34A853",
+    "scale": 0.58
+  },
+  {
+    "id": "google-slides",
+    "source": "Simple Icons · googleslides",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FBBC04",
+    "scale": 0.58
+  },
+  {
+    "id": "google-fonts",
+    "source": "SVG Logos · google-fonts-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "googlecloud",
+    "source": "Lobe Icons · googlecloud-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "firebase",
+    "source": "SVG Logos · firebase-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.6
+  },
+  {
+    "id": "proton-mail",
+    "source": "Simple Icons · protonmail",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#6D4AFF",
+    "scale": 0.62
+  },
+  {
+    "id": "proton-drive",
+    "source": "Simple Icons · protondrive",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#EB508D",
+    "scale": 0.6
+  },
+  {
+    "id": "airtable",
+    "source": "SVG Logos · airtable",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "evernote",
+    "source": "Simple Icons · evernote",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#00A82D",
+    "scale": 0.62
+  },
+  {
+    "id": "todoist",
+    "source": "Simple Icons · todoist",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#E44332",
+    "scale": 0.6
+  },
+  {
+    "id": "clickup",
+    "source": "SVG Logos · clickup-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "asana",
+    "source": "SVG Logos · asana-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "coda",
+    "source": "Simple Icons · coda",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#F46A54",
+    "scale": 0.6
+  },
+  {
+    "id": "squarespace",
+    "source": "Simple Icons · squarespace",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "adobe",
+    "source": "SVG Logos · adobe-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "wordpress",
+    "source": "Simple Icons · wordpress",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#21759B",
+    "scale": 0.7
+  },
+  {
+    "id": "artstation",
+    "source": "Simple Icons · artstation",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#13AFF0",
+    "scale": 0.62
+  },
+  {
+    "id": "sketch",
+    "source": "SVG Logos · sketch",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "pexels",
+    "source": "Simple Icons · pexels",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#05A081",
+    "scale": 0.6
+  },
+  {
+    "id": "pixabay",
+    "source": "Simple Icons · pixabay",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#2EC66D",
+    "scale": 0.58
+  },
+  {
+    "id": "freepik",
+    "source": "Simple Icons · freepik",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1273EB",
+    "scale": 0.6
+  },
+  {
+    "id": "wix",
+    "source": "Simple Icons · wix",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.74
+  },
+  {
+    "id": "capcut",
+    "source": "Lobe Icons · capcut.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "azure",
+    "source": "SVG Logos · azure-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "aws",
+    "source": "SVG Logos · aws",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "digitalocean",
+    "source": "Simple Icons · digitalocean",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#0080FF",
+    "scale": 0.62
+  },
+  {
+    "id": "stackexchange",
+    "source": "Simple Icons · stackexchange",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1E5397",
+    "scale": 0.58
+  },
+  {
+    "id": "codesandbox",
+    "source": "Simple Icons · codesandbox",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#151515",
+    "scale": 0.56
+  },
+  {
+    "id": "bitbucket",
+    "source": "SVG Logos · bitbucket",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "railway",
+    "source": "Simple Icons · railway",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#0B0D0E",
+    "scale": 0.58
+  },
+  {
+    "id": "render",
+    "source": "Simple Icons · render",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.56
+  },
+  {
+    "id": "codepen",
+    "source": "SVG Logos · codepen-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "replit",
+    "source": "Lobe Icons · replit-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "elevenlabs",
+    "source": "Lobe Icons · elevenlabs.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.5
+  },
+  {
+    "id": "replicate",
+    "source": "Lobe Icons · replicate.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.56
+  },
+  {
+    "id": "cherrystudio",
+    "source": "Lobe Icons · cherrystudio-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "stability",
+    "source": "Lobe Icons · stability-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "windsurf",
+    "source": "Lobe Icons · windsurf.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#0B100F",
+    "scale": 0.62
+  },
+  {
+    "id": "luma",
+    "source": "Lobe Icons · luma-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "ideogram",
+    "source": "Lobe Icons · ideogram.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "vidu",
+    "source": "Lobe Icons · vidu-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "comfyui",
+    "source": "Lobe Icons · comfyui-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "civitai",
+    "source": "Lobe Icons · civitai-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "lmstudio",
+    "source": "Lobe Icons · lmstudio.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "recraft",
+    "source": "Lobe Icons · recraft.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.6
+  },
+  {
+    "id": "tripo",
+    "source": "Lobe Icons · tripo-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "pika",
+    "source": "Lobe Icons · pika.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#000000",
+    "scale": 0.6
+  },
+  {
+    "id": "udio",
+    "source": "Lobe Icons · udio-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "meshy",
+    "source": "Lobe Icons · meshy-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "sora",
+    "source": "Lobe Icons · sora-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "dify",
+    "source": "Lobe Icons · dify-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "fal",
+    "source": "Lobe Icons · fal-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "tripadvisor",
+    "source": "Simple Icons · tripadvisor",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#34E0A1",
+    "scale": 0.72
+  },
+  {
+    "id": "epicgames",
+    "source": "Simple Icons · epicgames",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#313131",
+    "scale": 0.6
+  },
+  {
+    "id": "ebay",
+    "source": "Simple Icons · ebay",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.8
+  },
+  {
+    "id": "douban",
+    "source": "Simple Icons · douban",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#2D963D",
+    "scale": 0.62
+  },
+  {
+    "id": "quora",
+    "source": "Simple Icons · quora",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#B92B27",
+    "scale": 0.6
+  },
+  {
+    "id": "imdb",
+    "source": "Simple Icons · imdb",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#F5C518",
+    "scale": 0.74
   }
 ]

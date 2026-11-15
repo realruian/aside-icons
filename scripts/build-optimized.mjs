@@ -46,6 +46,26 @@ export const SPECS=[
   // 生活
   ['taobao','si:taobao','#FF5000',.70,W],['alipay','si:alipay','#1677FF',.66,W],['wikipedia','si:wikipedia',W,.72,K],
   ['steam','si:steam','#171A21',.70,W],['airbnb','si:airbnb','#FF5A5F',.60,W],['paypal','L:paypal',W,.60],
+  // 第二批
+  ['google-docs','si:googledocs','#4285F4',.58,W],['google-sheets','si:googlesheets','#34A853',.58,W],['google-slides','si:googleslides','#FBBC04',.58,W],
+  ['google-fonts','L:google-fonts-icon',W,.70],['googlecloud','lobe:googlecloud-color.svg',W,.74],['firebase','L:firebase-icon',W,.60],
+  ['proton-mail','si:protonmail','#6D4AFF',.62,W],['proton-drive','si:protondrive','#EB508D',.60,W],['airtable','L:airtable',W,.66],
+  ['evernote','si:evernote','#00A82D',.62,W],['todoist','si:todoist','#E44332',.60,W],['clickup','L:clickup-icon',W,.66],
+  ['asana','L:asana-icon',W,.66],['coda','si:coda','#F46A54',.60,W],
+  ['squarespace','si:squarespace',W,.66,K],['adobe','L:adobe-icon',W,.62],['wordpress','si:wordpress','#21759B',.70,W],
+  ['artstation','si:artstation','#13AFF0',.62,W],['sketch','L:sketch',W,.66],['pexels','si:pexels','#05A081',.60,W],
+  ['pixabay','si:pixabay','#2EC66D',.58,W],['freepik','si:freepik','#1273EB',.60,W],['wix','si:wix',W,.74,K],['capcut','lobe:capcut.svg',K,.62,W],
+  ['azure','L:azure-icon',W,.66],['aws','L:aws',W,.70],['digitalocean','si:digitalocean','#0080FF',.62,W],
+  ['stackexchange','si:stackexchange','#1E5397',.58,W],['codesandbox','si:codesandbox','#151515',.56,W],['bitbucket','L:bitbucket',W,.64],
+  ['railway','si:railway','#0B0D0E',.58,W],['render','si:render',K,.56,W],['codepen','L:codepen-icon',W,.62],['replit','lobe:replit-color.svg',W,.64],
+  ['elevenlabs','lobe:elevenlabs.svg',K,.50,W],['replicate','lobe:replicate.svg',K,.56,W],['cherrystudio','lobe:cherrystudio-color.svg',W,.70],
+  ['stability','lobe:stability-color.svg',W,.66],['windsurf','lobe:windsurf.svg','#0B100F',.62,W],['luma','lobe:luma-color.svg',W,.66],
+  ['ideogram','lobe:ideogram.svg',K,.62,W],['vidu','lobe:vidu-color.svg',W,.66],['comfyui','lobe:comfyui-color.svg',K,.62],
+  ['civitai','lobe:civitai-color.svg',W,.66],['lmstudio','lobe:lmstudio.svg',K,.62,W],['recraft','lobe:recraft.svg',K,.60,W],
+  ['tripo','lobe:tripo-color.svg',W,.66],['pika','lobe:pika.svg',K,.60,W],['udio','lobe:udio-color.svg',W,.66],
+  ['meshy','lobe:meshy-color.svg',W,.66],['sora','lobe:sora-color.svg',W,.66],['dify','lobe:dify-color.svg',W,.66],['fal','lobe:fal-color.svg',W,.66],
+  ['tripadvisor','si:tripadvisor','#34E0A1',.72,K],['epicgames','si:epicgames','#313131',.60,W],['ebay','si:ebay',W,.80,'#E53238'],
+  ['douban','si:douban','#2D963D',.62,W],['quora','si:quora','#B92B27',.60,W],['imdb','si:imdb','#F5C518',.74,K],
 ];
 const siBySlug=new Map(Object.values(si).filter(x=>x&&x.slug).map(x=>[x.slug,x]));
 function mark(src,fg){

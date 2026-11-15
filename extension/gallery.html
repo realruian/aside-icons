@@ -3,56 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Aside · 图标设置</title>
+  <title>Aside 图标</title>
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-<main>
-  <header>
-    <div class="eyebrow">ASIDE</div>
-    <h1>图标设置</h1>
-    <p class="intro">选好每个网站的图标和整体大小后，点底部的「保存并应用」。</p>
-    <div class="summary"><span id="count"></span><span class="local-note">保存在本机</span></div>
-  </header>
-  <div id="connection" class="notice" role="status" aria-live="polite">正在读取设置…</div>
-
-  <section class="panel" aria-label="通用设置">
-    <div class="setting">
-      <div class="setting-text"><h2>图标替换</h2><p id="enabled-text">正在读取…</p></div>
-      <div class="setting-actions">
-        <button id="scan" type="button" class="secondary">一键刷新图标</button>
-        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-label="图标替换" disabled><span></span></button>
-      </div>
-    </div>
-    <div class="setting">
-      <div class="setting-text"><h2>图标大小</h2><p>「大」让图标铺满整个图标位，和网站原图一样大；「特大」再把图案放大一圈，边缘会裁掉一点。只作用于 iPhone、Mac、优化版。</p></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><h1>Aside 图标</h1><span id="version"></span></div>
+    <div class="tools">
+      <label class="tool-switch" title="关闭后所有网页恢复网站原图">
+        <span>替换图标</span>
+        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-label="替换图标" disabled><span></span></button>
+      </label>
       <div class="segmented" id="size" role="radiogroup" aria-label="图标大小"></div>
+      <select id="bulk" aria-label="批量设置" disabled>
+        <option value="">批量设置…</option>
+        <option value="mine:optimized">我的网站 → 优化版</option>
+        <option value="mine:iphone">我的网站 → iPhone</option>
+        <option value="mine:mac">我的网站 → Mac</option>
+        <option value="mine:original">我的网站 → 原版</option>
+        <option value="all:optimized">全部网站 → 优化版</option>
+        <option value="all:iphone">全部网站 → iPhone</option>
+        <option value="all:original">全部网站 → 原版</option>
+      </select>
+      <button id="refresh" type="button" class="btn" disabled title="清除缓存并重画所有已打开网页的图标">刷新</button>
+      <details class="more">
+        <summary class="btn" aria-label="更多">更多</summary>
+        <div class="menu">
+          <button id="export" type="button">导出设置</button>
+          <button id="import" type="button">导入设置…</button>
+          <input id="import-file" type="file" accept="application/json,.json" hidden>
+        </div>
+      </details>
     </div>
-    <div class="pin-preview-wrap">
-      <div class="pin-preview-label">预览 · 模拟 Aside 固定区</div>
-      <div id="pin-preview" class="pin-preview" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+  <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+  <section class="mine" aria-labelledby="mine-title">
+    <div class="section-head">
+      <h2 id="mine-title">我的固定区</h2>
+      <p class="hint" id="mine-hint">点一个图标来更换。下面是实际显示大小。</p>
     </div>
-    <details id="tab-status">
-      <summary id="tab-summary">已打开的网页</summary>
-      <ul id="status"></ul>
-    </details>
+    <div class="mine-layout">
+      <div id="pins" class="pins" role="listbox" aria-label="我的网站"></div>
+      <div id="editor" class="editor" aria-live="polite"></div>
+    </div>
   </section>
 
-  <div class="controls">
-    <label class="search-label"><span class="sr-only">搜索网站名称或域名</span><input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off"></label>
-    <label><span class="sr-only">网站类别</span><select id="category"><option value="">全部类别</option></select></label>
-    <span id="visible-count" aria-live="polite"></span>
-  </div>
-  <div class="column-head" aria-hidden="true"><span>网站</span><span>原版</span><span>iPhone</span><span>Mac</span><span>优化版</span></div>
-  <div id="sites"></div>
-  <p id="empty" hidden>没有找到匹配的网站。</p>
-  <footer>“原版”会恢复网站自己的图标；预览为本地参考，可能与网站更新后的图标不同。没有对应 App 版本的选项会显示“暂无”；优化版未完成的条目会显示“暂未制作”。<br>保存后已打开的网页立即更新；关闭的固定项会在下次打开时更新。</footer>
+  <section class="all" aria-labelledby="all-title">
+    <div class="section-head">
+      <h2 id="all-title">全部网站</h2>
+      <p class="hint" id="count"></p>
+    </div>
+    <div class="filters">
+      <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
+      <div id="categories" class="chips" role="tablist" aria-label="类别"></div>
+    </div>
+    <div id="sites" class="sites"></div>
+    <p id="empty" class="empty" hidden>没有找到匹配的网站。</p>
+  </section>
 </main>
+
 <div class="savebar" id="savebar">
   <div class="savebar-inner">
     <span id="bar-text" aria-live="polite">所有更改已保存</span>
-    <button id="discard" type="button" class="secondary" hidden>放弃更改</button>
-    <button id="save" type="button" class="primary" disabled>已保存</button>
+    <button id="discard" type="button" class="btn" hidden>放弃更改</button>
+    <button id="save" type="button" class="btn primary" disabled>已保存</button>
   </div>
 </div>
 <div id="toast" role="status" aria-live="polite" hidden></div>

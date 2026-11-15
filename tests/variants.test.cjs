@@ -124,12 +124,12 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   assert.ok(!Object.values(s.effectiveChoices).includes('optimized'),'new option must not change existing defaults');
   const ready=vm.runInContext('ICON_LIBRARY.filter(e=>e.variants?.optimized).map(e=>e.id)',x.context);
   if(ready.length){
-   for(const id of ['gmail','x','youtube','douyin','libtv','instagram','bilibili','jimeng','chatgpt','github','notion','wechat'])assert.ok(ready.includes(id),id);assert.equal(ready.length,84);
+   for(const id of ['gmail','x','youtube','douyin','libtv','instagram','bilibili','jimeng','chatgpt','github','notion','wechat'])assert.ok(ready.includes(id),id);assert.ok(ready.length>=84);
    for(const id of ready){
     const asset=vm.runInContext('ICON_LIBRARY.find(e=>e.id==='+JSON.stringify(id)+').variants.optimized.path',x.context);assert.equal(asset,'icons/optimized/'+id+'.png');assert.ok(fs.existsSync('extension/'+asset));
     assert.equal((await x.call('setIconChoice',{id,variant:'optimized'})).effectiveChoices[id],'optimized');
    }
-   const denied=await x.call('setIconChoice',{id:'fal',variant:'optimized'});assert.match(denied.error,/没有可用/);
+   const denied=await x.call('setIconChoice',{id:'feishu',variant:'optimized'});assert.match(denied.error,/没有可用/);
    const reloaded=setup({stored:x.stored(),useRealCatalog:true});const after=await reloaded.settings();for(const id of ready)assert.equal(after.effectiveChoices[id],'optimized');
    for(const [id,value] of Object.entries(s.effectiveChoices))if(!ready.includes(id))assert.equal(after.effectiveChoices[id],value,'untouched default '+id);
   }
@@ -152,6 +152,11 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   const y=setup({stored:{iconSize:'xlarge',choices:{alpha:'mac'}}});assert.equal((await y.settings()).iconSize,'xlarge','saved size survives restart');const w=setup({stored:{iconSize:'standard'}});assert.equal((await w.settings()).iconSize,'large','retired standard size migrates to large');
   const z=setup({stored:{iconSize:'bogus'}});assert.equal((await z.settings()).iconSize,'large','unknown stored size falls back');
   {const r=await x.call('refresh');assert.equal(r.lastRefresh.open,3);assert.equal(r.lastRefresh.woken,0);assert.deepEqual([...r.lastRefresh.asleep],[]);const n=x.requests.length;await x.call('refresh');assert.ok(x.requests.length>n,'refresh drops cached images and rereads packaged files');}
+  {const m=await x.call('refresh');assert.deepEqual([...m.mySites].slice(0,1),['alpha'],'pinned tab is remembered as my site');
+   const sv=await x.call('saveSettings',{choices:{},starred:['gamma','nope'],hidden:['alpha']});assert.ok(sv.mySites.includes('gamma'));assert.ok(!sv.mySites.includes('alpha'));assert.deepEqual([...sv.mine.starred],['gamma']);
+   const again=setup({stored:x.stored()});assert.ok((await again.settings()).mySites.includes('gamma'),'my sites persist');
+   const tab=x.tabs.find(t=>t.id===1);const before=x.href(1);tab.url+='#inbox/123';
+   await x.call('saveSettings',{choices:{alpha:'mac'}});assert.notEqual(x.href(1),before,'hash-only address change (Gmail-style) is still processed');}
   console.log('PASS: batch saveSettings validation, atomicity, icon size persistence, popup sender rejected');
  }
 })().catch(e=>{console.error(e);process.exitCode=1});

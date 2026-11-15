@@ -26,7 +26,6 @@ function myIds(){
   const base=isExtension?settings.mySites||[]:PREVIEW_MINE;
   return [...base.filter(id=>!removed.has(id)),...[...added].filter(id=>!base.includes(id))].filter(id=>byId.has(id));
 }
-function isMine(id){return myIds().includes(id)}
 function assetPath(e,v){
   const p=v==='original'?e.variants?.original?.preview:e.variants?.[v]?.path;
   return typeof p==='string'&&/^icons\/[a-zA-Z0-9_/-]+\.png$/.test(p)&&!p.includes('..')?p:null;
@@ -42,7 +41,6 @@ function svgIcon(viewBox,attrs,inner){
   for(const [k,v] of Object.entries(attrs))svg.setAttribute(k,v);svg.innerHTML=inner;return svg;
 }
 function globe(){return svgIcon('0 0 24 24',{fill:'none',stroke:'currentColor','stroke-width':'1.5'},'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/>')}
-function starIcon(filled){return svgIcon('0 0 24 24',{fill:filled?'currentColor':'none',stroke:'currentColor','stroke-width':'1.6','stroke-linejoin':'round'},'<path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/>')}
 function frame(e,v,size){
   const f=el('span',`frame s${size} ${v}`),path=assetPath(e,v);
   if(!path){f.append(globe());return f}
@@ -61,72 +59,60 @@ function styleOf(pick){
   return VARIANTS.reduce((a,b)=>n[b]>n[a]?b:a);
 }
 function renderStyle(){
-  const now=styleOf(current),was=styleOf(saved),mine=myIds(),sample=(mine.length?mine:list.map(e=>e.id)).slice(0,4).map(id=>byId.get(id));
-  const row=el('div','grid style-row');row.setAttribute('role','radiogroup');row.setAttribute('aria-label','图标风格');
-  const label=el('div','label');label.append(el('b','','所有网站统一使用'),el('span','','选一列，所有网站换成这个版本'));row.append(label);
-  for(const v of VARIANTS){
-    const b=el('button','option');b.type='button';b.dataset.style=v;b.setAttribute('role','radio');
+  const now=styleOf(current),was=styleOf(saved);
+  $('#style').replaceChildren(...VARIANTS.map(v=>{
+    const b=el('button');b.type='button';b.dataset.style=v;b.setAttribute('role','radio');
     const sel=v===now;b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&now!==was);b.disabled=!canEdit();
-    b.setAttribute('aria-label','所有网站统一使用'+labels[v]);
-    const s=el('span','samples');for(const e of sample)s.append(frame(e,available(e,v)?v:current(e),24));
-    b.append(s,dot());row.append(b);
-  }
-  $('#style').replaceChildren(header(''),row);
+    b.append(dot(),labels[v]);return b;
+  }));
   const own=list.filter(e=>available(e,now)&&current(e)!==now).length;
-  $('#style-note').textContent='没有该版本的网站保持不变。'+(own?`有 ${own} 个网站在下面单独选了别的版本。`:'');
+  $('#style-note').textContent='没有该版本的网站保持不变'+(own?`；${own} 个网站单独选了别的版本`:'');
 }
 
-// ---------- site rows ----------
-function header(first,tail=''){
+// ---------- site list ----------
+const PAGE=30;let limit=PAGE;
+function query(){return $('#search').value.trim().toLocaleLowerCase()}
+function header(){
   const h=el('div','grid cols');h.setAttribute('aria-hidden','true');
-  h.append(el('span','',first),...VARIANTS.map(v=>el('span','',labels[v])));if(tail)h.append(el('span','',tail));return h;
+  h.append(el('span','','网站'),...VARIANTS.map(v=>el('span','',labels[v])));return h;
 }
-function siteRow(e,kind){
+// Site name with the searched text highlighted.
+function nameWithMatch(text,q){
+  const b=el('b'),i=q?text.toLocaleLowerCase().indexOf(q):-1;
+  if(i<0){b.textContent=text;return b}
+  b.append(text.slice(0,i),el('mark','',text.slice(i,i+q.length)),text.slice(i+q.length));return b;
+}
+function siteRow(e,q){
   const v=current(e),dirty=isDirty(e.id);
-  const row=el('div',`grid site ${kind}`);row.dataset.id=e.id;row.dataset.current=v;row.classList.toggle('is-dirty',dirty);
+  const row=el('div','grid site row');row.dataset.id=e.id;row.dataset.current=v;row.classList.toggle('is-dirty',dirty);
   row.setAttribute('role','radiogroup');row.setAttribute('aria-label',e.label);
   const mark=el('span','mark');mark.classList.toggle('is-dirty',dirty);mark.append(frame(e,v,24));
-  const name=el('div','name');name.append(el('b','',e.label),el('span','',e.domains.join(' · ')));
+  const name=el('div','name');name.append(nameWithMatch(e.label,q),el('span','',e.domains.join(' · ')));
   const who=el('div','who');who.append(mark,name);row.append(who);
   for(const x of VARIANTS){
     if(!available(e,x)){const n=el('span','none');n.title='没有'+labels[x];row.append(n);continue}
     const sel=x===v,b=el('button','option');b.type='button';b.dataset.id=e.id;b.dataset.variant=x;b.setAttribute('role','radio');
     b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&dirty);b.disabled=!canEdit();
     b.setAttribute('aria-label',`${e.label}：${labels[x]}`+(x===saved(e)?'（当前）':''));
-    b.append(frame(e,x,40),dot());row.append(b);
-  }
-  if(kind==='row'){
-    const mine=isMine(e.id),star=el('button','star');star.type='button';star.dataset.star=e.id;star.append(starIcon(mine));
-    star.setAttribute('aria-pressed',String(mine));star.disabled=!canEdit();
-    star.title=mine?'从我的固定区移除':'加入我的固定区';star.setAttribute('aria-label',star.title+'：'+e.label);row.append(star);
+    b.append(dot(),frame(e,x,40));row.append(b);
   }
   return row;
 }
-
-// ---------- my pinned area ----------
-function renderPins(){
-  const ids=myIds();
-  const nodes=ids.length?[header('网站'),...ids.map(id=>siteRow(byId.get(id),'pin'))]:[(()=>{const i=el('div','item'),l=el('div','label');l.append(el('b','','还没有固定的网站'),el('span','','打开一次固定的网页，或在下方「全部网站」里点星标添加。'));i.append(l);return i})()];
-  $('#pins').replaceChildren(...nodes);
-  $('#mine-count').textContent=ids.length?`${ids.length} 个网站`:'';
-}
-
-// ---------- all sites ----------
-const PAGE=20;let limit=PAGE;
 function renderCategories(){
-  const sel=$('#categories');
-  sel.replaceChildren(...['',...new Set(list.map(x=>x.category))].map(c=>{const o=el('option','',c||'全部类别');o.value=c;o.selected=c===category;return o}));
+  $('#categories').replaceChildren(...['',...new Set(list.map(x=>x.category))].map(c=>{const o=el('option','',c||'全部类别');o.value=c;o.selected=c===category;return o}));
 }
 function visibleSites(){
-  const q=$('#search').value.trim().toLocaleLowerCase();
+  const q=query();
   return list.filter(x=>(!category||x.category===category)&&(!q||[x.label,x.id,...x.domains].join(' ').toLocaleLowerCase().includes(q)));
 }
 function renderSites(){
-  const v=visibleSites(),shown=v.slice(0,limit);
-  const nodes=[header('网站','固定'),...shown.map(e=>siteRow(e,'row'))];
+  const q=query(),v=visibleSites(),shown=v.slice(0,limit);
+  const nodes=[header(),...shown.map(e=>siteRow(e,q))];
   if(v.length>shown.length){const more=el('button','more',`显示更多（还有 ${v.length-shown.length} 个）`);more.type='button';more.id='more';nodes.push(more)}
   $('#sites').replaceChildren(...nodes);
   $('#sites').hidden=!v.length;$('#empty').hidden=v.length>0;
+  const opt=list.filter(x=>x.variants?.optimized?.path).length;
+  $('#count').textContent=q||category?`找到 ${v.length} 个`:`${list.length} 个网站 · ${opt} 个有优化版`;
 }
 
 // ---------- chrome ----------
@@ -140,8 +126,6 @@ function renderTools(){
     const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
   }
   $('#version').textContent=loadedVersion?'v'+loadedVersion:'本地预览';
-  const opt=list.filter(x=>x.variants?.optimized?.path).length;
-  $('#count').textContent=`${list.length} 个网站 · ${opt} 个有优化版`;
 }
 function renderBar(){
   const n=changeCount();
@@ -150,7 +134,7 @@ function renderBar(){
   $('#save').disabled=!ready||saving||!n;$('#save').textContent=saving?'保存中…':n?'保存并应用':'已保存';
   $('#discard').hidden=!n||saving;
 }
-function refreshView(){renderStyle();renderPins();renderSites();renderTools();renderBar()}
+function refreshView(){renderStyle();renderSites();renderTools();renderBar()}
 const render=refreshView;
 
 function banner(text,{error=false,action=null,label=''}={}){
@@ -202,13 +186,6 @@ function choose(id,v){
 function chooseSize(size){
   if(!validIconSize(size)||saving||(isExtension&&!ready))return;
   draftSize=size===savedSize()?null:size;refreshView();
-}
-function toggleMine(id){
-  if(!canEdit()||!byId.has(id))return;
-  const base=settings.mySites||[];
-  if(isMine(id)){if(added.has(id))added.delete(id);else removed.add(id)}
-  else{if(removed.has(id))removed.delete(id);else if(!base.includes(id))added.add(id)}
-  refreshView();
 }
 function bulk(value){
   const [scope,v]=value.split(':');if(!canEdit()||!labels[v])return;
@@ -273,30 +250,34 @@ function arrowIndex(ev,n,i){
   if(j>=0)ev.preventDefault();return j;
 }
 function pickVersion(o){
-  const scope=o.closest('#pins')?'#pins':'#sites';
   choose(o.dataset.id,o.dataset.variant);
-  focusSel(`${scope} .option[data-id="${esc(o.dataset.id)}"][data-variant="${esc(o.dataset.variant)}"]`);
+  focusSel(`#sites .option[data-id="${esc(o.dataset.id)}"][data-variant="${esc(o.dataset.variant)}"]`);
 }
-function pickStyle(v){bulk('all:'+v);focusSel(`#style .option[data-style="${esc(v)}"]`)}
-function chooseOption(o){if(o.dataset.style)pickStyle(o.dataset.style);else pickVersion(o)}
-for(const panel of [$('#style'),$('#pins'),$('#sites')]){
-  panel.addEventListener('click',ev=>{
-    const o=ev.target.closest('.option');if(o){if(!o.disabled)chooseOption(o);return}
-    const s=ev.target.closest('.star[data-star]');if(s){if(!s.disabled)toggleMine(s.dataset.star);return}
-    if(ev.target.closest('#more')){limit+=PAGE*2;renderSites()}
-  });
-  panel.addEventListener('keydown',ev=>{
-    const o=ev.target.closest?.('.option');if(!o)return;
-    const items=[...o.parentElement.querySelectorAll('.option:not(:disabled)')],i=items.indexOf(o);if(i<0)return;
-    const j=arrowIndex(ev,items.length,i);if(j>=0&&j!==i)chooseOption(items[j]);
-  });
-}
-$('#size').addEventListener('click',ev=>{const b=ev.target.closest('button[data-size]');if(b&&!b.disabled)chooseSize(b.dataset.size)});
-$('#size').addEventListener('keydown',ev=>{
-  const items=[...$('#size').querySelectorAll('button')],i=items.indexOf(ev.target);if(i<0)return;
-  const j=arrowIndex(ev,items.length,i);if(j<0||items[j].disabled)return;
-  chooseSize(items[j].dataset.size);items[j].focus();
+$('#sites').addEventListener('click',ev=>{
+  const o=ev.target.closest('.option');if(o){if(!o.disabled)pickVersion(o);return}
+  if(ev.target.closest('#more')){limit+=PAGE*2;renderSites()}
 });
+$('#sites').addEventListener('keydown',ev=>{
+  const o=ev.target.closest?.('.option');if(!o)return;
+  const items=[...o.parentElement.querySelectorAll('.option:not(:disabled)')],i=items.indexOf(o);if(i<0)return;
+  const j=arrowIndex(ev,items.length,i);if(j>=0&&j!==i)pickVersion(items[j]);
+});
+// Style and icon size are small radio groups of the same shape.
+for(const [box,attr,act] of [[$('#style'),'style',v=>bulk('all:'+v)],[$('#size'),'size',chooseSize]]){
+  box.addEventListener('click',ev=>{const b=ev.target.closest(`button[data-${attr}]`);if(b&&!b.disabled){act(b.dataset[attr]);focusSel(`#${box.id} [data-${attr}="${esc(b.dataset[attr])}"]`)}});
+  box.addEventListener('keydown',ev=>{
+    const items=[...box.querySelectorAll('button')],i=items.indexOf(ev.target);if(i<0)return;
+    const j=arrowIndex(ev,items.length,i);if(j<0||items[j].disabled)return;
+    act(items[j].dataset[attr]);focusSel(`#${box.id} [data-${attr}="${esc(items[j].dataset[attr])}"]`);
+  });
+}
+// "/" jumps to search from anywhere; the top bar gets a hairline once the list scrolls under it.
+document.addEventListener('keydown',ev=>{
+  if(ev.key!=='/'||ev.metaKey||ev.ctrlKey||ev.altKey)return;
+  if(ev.target?.closest?.('input,select,textarea'))return;
+  ev.preventDefault();$('#search').focus();$('#search').select();
+});
+globalThis.addEventListener?.('scroll',()=>$('.top').classList.toggle('scrolled',scrollY>4),{passive:true});
 $('#categories').addEventListener('change',ev=>{category=ev.target.value;limit=PAGE;renderSites()});
 $('#search').addEventListener('input',()=>{limit=PAGE;renderSites()});
 $('#toggle').addEventListener('click',()=>simple('setEnabled',{enabled:settings.enabled===false},s=>s.enabled?'图标替换已打开。':'已关闭，网页恢复原图。'));
@@ -309,3 +290,4 @@ $('#discard').addEventListener('click',discard);
 document.addEventListener('keydown',ev=>{if((ev.metaKey||ev.ctrlKey)&&ev.key==='s'){ev.preventDefault();saveAll()}});
 globalThis.addEventListener?.('beforeunload',ev=>{if(changeCount()){ev.preventDefault();ev.returnValue=''}});
 renderCategories();render();load();
+$('#search').focus({preventScroll:true});

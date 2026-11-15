@@ -1,13 +1,15 @@
 :root{
   color-scheme:light dark;
-  --bg:#f5f5f7;--surface:#fff;--ink:#1d1d1f;--muted:#6e6e73;--faint:#aeaeb2;--line:#e5e5ea;
-  --accent:#0a84ff;--accent-soft:#eaf3ff;--dirty:#ff9f0a;--dirty-ink:#a85d00;--danger:#d70015;
+  --bg:#f5f5f7;--surface:#fff;--ink:#1d1d1f;--muted:#6a6a6f;--faint:#aeaeb2;--line:#e5e5ea;
+  --accent:#0a84ff;--accent-soft:#eaf3ff;--dirty:#c96a00;--dirty-ink:#a85d00;--danger:#d70015;
+  --star:#b87d00;--star-off:var(--muted);
   --tile:#e6e6e8;--tile-line:#d6d6da;--pins-bg:#f0f0f2;--well:#f2f2f4;
   --pad:24px;
 }
 @media(prefers-color-scheme:dark){:root{
   --bg:#161618;--surface:#1f1f22;--ink:#f2f2f7;--muted:#98989f;--faint:#636366;--line:#323236;
-  --accent:#409cff;--accent-soft:#1b2b40;--dirty-ink:#ffc266;--danger:#ff6961;
+  --accent:#409cff;--accent-soft:#1b2b40;--dirty:#ff9f0a;--dirty-ink:#ffc266;--danger:#ff6961;
+  --star:#ffb800;
   --tile:#3a3a3e;--tile-line:#48484c;--pins-bg:#2a2a2d;--well:#2a2a2d;
 }}
 *{box-sizing:border-box}
@@ -31,7 +33,7 @@ button:disabled{cursor:default}
 .topbar-inner{max-width:1000px;margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;gap:20px}
 .brand{display:flex;align-items:baseline;gap:8px;margin-right:auto}
 .brand h1{font-size:17px;font-weight:650;margin:0}
-#version{font-size:12px;color:var(--faint)}
+#version{font-size:12px;color:var(--muted)}
 .top-actions{display:flex;align-items:center;gap:16px}
 .switch-group{display:flex;align-items:center;gap:8px;font-size:13px}
 .switch-label{color:var(--ink)}
@@ -60,6 +62,7 @@ main{max-width:1000px;margin:0 auto;padding:20px var(--pad)}
 /* my pinned area */
 .mine-layout{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:stretch}
 .pins{display:grid;grid-template-columns:repeat(4,76px);grid-auto-rows:40px;align-content:start;gap:6px;background:var(--pins-bg);padding:12px;border-radius:14px;width:max-content}
+.pin-list{display:contents}
 .pin{height:40px;border-radius:10px;background:var(--tile);border:1px solid var(--tile-line);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;padding:0}
 .pin:hover{filter:brightness(.97)}
 .pin img,.pin svg{width:16px;height:16px;display:block}
@@ -126,8 +129,8 @@ main{max-width:1000px;margin:0 auto;padding:20px var(--pad)}
 .vbtn[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px var(--accent) inset}
 .vbtn[aria-pressed="true"].is-dirty{border-color:var(--dirty);background:color-mix(in srgb,var(--dirty) 10%,var(--surface));box-shadow:0 0 0 1px var(--dirty) inset}
 .vbtn.placeholder{visibility:hidden}
-.star{justify-self:center;border:0;background:none;cursor:pointer;color:var(--faint);font-size:18px;width:36px;height:36px;border-radius:8px}
-.star[aria-pressed="true"]{color:#ffb800}
+.star{justify-self:center;border:0;background:none;cursor:pointer;color:var(--star-off);font-size:18px;width:36px;height:36px;border-radius:8px}
+.star[aria-pressed="true"]{color:var(--star)}
 .star:hover:not(:disabled){background:var(--well)}
 .empty{text-align:center;color:var(--muted);padding:30px}
 .foot{display:flex;justify-content:center;gap:8px;color:var(--faint);font-size:12.5px;padding:4px 0 12px}

@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="mine-layout">
-      <div id="pins" class="pins" role="listbox" aria-label="我的网站"></div>
+      <div id="pins-box" class="pins"><div id="pins" class="pin-list" role="listbox" aria-label="我的网站" aria-orientation="horizontal"></div></div>
       <div id="editor" class="editor" aria-live="polite"></div>
     </div>
     <div class="quick">
@@ -59,7 +59,7 @@
     <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
     <div id="categories" class="chips" role="tablist" aria-label="类别"></div>
     <div class="list-head" aria-hidden="true"><span>网站</span><span>原版</span><span>iPhone</span><span>Mac</span><span>优化版</span><span>固定区</span></div>
-    <div id="sites" class="sites"></div>
+    <div id="sites" class="sites" role="tabpanel" aria-label="网站列表"></div>
     <p id="empty" class="empty" hidden>没有找到匹配的网站。</p>
   </section>
 

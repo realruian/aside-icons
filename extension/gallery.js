@@ -65,14 +65,16 @@ function renderPins(){
   const nodes=ids.map(id=>{
     const e=byId.get(id),b=document.createElement('button');
     b.type='button';b.className='pin';b.dataset.id=id;b.title=e.label;b.setAttribute('role','option');
-    b.setAttribute('aria-selected',String(id===selectedId));b.setAttribute('aria-label',`${e.label}：${labels[current(e)]}`);
+    b.setAttribute('aria-selected',String(id===selectedId));b.tabIndex=id===selectedId?0:-1;b.setAttribute('aria-label',`${e.label}：${labels[current(e)]}`);
     b.classList.toggle('is-dirty',Object.prototype.hasOwnProperty.call(draft,id));
     paint(b,e,current(e));return b;
   });
   const add=document.createElement('button');add.type='button';add.className='pin add';add.textContent='+';add.title='从下方列表用 ☆ 添加网站';
   add.addEventListener('click',()=>{$('#search').focus();showToast('在下方列表点 ☆ 把网站加入我的固定区。')});
-  if(!ids.length){const p=document.createElement('div');p.className='pins-empty';p.textContent='还没有记录到你的固定网站。打开一次固定的网页，或在下方列表点 ☆ 添加。';nodes.push(p)}
-  pins.replaceChildren(...nodes,add);
+  const extra=[];
+  if(!ids.length){const p=document.createElement('div');p.className='pins-empty';p.textContent='还没有记录到你的固定网站。打开一次固定的网页，或在下方列表点 ☆ 添加。';extra.push(p)}
+  // Only pins live inside the listbox; the empty note and "+" sit beside it in the same grid.
+  pins.replaceChildren(...nodes);$('#pins-box').replaceChildren(pins,...extra,add);
   $('#mine-hint').textContent=ids.length?'左边按实际大小显示。点一个图标，在右边选版本：上面是大图，下面小格是实际效果。':'';
 }
 function renderEditor(){
@@ -103,7 +105,7 @@ function renderCategories(){
   const cats=['',...new Set(list.map(x=>x.category))];
   $('#categories').replaceChildren(...cats.map(c=>{
     const b=document.createElement('button');b.type='button';b.className='chip';b.dataset.cat=c;b.setAttribute('role','tab');
-    b.textContent=c||'全部';b.setAttribute('aria-selected',String(c===category));return b;
+    b.textContent=c||'全部';b.setAttribute('aria-selected',String(c===category));b.setAttribute('aria-controls','sites');b.tabIndex=c===category?0:-1;return b;
   }));
 }
 function visibleSites(){
@@ -144,7 +146,7 @@ function renderTools(){
   for(const b of document.querySelectorAll('[data-bulk]'))b.disabled=!canEdit();
   $('#toggle-state').textContent=!isExtension?'':on?'已开启':'已关闭';
   for(const b of $('#size').querySelectorAll('button')){
-    const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
+    const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
   }
   $('#version').textContent=loadedVersion?'v'+loadedVersion:'本地预览';
   const opt=list.filter(x=>x.variants?.optimized?.path).length;
@@ -271,15 +273,46 @@ async function importSettings(file){
 
 // ---------- wiring ----------
 for(const [key,spec] of Object.entries(ICON_SIZES)){const b=document.createElement('button');b.type='button';b.dataset.size=key;b.setAttribute('role','radio');b.textContent=spec.label;$('#size').append(b)}
+// Arrow keys for the three single-tab-stop widgets (listbox, tablist, radiogroup).
+// Returns the index to move to, or -1 if the key isn't ours.
+function arrowIndex(ev,n,i,{cols=0,vertical=true}={}){
+  let j;
+  if(ev.key==='Home')j=0;
+  else if(ev.key==='End')j=n-1;
+  else{
+    const steps={ArrowRight:1,ArrowLeft:-1};
+    if(vertical){steps.ArrowDown=cols||1;steps.ArrowUp=-(cols||1)}
+    if(!(ev.key in steps))return -1;
+    j=i+steps[ev.key];
+    j=cols?Math.max(0,Math.min(n-1,j)):(j+n)%n;
+  }
+  ev.preventDefault();
+  return j;
+}
+function selectPin(id){selectedId=id;renderPins();renderEditor();$(`#pins .pin[data-id="${CSS.escape(id)}"]`)?.focus()}
+function selectCategory(c){category=c;renderCategories();renderSites();$(`#categories .chip[data-cat="${CSS.escape(c)}"]`)?.focus()}
 $('#size').addEventListener('click',ev=>{const b=ev.target.closest('button[data-size]');if(b&&!b.disabled)chooseSize(b.dataset.size)});
-$('#pins').addEventListener('click',ev=>{const b=ev.target.closest('.pin[data-id]');if(b){selectedId=b.dataset.id;renderPins();renderEditor()}});
+$('#size').addEventListener('keydown',ev=>{
+  const items=[...$('#size').querySelectorAll('button')],i=items.indexOf(ev.target);if(i<0)return;
+  const j=arrowIndex(ev,items.length,i);if(j<0||items[j].disabled)return;
+  chooseSize(items[j].dataset.size);items[j].focus();
+});
+$('#pins').addEventListener('click',ev=>{const b=ev.target.closest('.pin[data-id]');if(b)selectPin(b.dataset.id)});
+$('#pins').addEventListener('keydown',ev=>{
+  const items=[...$('#pins').querySelectorAll('.pin')],i=items.indexOf(ev.target);if(i<0)return;
+  const j=arrowIndex(ev,items.length,i,{cols:4});if(j>=0&&j!==i)selectPin(items[j].dataset.id);
+});
+$('#categories').addEventListener('keydown',ev=>{
+  const items=[...$('#categories').querySelectorAll('.chip')],i=items.indexOf(ev.target);if(i<0)return;
+  const j=arrowIndex(ev,items.length,i,{vertical:false});if(j>=0)selectCategory(items[j].dataset.cat);
+});
 $('#editor').addEventListener('click',ev=>{const b=ev.target.closest('.option[data-variant]');if(b&&!b.disabled)choose(b.dataset.id,b.dataset.variant)});
 $('#sites').addEventListener('click',ev=>{
   const v=ev.target.closest('.vbtn[data-variant]');if(v&&!v.disabled){choose(v.dataset.id,v.dataset.variant);return}
   const s=ev.target.closest('.star[data-star]');if(s&&!s.disabled){toggleMine(s.dataset.star);return}
   const n=ev.target.closest('.row-name');if(n){selectedId=n.parentElement.dataset.id;renderPins();renderEditor();$('.mine').scrollIntoView({behavior:'smooth',block:'start'})}
 });
-$('#categories').addEventListener('click',ev=>{const c=ev.target.closest('.chip');if(c){category=c.dataset.cat;renderCategories();renderSites()}});
+$('#categories').addEventListener('click',ev=>{const c=ev.target.closest('.chip');if(c)selectCategory(c.dataset.cat)});
 $('#search').addEventListener('input',renderSites);
 document.addEventListener('click',ev=>{const b=ev.target.closest('[data-bulk]');if(b&&!b.disabled)bulk(b.dataset.bulk)});
 $('#toggle').addEventListener('click',()=>simple('setEnabled',{enabled:settings.enabled===false},s=>s.enabled?'图标替换已打开。':'已关闭，网页恢复原图。'));

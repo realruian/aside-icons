@@ -14,19 +14,25 @@
   </header>
   <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
 
+  <section aria-labelledby="style-title">
+    <h2 class="group-title" id="style-title">图标风格</h2>
+    <div class="panel" id="style"></div>
+    <p class="note" id="style-note"></p>
+  </section>
+
   <section aria-labelledby="general-title">
     <h2 class="group-title" id="general-title">通用</h2>
-    <div class="group">
+    <div class="panel">
       <div class="item">
         <div class="label"><b id="toggle-label">替换网站图标</b><span id="toggle-state"></span></div>
         <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="toggle-label" disabled></button>
       </div>
       <div class="item">
         <div class="label"><b id="size-label">固定区图标大小</b></div>
-        <div class="segmented" id="size" role="radiogroup" aria-labelledby="size-label"></div>
+        <div class="choices" id="size" role="radiogroup" aria-labelledby="size-label"></div>
       </div>
       <div class="item">
-        <div class="label"><b>刷新图标</b><span>清除缓存，重画所有已打开网页的图标</span></div>
+        <div class="label"><b>刷新图标</b><span>重画所有已打开网页的图标</span></div>
         <button id="refresh" type="button" class="btn" disabled>刷新</button>
       </div>
     </div>
@@ -34,25 +40,26 @@
 
   <section aria-labelledby="mine-title">
     <h2 class="group-title" id="mine-title">我的固定区 <span id="mine-count"></span></h2>
-    <div class="group" id="pins"></div>
-    <p class="group-note" id="mine-hint"></p>
+    <div class="panel" id="pins"></div>
+    <p class="note" id="mine-hint">在「全部网站」里点星标可以加入固定区。</p>
   </section>
 
   <section aria-labelledby="all-title">
     <h2 class="group-title" id="all-title">全部网站 <span id="count"></span></h2>
-    <label class="search">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-      <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
-    </label>
-    <div id="categories" class="chips" role="tablist" aria-label="类别"></div>
-    <div class="group" id="sites" role="tabpanel" aria-label="网站列表"></div>
-    <p id="empty" class="group-note empty" hidden>没有找到匹配的网站。</p>
-    <p class="group-note"><button type="button" class="link" data-bulk="all:optimized" disabled>全部网站都用优化版</button></p>
+    <div class="tools">
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" type="search" placeholder="搜索网站名称或域名" autocomplete="off" aria-label="搜索网站">
+      </label>
+      <select id="categories" aria-label="类别"></select>
+    </div>
+    <div class="panel" id="sites" aria-label="网站列表"></div>
+    <p id="empty" class="note empty" hidden>没有找到匹配的网站。</p>
   </section>
 
   <section aria-labelledby="backup-title">
     <h2 class="group-title" id="backup-title">备份</h2>
-    <div class="group">
+    <div class="panel">
       <div class="item">
         <div class="label"><b>导出设置</b><span>保存为 JSON 文件，换电脑时导入</span></div>
         <button id="export" type="button" class="btn" disabled>导出…</button>

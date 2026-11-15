@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Aside 图标设置",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "为每个网站选择原版、iPhone、Mac或优化版图标并调整大小，保存后固定页与普通网页一致。本地资源，不联网补库。",
   "permissions": [
     "tabs",

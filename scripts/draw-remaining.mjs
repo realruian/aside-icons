@@ -55,11 +55,20 @@ function replate(src,bgMode,scale){
     const [r,g,b,a]=at(x,y);let m=a/255;
     // Ignore the source tile's own rim (anti-aliased rounded edge).
     const edge=Math.min(x,y,w-1-x,h-1-y);if(bg&&edge<w*.06)m=0;
-    if(bg){const d=Math.hypot(r-bg[0],g-bg[1],b-bg[2]);m*=Math.min(1,Math.max(0,(d-28)/60));}
+    if(bg){const d=Math.hypot(r-bg[0],g-bg[1],b-bg[2]),light=bg[0]+bg[1]+bg[2]>600,t0=light?75:70,t1=light?70:50;m*=Math.min(1,Math.max(0,(d-t0)/t1));}
     const i=(y*w+x)*4;out[i]=r;out[i+1]=g;out[i+2]=b;out[i+3]=Math.round(m*255);
     if(m>.25){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}
   }
-  // Drop a thin rim so the source tile's own rounded edge never counts as mark.
+  // Remove specks: connected components smaller than 0.3% of the image.
+  {const lab=new Int32Array(w*h).fill(-1),sizes=[];const stack=[];
+   for(let i=0;i<w*h;i++){if(lab[i]>=0||out[i*4+3]<64)continue;const id=sizes.length;let n=0;stack.push(i);lab[i]=id;
+     while(stack.length){const j=stack.pop();n++;const x=j%w,y=(j/w)|0;for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const X=x+dx,Y=y+dy;if(X<0||Y<0||X>=w||Y>=h)continue;const k=Y*w+X;if(lab[k]<0&&out[k*4+3]>=64){lab[k]=id;stack.push(k)}}}
+     sizes.push(n);}
+   const min=w*h*.003;x0=w;y0=h;x1=-1;y1=-1;
+   for(let i=0;i<w*h;i++){const keep=lab[i]>=0?sizes[lab[i]]>=min:out[i*4+3]>0&&false;
+     if(lab[i]>=0&&!keep)out[i*4+3]=0;
+     if(lab[i]<0&&out[i*4+3]>0){/* faint halo pixel: keep only if next to a kept component */}
+     if(out[i*4+3]>64&&(lab[i]<0||keep)){const x=i%w,y=(i/w)|0;if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y;}}}
   const mark=png(w,h,out).toString('base64');
   const bw=x1-x0+1,bh=y1-y0+1,f=S*scale/Math.max(bw,bh);
   const fill=bgMode==='auto'?(bg?`rgb(${bg.join(',')})`:'#fff'):bgMode;

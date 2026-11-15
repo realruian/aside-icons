@@ -58,8 +58,8 @@ main{max-width:1000px;margin:0 auto;padding:20px var(--pad)}
 .segmented button.is-dirty::after{content:"";position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%;background:var(--dirty)}
 
 /* my pinned area */
-.mine-layout{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
-.pins{display:grid;grid-template-columns:repeat(4,76px);gap:6px;background:var(--pins-bg);padding:8px;border-radius:14px;width:max-content}
+.mine-layout{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:stretch}
+.pins{display:grid;grid-template-columns:repeat(4,76px);grid-auto-rows:40px;align-content:start;gap:6px;background:var(--pins-bg);padding:12px;border-radius:14px;width:max-content}
 .pin{height:40px;border-radius:10px;background:var(--tile);border:1px solid var(--tile-line);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;padding:0}
 .pin:hover{filter:brightness(.97)}
 .pin img,.pin svg{width:16px;height:16px;display:block}
@@ -68,28 +68,28 @@ main{max-width:1000px;margin:0 auto;padding:20px var(--pad)}
 .pin.is-dirty::after{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;border-radius:50%;background:var(--dirty)}
 .pin.add{background:transparent;border:1px dashed var(--tile-line);color:var(--muted);font-size:18px}
 .pins-empty{grid-column:1/-1;color:var(--muted);font-size:12.5px;padding:8px 4px;width:316px}
-.editor{min-height:140px}
-.editor-head{display:flex;align-items:baseline;gap:10px;height:24px;margin-bottom:12px}
+.editor{background:var(--pins-bg);border-radius:14px;padding:12px 16px 14px;display:flex;flex-direction:column;min-width:0}
+.editor-head{display:flex;align-items:center;gap:10px;height:40px;margin-bottom:8px}
 .editor-head h3{margin:0;font-size:15px;font-weight:650;line-height:24px}
 .editor-head .domain{color:var(--muted);font-size:12.5px}
 .editor-head .link{margin-left:auto}
 .editor-head .link:hover:not(:disabled){color:var(--danger)}
 .options{display:flex;gap:10px;flex-wrap:wrap}
-.option{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 10px 8px;width:116px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
+.option{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 10px 8px;width:112px;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
 .option:hover:not(:disabled){border-color:var(--faint)}
 .option[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;background:var(--accent-soft)}
 .option[aria-pressed="true"].is-dirty{border-color:var(--dirty);box-shadow:0 0 0 1px var(--dirty) inset;background:color-mix(in srgb,var(--dirty) 9%,var(--surface))}
-.option .big{width:60px;height:60px;display:flex;align-items:center;justify-content:center}
-.option .big img{width:60px;height:60px;display:block}
+.option .big{width:52px;height:52px;display:flex;align-items:center;justify-content:center}
+.option .big img{width:52px;height:52px;display:block}
 .option .big svg{width:34px;height:34px;color:var(--faint)}
-.option .real{width:68px;height:32px;border-radius:8px;background:var(--tile);border:1px solid var(--tile-line);display:flex;align-items:center;justify-content:center}
+.option .real{width:68px;height:30px;border-radius:8px;background:var(--tile);border:1px solid var(--tile-line);display:flex;align-items:center;justify-content:center}
 .option .real img,.option .real svg{width:16px;height:16px;display:block}
 .option .real svg{color:var(--faint)}
 .option .name{font-size:12.5px;color:var(--muted)}
 .option[aria-pressed="true"] .name{color:var(--ink);font-weight:600}
 .option[aria-pressed="true"].is-dirty .name{color:var(--dirty-ink)}
 .editor-note{margin:10px 0 0;font-size:12px;color:var(--muted)}
-.editor-empty{color:var(--muted);font-size:13px;margin:0}
+.editor-empty{color:var(--muted);font-size:13px;margin:auto}
 .quick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
 .quick .field-label{margin-right:4px}
 

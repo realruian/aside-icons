@@ -73,7 +73,7 @@ function renderPins(){
   add.addEventListener('click',()=>{$('#search').focus();showToast('在下方列表点 ☆ 把网站加入我的固定区。')});
   if(!ids.length){const p=document.createElement('div');p.className='pins-empty';p.textContent='还没有记录到你的固定网站。打开一次固定的网页，或在下方列表点 ☆ 添加。';nodes.push(p)}
   pins.replaceChildren(...nodes,add);
-  $('#mine-hint').textContent=ids.length?'点一个图标，在右边换版本。这里按实际大小显示。':'';
+  $('#mine-hint').textContent=ids.length?'左边按实际大小显示。点一个图标，在右边选版本：上面是大图，下面小格是实际效果。':'';
 }
 function renderEditor(){
   const box=$('#editor'),e=byId.get(selectedId);
@@ -95,9 +95,7 @@ function renderEditor(){
     const name=document.createElement('span');name.className='name';name.textContent=labels[v]+(sel?(dirty?' · 未保存':' · 当前'):'');
     o.append(big,real,name);opts.append(o);
   }
-  const note=document.createElement('p');note.className='editor-note';
-  note.textContent=dirty?`将从「${labels[saved(e)]}」改为「${labels[current(e)]}」，点底部保存后生效。`:'上面是大图，下面的小格是固定区里的实际效果。';
-  box.replaceChildren(head,opts,note);
+  box.replaceChildren(head,opts);
 }
 
 // ---------- all sites ----------

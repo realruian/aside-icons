@@ -277,6 +277,15 @@ document.addEventListener('keydown',ev=>{
   if(ev.target?.closest?.('input,select,textarea'))return;
   ev.preventDefault();$('#search').focus();$('#search').select();
 });
+// Sticky top bar and fixed save bar: publish their real heights so scroll padding, body padding and the toast clear them.
+if(globalThis.ResizeObserver){
+  const ro=new ResizeObserver(()=>{
+    const root=document.documentElement.style;
+    root.setProperty('--top-h',Math.ceil($('.top').offsetHeight+8)+'px');
+    root.setProperty('--bar-h',Math.ceil($('#savebar').offsetHeight)+'px');
+  });
+  ro.observe($('.top'));ro.observe($('#savebar'));
+}
 globalThis.addEventListener?.('scroll',()=>$('.top').classList.toggle('scrolled',scrollY>4),{passive:true});
 $('#categories').addEventListener('change',ev=>{category=ev.target.value;limit=PAGE;renderSites()});
 $('#search').addEventListener('input',()=>{limit=PAGE;renderSites()});

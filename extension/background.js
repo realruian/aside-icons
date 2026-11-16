@@ -83,6 +83,9 @@ async function process(id){
       let tab;try{tab=await chrome.tabs.get(id);}catch{return;}
       if(!supported(tab.url)||tab.status==='loading'||tab.discarded)return;
       const d=await db(),entry=libraryFor(tab.url),variant=choiceFor(d,entry);
+      // Unlisted sites are never touched: no script is injected, unless an
+      // older version changed this page's icon and it still needs restoring.
+      if(!entry){const page=d.pages[tab.url.split('#')[0]];if(!(page&&!page.restored)&&!isOutput(d,tab.favIconUrl))return;}
       if(entry&&tab.pinned)rememberPinned(d,entry.id,tab.index);
       if(!d.enabled||!entry||variant==='original'){
         const restored=await restore(tab,d);

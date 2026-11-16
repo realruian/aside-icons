@@ -7,9 +7,38 @@
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-<header class="top">
-  <div class="top-inner">
-    <h1>Aside 图标 <span id="version"></span></h1>
+<main>
+  <header class="hero">
+    <div>
+      <h1>Aside 图标</h1>
+      <p>为固定区和标签页换上统一风格的网站图标。</p>
+    </div>
+    <span id="version"></span>
+  </header>
+
+  <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+  <!-- page-wide settings sit above the list so they never need a long scroll -->
+  <section class="strip" aria-label="设置">
+    <div class="grp">
+      <span id="toggle-label">替换图标</span>
+      <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="toggle-label" aria-describedby="toggle-state" disabled></button>
+    </div>
+    <div class="grp">
+      <span id="style-label">统一使用</span>
+      <div class="seg" id="style" role="radiogroup" aria-labelledby="style-label" aria-describedby="style-note"></div>
+    </div>
+    <div class="grp">
+      <span id="size-label">固定区大小</span>
+      <div class="seg" id="size" role="radiogroup" aria-labelledby="size-label"></div>
+    </div>
+    <div class="grp end">
+      <button id="refresh" type="button" class="btn" title="重画所有已打开网页的图标" disabled>刷新图标</button>
+    </div>
+  </section>
+  <p class="strip-note"><span id="toggle-state"></span><span id="style-note"></span></p>
+
+  <div class="top">
     <div class="tools">
       <label class="search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
@@ -19,42 +48,16 @@
       <select id="categories" aria-label="类别"></select>
     </div>
   </div>
-</header>
-
-<main>
-  <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
 
   <section aria-labelledby="all-title">
     <h2 class="group-title" id="all-title">网站 <span id="count" aria-live="polite"></span></h2>
-    <div class="panel" id="sites" aria-label="网站列表"></div>
+    <div class="table" id="sites" aria-label="网站列表"></div>
     <p id="empty" class="note empty" hidden>没有找到匹配的网站。</p>
-  </section>
-
-  <section aria-labelledby="settings-title">
-    <h2 class="group-title" id="settings-title">设置</h2>
-    <div class="panel">
-      <div class="item">
-        <div class="label"><b id="style-label">所有网站统一使用</b><span id="style-note"></span></div>
-        <div class="choices" id="style" role="radiogroup" aria-labelledby="style-label"></div>
-      </div>
-      <div class="item">
-        <div class="label"><b id="toggle-label">替换网站图标</b><span id="toggle-state"></span></div>
-        <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="toggle-label" disabled></button>
-      </div>
-      <div class="item">
-        <div class="label"><b id="size-label">固定区图标大小</b></div>
-        <div class="choices" id="size" role="radiogroup" aria-labelledby="size-label"></div>
-      </div>
-      <div class="item">
-        <div class="label"><b>刷新图标</b><span>重画所有已打开网页的图标</span></div>
-        <button id="refresh" type="button" class="btn" disabled>刷新</button>
-      </div>
-    </div>
   </section>
 
   <section aria-labelledby="backup-title">
     <h2 class="group-title" id="backup-title">备份</h2>
-    <div class="panel">
+    <div class="list">
       <div class="item">
         <div class="label"><b>导出设置</b><span>保存为 JSON 文件，换电脑时导入</span></div>
         <button id="export" type="button" class="btn" disabled>导出…</button>
@@ -69,13 +72,9 @@
 </main>
 
 <div class="savebar" id="savebar">
-  <div class="savebar-inner">
-    <span id="bar-text" aria-live="polite">所有更改已保存</span>
-    <div class="bar-actions">
-      <button id="discard" type="button" class="btn" hidden>放弃更改</button>
-      <button id="save" type="button" class="btn primary" disabled>已保存</button>
-    </div>
-  </div>
+  <span id="bar-text" aria-live="polite">所有更改已保存</span>
+  <button id="discard" type="button" class="ghost" hidden>放弃</button>
+  <button id="save" type="button" class="go" disabled>已保存</button>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="library.js"></script>

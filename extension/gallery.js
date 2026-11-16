@@ -49,7 +49,6 @@ function frame(e,v,size){
   img.addEventListener('error',()=>img.replaceWith(globe()),{once:true});
   f.append(img);return f;
 }
-function dot(){return el('span','dot')}
 function isDirty(id){return Object.prototype.hasOwnProperty.call(draft,id)}
 
 // ---------- style ----------
@@ -64,7 +63,7 @@ function renderStyle(){
   $('#style').replaceChildren(...VARIANTS.map(v=>{
     const b=el('button');b.type='button';b.dataset.style=v;b.setAttribute('role','radio');
     const sel=v===now;b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&now!==was);b.disabled=!canEdit();
-    b.append(dot(),labels[v]);return b;
+    b.append(labels[v]);return b;
   }));
   const own=list.filter(e=>available(e,now)&&current(e)!==now).length;
   $('#style-note').textContent='没有该版本的网站保持不变'+(own?`；${own} 个网站单独选了别的版本`:'');
@@ -95,7 +94,7 @@ function siteRow(e,q){
     const sel=x===v,b=el('button','option');b.type='button';b.dataset.id=e.id;b.dataset.variant=x;b.setAttribute('role','radio');
     b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&dirty);b.disabled=!canEdit();
     b.setAttribute('aria-label',`${e.label}：${labels[x]}`+(x===saved(e)?'（当前）':''));
-    b.append(dot(),frame(e,x,40));row.append(b);
+    b.append(frame(e,x,40));row.append(b);
   }
   return row;
 }
@@ -122,7 +121,7 @@ function renderTools(){
   const on=settings.enabled!==false;
   $('#toggle').setAttribute('aria-checked',String(on));
   for(const id of ['#toggle','#refresh','#export','#import'])$(id).disabled=!canEdit();
-  $('#toggle-state').textContent=!isExtension?'本地预览':on?'已开启':'已关闭，网页显示原图';
+  $('#toggle-state').textContent=!isExtension?'本地预览':on?'':'图标替换已关闭，网页显示原图';
   for(const b of $('#size').querySelectorAll('button')){
     const sel=b.dataset.size===currentSize();b.setAttribute('aria-checked',String(sel));b.tabIndex=sel?0:-1;b.classList.toggle('is-dirty',sel&&!!draftSize);b.disabled=!isExtension?false:!canEdit();
   }
@@ -241,7 +240,7 @@ async function importSettings(file){
 }
 
 // ---------- wiring ----------
-for(const [key,spec] of Object.entries(ICON_SIZES)){const b=el('button');b.type='button';b.dataset.size=key;b.setAttribute('role','radio');b.append(dot(),spec.label);$('#size').append(b)}
+for(const [key,spec] of Object.entries(ICON_SIZES)){const b=el('button');b.type='button';b.dataset.size=key;b.setAttribute('role','radio');b.append(spec.label);$('#size').append(b)}
 const esc=s=>globalThis.CSS?.escape?CSS.escape(s):String(s).replace(/["\\]/g,'\\$&');
 const focusSel=sel=>$(sel)?.focus();
 // Radio-group arrow keys: move the choice within the same row and keep focus on it.
@@ -287,7 +286,7 @@ if(globalThis.ResizeObserver){
   });
   ro.observe($('.top'));ro.observe($('#savebar'));
 }
-globalThis.addEventListener?.('scroll',()=>$('.top').classList.toggle('scrolled',scrollY>4),{passive:true});
+globalThis.addEventListener?.('scroll',()=>$('.top').classList.toggle('scrolled',scrollY>4&&$('.top').getBoundingClientRect().top<=0),{passive:true});
 $('#categories').addEventListener('change',ev=>{category=ev.target.value;limit=PAGE;renderSites()});
 $('#search').addEventListener('input',()=>{limit=PAGE;renderSites()});
 $('#toggle').addEventListener('click',()=>simple('setEnabled',{enabled:settings.enabled===false},s=>s.enabled?'图标替换已打开。':'已关闭，网页恢复原图。'));

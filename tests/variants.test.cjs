@@ -44,7 +44,7 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
    runtime:{id:'test',getURL:p=>'chrome-extension://test/'+p,getManifest:()=>({version:'0.9.0'}),onStartup:event(),onInstalled:event(),onMessage:{addListener:f=>listener=f}}
   },
   fetch:async url=>{requests.push(url);if(fetchHook)await fetchHook(url);const bytes=Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]),Buffer.from(url)]);return {ok:true,arrayBuffer:async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength)}},
-  importScripts:()=>{vm.runInContext(fs.readFileSync('extension/resize.js','utf8'),context);return vm.runInContext(useRealCatalog?fs.readFileSync('extension/library.js','utf8'):'const ICON_LIBRARY='+JSON.stringify(catalog)+';function libraryFor(url){try{const host=new URL(url).hostname;return ICON_LIBRARY.find(e=>e.domains.includes(host))||null}catch{return null}}',context)}
+  importScripts:()=>{return vm.runInContext(useRealCatalog?fs.readFileSync('extension/library.js','utf8'):'const ICON_LIBRARY='+JSON.stringify(catalog)+';function libraryFor(url){try{const host=new URL(url).hostname;return ICON_LIBRARY.find(e=>e.domains.includes(host))||null}catch{return null}}',context)}
  };
  const context=vm.createContext(sandbox);vm.runInContext(worker,context);
  activeTabs=tabs;
@@ -89,7 +89,7 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   x.setFetchHook(async url=>{if(url.endsWith('/iphone/alpha.png')){entered.resolve();await release.promise;}});
   const first=x.call('setIconChoice',{id:'alpha',variant:'iphone'});await entered.promise;
   const latest=x.call('setIconChoice',{id:'alpha',variant:'mac'});await tick();release.resolve();await Promise.all([first,latest]);
-  const applied=x.messages.filter(m=>m.type==='apply');assert.ok(applied.length>=2);assert.ok(applied.every(m=>atob(m.image.split(',')[1]).includes('/mac/alpha.png')),'slow old image must never apply after a newer choice');assert.equal(x.stored().choices.alpha,'mac');assert.equal((await x.settings()).effectiveChoices.alpha,'mac');
+  const applied=x.messages.filter(m=>m.type==='apply');assert.ok(applied.length>=2);assert.ok(applied.every(m=>atob(m.image.split(',')[1]).includes('/mac/alpha.png')),'slow old image must never apply after a newer choice');assert.equal(x.stored().choices.alpha,undefined,'Mac is alpha\'s recommended version, so no override is stored');assert.equal((await x.settings()).effectiveChoices.alpha,'mac');
  }
  {
   const x=setup(),entered=deferred(),release=deferred();let held=false;
@@ -99,12 +99,12 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   assert.equal(x.href(1),'/original.svg');assert.equal(x.href(2),'/original.svg');assert.ok(!x.messages.some(m=>m.type==='apply'),'selection changed while persisting: stale apply must be skipped');assert.equal(x.stored().choices.alpha,'original');
  }
  {
-  const x=setup();await x.call('setIconChoice',{id:'alpha',variant:'iphone'});await x.call('setEnabled',{enabled:false});assert.equal(x.href(1),'/original.svg');await x.call('setIconChoice',{id:'alpha',variant:'mac'});assert.equal(x.href(1),'/original.svg');assert.equal(x.stored().choices.alpha,'mac');await x.call('setEnabled',{enabled:true});assert.ok(atob(x.href(1).split(',')[1]).includes('/mac/alpha.png'));assert.equal(x.stored().choices.alpha,'mac');
+  const x=setup();await x.call('setIconChoice',{id:'alpha',variant:'iphone'});await x.call('setEnabled',{enabled:false});assert.equal(x.href(1),'/original.svg');await x.call('setIconChoice',{id:'alpha',variant:'mac'});assert.equal(x.href(1),'/original.svg');assert.equal(x.stored().choices.alpha,undefined,'Mac is alpha\'s recommended version, so no override is stored');await x.call('setEnabled',{enabled:true});assert.ok(atob(x.href(1).split(',')[1]).includes('/mac/alpha.png'));assert.equal(x.stored().choices.alpha,undefined,'Mac is alpha\'s recommended version, so no override is stored');
  }
  {
   // Adding a fourth variant must not choose it for existing users or defaults.
   for(const previous of ['original','iphone','mac']){
-   const migrated=setup({stored:{choices:{alpha:previous}}});assert.equal((await migrated.settings()).effectiveChoices.alpha,previous);await migrated.process(1);assert.equal((await migrated.settings()).choices.alpha,previous);
+   const migrated=setup({stored:{choices:{alpha:previous}}});assert.equal((await migrated.settings()).effectiveChoices.alpha,previous);await migrated.process(1);assert.equal((await migrated.settings()).effectiveChoices.alpha,previous);
   }
   assert.equal((await setup().settings()).effectiveChoices.alpha,'mac');
   const x=setup();await x.call('setIconChoice',{id:'alpha',variant:'optimized'});
@@ -140,23 +140,37 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
 
  {
   const x=setup();
-  let s=await x.settings();assert.equal(s.iconSize,'large','default size is large');
+  let s=await x.settings();assert.equal(s.iconSize,'large','size constant stays for old-worker detection');assert.equal(s.style,'recommended');
   const before=x.stored();
   assert.match((await x.call('saveSettings',{choices:{alpha:'iphone',beta:'mac'}})).error,/没有可用/);assert.deepEqual(x.stored(),before,'invalid batch saves nothing');
-  assert.match((await x.call('saveSettings',{choices:{},iconSize:'huge'})).error,/无效的图标大小/);assert.deepEqual(x.stored(),before);
+  assert.match((await x.call('saveSettings',{choices:{},style:'huge'})).error,/无效的默认样式/);assert.deepEqual(x.stored(),before);
+  assert.match((await x.call('saveSettings',{choices:{},enabled:'no'})).error,/无效的开关状态/);assert.deepEqual(x.stored(),before);
   assert.equal((await x.call('saveSettings',{choices:{alpha:'iphone'}},{id:'test',url:'chrome-extension://test/popup.html'})).error,'无效控制请求','popup page no longer exists');
-  s=await x.call('saveSettings',{choices:{alpha:'iphone',beta:'original'},iconSize:'xlarge'});
-  assert.equal(s.iconSize,'xlarge');assert.equal(s.effectiveChoices.alpha,'iphone');assert.equal(s.effectiveChoices.beta,'original');
-  assert.equal(x.stored().iconSize,'xlarge');assert.equal(x.stored().choices.alpha,'iphone');
+  s=await x.call('saveSettings',{choices:{alpha:'iphone',beta:'original'}});
+  assert.equal(s.effectiveChoices.alpha,'iphone');assert.equal(s.effectiveChoices.beta,'original');
+  assert.equal(x.stored().choices.alpha,'iphone');
   assert.ok(x.href(1).startsWith('data:image/png;base64,'),'applied after batch save');assert.equal(x.href(2),x.href(1));
-  const y=setup({stored:{iconSize:'xlarge',choices:{alpha:'mac'}}});assert.equal((await y.settings()).iconSize,'xlarge','saved size survives restart');const w=setup({stored:{iconSize:'standard'}});assert.equal((await w.settings()).iconSize,'large','retired standard size migrates to large');
-  const z=setup({stored:{iconSize:'bogus'}});assert.equal((await z.settings()).iconSize,'large','unknown stored size falls back');
+  // Default style: sites follow it, overrides stay, sites without that version use their recommended one.
+  s=await x.call('saveSettings',{choices:{},style:'iphone'});
+  assert.equal(s.style,'iphone');assert.equal(s.effectiveChoices.alpha,'iphone');assert.equal(s.effectiveChoices.beta,'original','override kept');assert.equal(s.effectiveChoices.gamma,'original','no iPhone: recommended');
+  assert.equal(s.choices.alpha,undefined,'an override equal to the style is dropped');
+  s=await x.call('saveSettings',{choices:{beta:null}});assert.equal(s.effectiveChoices.beta,'iphone','null makes a site follow the style');assert.deepEqual({...s.choices},{});
+  s=await x.call('saveSettings',{choices:{},enabled:false});assert.equal(s.enabled,false);assert.equal(x.href(1),'/original.svg','switching off through save restores pages');
+  s=await x.call('saveSettings',{choices:{},enabled:true});assert.equal(s.enabled,true);
+const again0=setup({stored:x.stored()});assert.equal((await again0.settings()).style,'iphone','style persists');
+  // Migration: an old all-explicit setup picks the style that needs the fewest overrides.
+  const m=setup({stored:{choices:{alpha:'original'},iconSize:'xlarge'}});const ms=await m.settings();
+  assert.equal(ms.style,'recommended','ties keep the recommended style');assert.deepEqual({...ms.choices},{alpha:'original'});assert.equal(ms.effectiveChoices.alpha,'original');
+  const opt=setup({stored:{choices:{alpha:'optimized',beta:'iphone'}}});const os=await opt.settings();
+  assert.equal(os.style,'optimized');assert.deepEqual({...os.choices},{});assert.equal(os.effectiveChoices.beta,'iphone','no optimized version: recommended');
+  const all=setup({stored:{choices:{alpha:'iphone',beta:'iphone',gamma:'original'}}});const as=await all.settings();
+  assert.equal(as.style,'iphone','everything on iPhone becomes the default');assert.deepEqual({...as.choices},{});
   {const r=await x.call('refresh');assert.equal(r.lastRefresh.open,3);assert.equal(r.lastRefresh.woken,0);assert.deepEqual([...r.lastRefresh.asleep],[]);const n=x.requests.length;await x.call('refresh');assert.ok(x.requests.length>n,'refresh drops cached images and rereads packaged files');}
   {const m=await x.call('refresh');assert.deepEqual([...m.mySites].slice(0,1),['alpha'],'pinned tab is remembered as my site');
    const sv=await x.call('saveSettings',{choices:{},starred:['gamma','nope'],hidden:['alpha']});assert.ok(sv.mySites.includes('gamma'));assert.ok(!sv.mySites.includes('alpha'));assert.deepEqual([...sv.mine.starred],['gamma']);
    const again=setup({stored:x.stored()});assert.ok((await again.settings()).mySites.includes('gamma'),'my sites persist');
    const tab=x.tabs.find(t=>t.id===1);const before=x.href(1);tab.url+='#inbox/123';
    await x.call('saveSettings',{choices:{alpha:'mac'}});assert.notEqual(x.href(1),before,'hash-only address change (Gmail-style) is still processed');}
-  console.log('PASS: batch saveSettings validation, atomicity, icon size persistence, popup sender rejected');
+  console.log('PASS: batch saveSettings validation, atomicity, default style + overrides, switch via save, style migration, popup sender rejected');
  }
 })().catch(e=>{console.error(e);process.exitCode=1});

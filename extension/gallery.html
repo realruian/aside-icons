@@ -25,15 +25,8 @@
       <button id="toggle" type="button" class="switch" role="switch" aria-checked="true" aria-labelledby="toggle-label" aria-describedby="toggle-state" disabled></button>
     </div>
     <div class="grp">
-      <span id="style-label">统一使用</span>
+      <span id="style-label">默认样式</span>
       <div class="seg" id="style" role="radiogroup" aria-labelledby="style-label" aria-describedby="style-note"></div>
-    </div>
-    <div class="grp">
-      <span id="size-label">固定区大小</span>
-      <div class="seg" id="size" role="radiogroup" aria-labelledby="size-label"></div>
-    </div>
-    <div class="grp end">
-      <button id="refresh" type="button" class="btn" title="重画所有已打开网页的图标" disabled>刷新图标</button>
     </div>
   </section>
   <p class="strip-note"><span id="toggle-state"></span><span id="style-note"></span></p>
@@ -55,9 +48,13 @@
     <p id="empty" class="note empty" hidden>没有找到匹配的网站。</p>
   </section>
 
-  <section aria-labelledby="backup-title">
-    <h2 class="group-title" id="backup-title">备份</h2>
+  <section aria-labelledby="tools-title">
+    <h2 class="group-title" id="tools-title">工具</h2>
     <div class="list">
+      <div class="item">
+        <div class="label"><b>重新应用到已打开的网页</b><span>保存时会自动做一次；图标没换过来时再用</span></div>
+        <button id="refresh" type="button" class="btn" disabled>重新应用</button>
+      </div>
       <div class="item">
         <div class="label"><b>导出设置</b><span>保存为 JSON 文件，换电脑时导入</span></div>
         <button id="export" type="button" class="btn" disabled>导出…</button>
@@ -78,7 +75,6 @@
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="library.js"></script>
-<script src="resize.js"></script>
 <script src="gallery.js"></script>
 </body>
 </html>

@@ -1,28 +1,49 @@
-importScripts('library.js','resize.js');
+importScripts('library.js');
 let dataPromise,saveQueue=Promise.resolve();
 const running=new Map(),status=new Map(),retryTimers=new Map();
 const assetCache=new Map(),libraryImages=new Set();
 const supported=url=>/^https?:\/\//.test(url||'');
 const choiceNames={original:'原版',iphone:'iPhone',mac:'Mac',optimized:'优化版'};
 function supportsChoice(entry,variant){return variant==='original'||((variant==='iphone'||variant==='mac'||variant==='optimized')&&typeof entry?.variants?.[variant]?.path==='string');}
+// Default style for every site: 'recommended' (each site's catalog default) or one version.
+// A site without that version falls back to its recommended one. d.choices holds only the
+// per-site overrides that differ from what the default style gives.
+const STYLES=['recommended','original','iphone','mac','optimized'];
+const validStyle=s=>STYLES.includes(s);
+function recommended(entry){return supportsChoice(entry,entry.defaultVariant)?entry.defaultVariant:'original';}
+function styleChoice(entry,style){return style!=='recommended'&&supportsChoice(entry,style)?style:recommended(entry);}
 function choiceFor(d,entry){
   if(!entry)return 'original';
   const saved=d.choices[entry.id];
   if(supportsChoice(entry,saved))return saved;
   // Compatibility for a previous catalog while an unpacked update reloads.
   if(!entry.variants)return 'library';
-  return supportsChoice(entry,entry.defaultVariant)?entry.defaultVariant:'original';
+  return styleChoice(entry,d.style);
+}
+// Overrides equal to what the style gives are not overrides; drop them.
+function pruneChoices(d){for(const entry of ICON_LIBRARY)if(d.choices[entry.id]!==undefined&&d.choices[entry.id]===styleChoice(entry,d.style))delete d.choices[entry.id];}
+// Before default styles existed every choice was explicit. Pick the style that leaves the
+// fewest overrides (recommended wins ties), so nothing on screen changes.
+function migrateStyle(choices){
+  const eff=Object.fromEntries(ICON_LIBRARY.map(e=>[e.id,supportsChoice(e,choices[e.id])?choices[e.id]:recommended(e)]));
+  let best='recommended',fewest=Infinity;
+  for(const style of STYLES){const n=ICON_LIBRARY.filter(e=>eff[e.id]!==styleChoice(e,style)).length;if(n<fewest){fewest=n;best=style;}}
+  return {style:best,choices:Object.fromEntries(ICON_LIBRARY.filter(e=>eff[e.id]!==styleChoice(e,best)).map(e=>[e.id,eff[e.id]]))};
 }
 async function db(){return dataPromise??=(async()=>{
-  const d=await chrome.storage.local.get(['enabled','pages','cache','choices','iconSize','mine','updated']);
+  const d=await chrome.storage.local.get(['enabled','pages','cache','choices','style','mine','updated']);
   // Settings sync: a newer copy from another computer wins.
-  try{const s=await chrome.storage.sync?.get(['choices','iconSize','mine','updated']);if(s?.updated&&s.updated>(d.updated||0)){d.choices=s.choices;d.iconSize=s.iconSize;d.mine={...(d.mine||{}),...(s.mine||{})};d.updated=s.updated;}}catch{}
-  const choices={};
+  try{const s=await chrome.storage.sync?.get(['choices','style','mine','updated']);if(s?.updated&&s.updated>(d.updated||0)){d.choices=s.choices;d.style=s.style;d.mine={...(d.mine||{}),...(s.mine||{})};d.updated=s.updated;}}catch{}
+  let choices={};
   for(const entry of ICON_LIBRARY){const value=d.choices?.[entry.id];if(supportsChoice(entry,value))choices[entry.id]=value;}
+  let style=d.style;
+  if(!validStyle(style))({style,choices}=migrateStyle(choices));
   const mine={pinned:{},starred:[],hidden:[],...(d.mine||{})};
-  return {enabled:d.enabled!==false,pages:d.pages||{},cache:d.cache||{},choices,iconSize:validIconSize(d.iconSize)?d.iconSize:DEFAULT_ICON_SIZE,mine,updated:d.updated||0};
+  const out={enabled:d.enabled!==false,pages:d.pages||{},cache:d.cache||{},choices,style,mine,updated:d.updated||0};
+  pruneChoices(out);
+  return out;
 })();}
-function pushSync(d){d.updated=Date.now();chrome.storage.sync?.set({choices:d.choices,iconSize:d.iconSize,mine:{starred:d.mine.starred,hidden:d.mine.hidden},updated:d.updated}).catch(()=>{});}
+function pushSync(d){d.updated=Date.now();chrome.storage.sync?.set({choices:d.choices,style:d.style,mine:{starred:d.mine.starred,hidden:d.mine.hidden},updated:d.updated}).catch(()=>{});}
 // Single-page apps (Gmail etc.) change only the #fragment; treat that as the same document.
 const sameDoc=(a,b)=>!!a&&!!b&&a.split('#')[0]===b.split('#')[0];
 function save(d){saveQueue=saveQueue.catch(()=>{}).then(async()=>{
@@ -43,10 +64,10 @@ function originalSource(d,image){
 }
 function isOutput(d,url){return !!url&&(generated(url)||libraryImages.has(url)||Object.values(d.cache).some(c=>c.image===url));}
 function originalCandidate(d,url){return typeof url==='string'&&/^(?:https?:|data:image\/|blob:)/.test(url)&&!isOutput(d,url)?url:null;}
-async function libraryImage(entry,variant,size='large'){
+async function libraryImage(entry,variant){
   const path=variant==='library'?'icons/'+entry.id+'.png':entry.variants?.[variant]?.path;
   if(typeof path!=='string'||!/^icons\/[a-z0-9_/-]+\.png$/i.test(path)||path.includes('..'))throw Error('图标库路径无效');
-  const key=entry.id+':'+variant+':'+size+':'+path;
+  const key=entry.id+':'+variant+':'+path;
   if(assetCache.has(key))return assetCache.get(key);
   const pending=(async()=>{
     // Read the packaged PNG exactly as authored: no canvas, cropping, scaling,
@@ -55,10 +76,7 @@ async function libraryImage(entry,variant,size='large'){
     if(!response.ok)throw Error('图标库文件不可用');
     const bytes=new Uint8Array(await response.arrayBuffer());
     if(bytes.length<8||bytes.length>1000000||[137,80,78,71,13,10,26,10].some((v,i)=>bytes[i]!==v))throw Error('图标库文件格式错误');
-    let out=bytes;
-    // Size presets trim/zoom the packaged artwork locally; any failure keeps the original PNG.
-    if(size!=='large'){try{const blob=await resizeIcon(new Blob([bytes],{type:'image/png'}),size);if(blob)out=new Uint8Array(await blob.arrayBuffer());}catch{}}
-    const bytesOut=out;let str='';for(let i=0;i<bytesOut.length;i+=8192)str+=String.fromCharCode(...bytesOut.subarray(i,i+8192));
+    const bytesOut=bytes;let str='';for(let i=0;i<bytesOut.length;i+=8192)str+=String.fromCharCode(...bytesOut.subarray(i,i+8192));
     const image='data:image/png;base64,'+btoa(str);libraryImages.add(image);return image;
   })();
   assetCache.set(key,pending);
@@ -95,7 +113,7 @@ async function process(id){
       await connect(id);const info=await send(id,{type:'inspect'});
       if(!info||!sameDoc(info.url,tab.url))return;
       let image;
-      try{image=await libraryImage(entry,variant,d.iconSize);}catch(e){
+      try{image=await libraryImage(entry,variant);}catch(e){
         if(!d.enabled||choiceFor(d,entry)!==variant){job.again=true;continue;}
         await restore(tab,d);await save(d);throw e;
       }
@@ -156,7 +174,9 @@ function controlsAllowed(sender){
 }
 async function settingsSnapshot(d){
   const tabs=(await chrome.tabs.query({})).filter(t=>supported(t.url));
-  return {enabled:d.enabled,version:chrome.runtime.getManifest().version,pinned:tabs.filter(t=>t.pinned).length,ordinary:tabs.filter(t=>!t.pinned).length,status:[...status.values()],libraryCount:ICON_LIBRARY.length,iconSize:d.iconSize,lastRefresh,mySites:mySites(d),mine:{starred:[...d.mine.starred],hidden:[...d.mine.hidden]},openPinned:[...new Set(tabs.filter(t=>t.pinned).map(t=>libraryFor(t.url)?.id).filter(Boolean))],pendingRestore:d.enabled?0:Object.values(d.pages).filter(p=>!p.restored).length,choices:{...d.choices},effectiveChoices:Object.fromEntries(ICON_LIBRARY.map(entry=>[entry.id,choiceFor(d,entry)]))};
+  return {enabled:d.enabled,version:chrome.runtime.getManifest().version,pinned:tabs.filter(t=>t.pinned).length,ordinary:tabs.filter(t=>!t.pinned).length,status:[...status.values()],libraryCount:ICON_LIBRARY.length,style:d.style,
+    // Icon size was retired; the constant stays so the toolbar popup and older pages still recognise a current worker.
+    iconSize:'large',lastRefresh,mySites:mySites(d),mine:{starred:[...d.mine.starred],hidden:[...d.mine.hidden]},openPinned:[...new Set(tabs.filter(t=>t.pinned).map(t=>libraryFor(t.url)?.id).filter(Boolean))],pendingRestore:d.enabled?0:Object.values(d.pages).filter(p=>!p.restored).length,choices:{...d.choices},effectiveChoices:Object.fromEntries(ICON_LIBRARY.map(entry=>[entry.id,choiceFor(d,entry)]))};
 }
 chrome.tabs.onUpdated.addListener((id,change)=>{
   if(change.url!==undefined||change.status==='complete'||change.pinned!==undefined||change.favIconUrl){
@@ -189,30 +209,33 @@ chrome.runtime.onMessage.addListener((msg,sender,respond)=>{
     else if(msg.type==='setIconChoice'){
       const entry=ICON_LIBRARY.find(e=>e.id===msg.id);
       if(!entry||!supportsChoice(entry,msg.variant))throw Error('这个网站没有可用的所选图标版本');
-      d.choices[entry.id]=msg.variant;
+      d.choices[entry.id]=msg.variant;pruneChoices(d);
       await save(d);
       await applyEntry(entry.id);
     }
     else if(msg.type==='saveSettings'){
       // Validate everything first so one bad entry never leaves a half-saved batch.
+      // choices: {id: variant} sets an override, {id: null} makes the site follow the style again.
       const choices=msg.choices&&typeof msg.choices==='object'?msg.choices:{};
       const updates=[];
       for(const [id,variant] of Object.entries(choices)){
         const entry=ICON_LIBRARY.find(e=>e.id===id);
-        if(!entry||!supportsChoice(entry,variant))throw Error('这个网站没有可用的所选图标版本');
+        if(!entry||(variant!==null&&!supportsChoice(entry,variant)))throw Error('这个网站没有可用的所选图标版本');
         updates.push([id,variant]);
       }
-      if(msg.iconSize!==undefined&&!validIconSize(msg.iconSize))throw Error('无效的图标大小');
-      for(const [id,variant] of updates)d.choices[id]=variant;
-      const sizeChanged=msg.iconSize!==undefined&&msg.iconSize!==d.iconSize;
-      if(msg.iconSize!==undefined)d.iconSize=msg.iconSize;
+      if(msg.style!==undefined&&!validStyle(msg.style))throw Error('无效的默认样式');
+      if(msg.enabled!==undefined&&typeof msg.enabled!=='boolean')throw Error('无效的开关状态');
+      if(msg.style!==undefined)d.style=msg.style;
+      if(msg.enabled!==undefined)d.enabled=msg.enabled;
+      for(const [id,variant] of updates){if(variant===null)delete d.choices[id];else d.choices[id]=variant;}
+      pruneChoices(d);
       const ids=new Set(ICON_LIBRARY.map(e=>e.id));
       if(Array.isArray(msg.starred))d.mine.starred=msg.starred.filter(id=>ids.has(id));
       if(Array.isArray(msg.hidden))d.mine.hidden=msg.hidden.filter(id=>ids.has(id));
       pushSync(d);
       await save(d);
       // Saving always refreshes everything, so no separate step is needed.
-      void sizeChanged;await refreshAll();
+      await Promise.allSettled([...running.values()].map(j=>j.promise));await refreshAll();
     }
     else if(msg.type==='scan'||msg.type==='refresh')await refreshAll();
     else if(msg.type!=='status'&&msg.type!=='getSettings')throw Error('未知控制请求');

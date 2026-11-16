@@ -18,3 +18,6 @@
 - `npm run release` 构建 → 测试 → 版本号 +1 → 安装到 Aside → 打包到 dist/
 
 安装位置：`~/Library/Application Support/AsidePinnedIcons`（Aside 以未打包扩展加载）。发布后打开一次设置页，它会自动重载扩展。
+
+## 许可证
+代码以 [MIT](LICENSE) 许可证开源。`assets/` 和 `extension/icons/` 里的网站 logo 与应用图标归各自的公司或权利人所有，不在 MIT 许可范围内，收录它们只是为了标明图标对应哪个网站。

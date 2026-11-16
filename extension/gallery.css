@@ -1,9 +1,11 @@
 /* One of each, everywhere on this page:
-   paper background · ink for text and selection · hairlines instead of panels
-   serif for titles and site names · icon = rounded frame at 24 or 40 px · unsaved = orange */
+   surface = paper; nothing is filled white, everything is outlined with one hairline
+   shape = containers are 16px rounded rectangles, controls are pills
+   selected = a soft grey fill (versions, style, size) · primary = ink (switch on, save pill)
+   serif for titles and site names · icon = rounded frame at 28 or 40 px · unsaved = orange */
 :root{
   color-scheme:light dark;
-  --page:#fbfaf6;--raised:#fff;
+  --page:#fbfaf6;
   --ink:rgba(0,0,0,.86);--muted:rgba(0,0,0,.6);--faint:rgba(0,0,0,.34);
   --line:rgba(0,0,0,.14);--line-soft:rgba(0,0,0,.07);--tint:rgba(0,0,0,.035);--tint-2:rgba(0,0,0,.065);
   --solid:#141414;--on-solid:#fbfaf6;--dirty:#d9711c;--danger:#c4321c;--hl:rgba(255,196,0,.32);
@@ -16,7 +18,7 @@
   --col:960px;--gutter:32px;--strip-pad:20px;--cols:repeat(4,96px);
 }
 @media(prefers-color-scheme:dark){:root{
-  --page:#151412;--raised:#1f1e1b;
+  --page:#151412;
   --ink:rgba(255,255,255,.9);--muted:rgba(255,255,255,.6);--faint:rgba(255,255,255,.32);
   --line:rgba(255,255,255,.15);--line-soft:rgba(255,255,255,.08);--tint:rgba(255,255,255,.045);--tint-2:rgba(255,255,255,.09);
   --solid:#f4f1ea;--on-solid:#151412;--dirty:#f0923e;--danger:#ff7a66;--hl:rgba(255,196,0,.24);
@@ -39,7 +41,7 @@ main{max-width:var(--col);margin:0 auto;padding:0 var(--gutter)}
 .hero h1{font:600 44px/1.05 var(--serif);letter-spacing:-.035em;margin:0}
 .hero p{margin:10px 0 0;color:var(--muted)}
 #version{font-size:13px;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
-.banner{border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-size:14px}
+.banner{border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;font-size:14px}
 .banner.error{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 40%,transparent)}
 .banner .btn{margin-inline-start:auto}
 
@@ -52,27 +54,28 @@ main{max-width:var(--col);margin:0 auto;padding:0 var(--gutter)}
 .strip-note span:empty{display:none}
 
 /* segmented control (style, icon size) */
-.seg{display:inline-flex;flex-wrap:wrap;padding:3px;border-radius:999px;background:var(--tint-2);gap:2px}
+.seg{display:inline-flex;flex-wrap:wrap;padding:3px;border-radius:999px;border:1px solid var(--line);gap:2px}
 .seg button{border:0;background:none;border-radius:999px;padding:5px 14px;cursor:pointer;font-size:13px;color:var(--muted);transition:background-color .15s ease,color .15s ease}
 .seg button:hover:not(:disabled):not([aria-checked="true"]){color:var(--ink)}
-.seg button[aria-checked="true"]{background:var(--raised);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08),0 0 0 1px var(--line-soft)}
-.seg button.is-dirty[aria-checked="true"]{box-shadow:0 1px 2px rgba(0,0,0,.08),0 0 0 1.5px var(--dirty)}
+.seg button[aria-checked="true"]{background:var(--tint-2);color:var(--ink)}
+.seg button.is-dirty[aria-checked="true"]{box-shadow:inset 0 0 0 1.5px var(--dirty)}
 .seg button:disabled{opacity:.6}
 
 /* search is the page's main tool, so it stays put while the list scrolls */
 .top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--page) 90%,transparent);backdrop-filter:saturate(1.4) blur(14px);margin:28px calc(var(--gutter) * -1) 0;padding:12px var(--gutter);border-bottom:1px solid transparent;transition:border-color .2s ease}
 .top.scrolled{border-bottom-color:var(--line-soft)}
 .tools{display:flex;gap:10px}
-.search{flex:1;min-width:0;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:0 18px;background:var(--raised);transition:border-color .15s ease}
+.search{flex:1;min-width:0;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:0 18px;background:none;transition:border-color .15s ease}
 .search svg{width:16px;height:16px;fill:none;stroke:var(--muted);stroke-width:2;flex:none}
 .search input{flex:1;min-width:0;border:0;background:none;outline:0;padding:11px 0;font-size:15px}
 .search input::-webkit-search-cancel-button{cursor:pointer}
 .search input::placeholder{color:var(--faint)}
 .search kbd{font:12px/1 var(--sans);color:var(--faint);border:1px solid var(--line);border-radius:6px;padding:3px 6px}
+.search:hover,select:hover{background-color:var(--tint)}
 .search:focus-within{border-color:var(--muted)}
 .search:focus-within kbd{display:none}
 /* own chevron: the native one hugs the edge and ignores padding */
-select{flex:none;appearance:none;border:1px solid var(--line);background:var(--raised) var(--chevron) no-repeat right 16px center/12px 12px;border-radius:999px;padding:0 40px 0 18px;min-height:44px;cursor:pointer}
+select{flex:none;appearance:none;border:1px solid var(--line);background:var(--chevron) no-repeat right 16px center/12px 12px;border-radius:999px;padding:0 40px 0 18px;min-height:44px;cursor:pointer}
 select:focus-visible{outline:0;border-color:var(--muted)}
 
 /* sections: serif title, hairline-ruled content */

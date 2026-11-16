@@ -38,7 +38,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/squarespace.png",
-        "sourceUrl": "https://images.squarespace-cdn.com/content/5134cbefe4b0c6fb04df8065/1541453017272-VW5DX9K6F21C7VZZTZYR/sqsp-favicon.ico?content-type=image%2Fx-icon"
+        "sourceUrl": "https://images.squarespace-cdn.com/content/5134cbefe4b0c6fb04df8065/1541453017272-VW5DX9K6F21C7VZZTZYR/sqsp-favicon.ico?content-type=image%2Fx-icon",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/squarespace.png"
@@ -62,7 +63,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/adobe.png",
-        "sourceUrl": "https://www.adobe.com/favicon.ico"
+        "sourceUrl": "https://www.adobe.com/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/adobe.png",
@@ -82,7 +84,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/copilot.png",
-        "sourceUrl": "https://copilot.microsoft.com/favicon.ico"
+        "sourceUrl": "https://copilot.microsoft.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/copilot.png"
@@ -127,7 +130,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/teams.png",
-        "sourceUrl": "https://teams.public.onecdn.static.microsoft/evergreen-assets/icons/microsoft_teams_logo_refresh_v2025.ico"
+        "sourceUrl": "https://teams.public.onecdn.static.microsoft/evergreen-assets/icons/microsoft_teams_logo_refresh_v2025.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/teams.png"
@@ -151,7 +155,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/kling.png",
-        "sourceUrl": "https://p4-kling.klingai.com/kcdn/cdn-kcdn112452/kling-homepage-aio/favicon.ico"
+        "sourceUrl": "https://p4-kling.klingai.com/kcdn/cdn-kcdn112452/kling-homepage-aio/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/kling.png"
@@ -176,7 +181,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/microsoft365.png",
-        "sourceUrl": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/favicon-copilot-brand-refresh-23392c1f66.ico"
+        "sourceUrl": "https://res.cdn.office.net/officehub/images/content/images/unauth-copilotcom/favicon-copilot-brand-refresh-23392c1f66.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/microsoft365.png",
@@ -195,7 +201,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/jimeng.png",
-        "sourceUrl": "https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico"
+        "sourceUrl": "https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/jimeng.png"
@@ -216,7 +223,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/yuanbao.png",
-        "sourceUrl": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon_new@32.png"
+        "sourceUrl": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon_new@32.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/yuanbao.png"
@@ -239,7 +247,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/aistudio.png",
-        "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/ai_studio/v1/web-32dp/logo_ai_studio_color_1x_web_32dp.png"
+        "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/ai_studio/v1/web-32dp/logo_ai_studio_color_1x_web_32dp.png",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/aistudio.png",
@@ -259,7 +268,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-calendar.png",
-        "sourceUrl": "https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_14.ico"
+        "sourceUrl": "https://calendar.google.com/googlecalendar/images/favicons_2020q4/calendar_14.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/google-calendar.png"
@@ -283,7 +293,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/proton-mail.png",
-        "sourceUrl": "https://mail.proton.me/assets/favicon.ico"
+        "sourceUrl": "https://mail.proton.me/assets/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/proton-mail.png"
@@ -309,7 +320,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/photoshop.png",
-        "sourceUrl": "https://photoshop.adobe.com/favicon-32x32.png"
+        "sourceUrl": "https://photoshop.adobe.com/favicon-32x32.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/photoshop.png"
@@ -331,7 +343,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/firebase.png",
-        "sourceUrl": "https://www.gstatic.com/devrel-devsite/prod/v579d635a54d6e1f40caad46ce407560c5106c8915e5ff7e6341f5b13eb245c5a/firebase/images/favicon.png"
+        "sourceUrl": "https://www.gstatic.com/devrel-devsite/prod/v579d635a54d6e1f40caad46ce407560c5106c8915e5ff7e6341f5b13eb245c5a/firebase/images/favicon.png",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/firebase.png",
@@ -373,7 +386,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/steam.png",
-        "sourceUrl": "https://store.steampowered.com/favicon.ico"
+        "sourceUrl": "https://store.steampowered.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/steam.png"
@@ -423,7 +437,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/qwen.png",
-        "sourceUrl": "https://img.alicdn.com/imgextra/i4/O1CN01OXv3EM1FN8t9W4P79_!!6000000000474-2-tps-80-80.png"
+        "sourceUrl": "https://img.alicdn.com/imgextra/i4/O1CN01OXv3EM1FN8t9W4P79_!!6000000000474-2-tps-80-80.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/qwen.png"
@@ -449,7 +464,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/firefly.png",
-        "sourceUrl": "https://firefly.adobe.com/releases/7a639869dfadbea6ab620756a9ca5f6eb768ec0a/assets/fi_favicon_32-Mz96Nj_h.png"
+        "sourceUrl": "https://firefly.adobe.com/releases/7a639869dfadbea6ab620756a9ca5f6eb768ec0a/assets/fi_favicon_32-Mz96Nj_h.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/firefly.png",
@@ -468,7 +484,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-photos.png",
-        "sourceUrl": "https://www.gstatic.com/social/photosui/images/logo/2025/favicon_alldp.ico"
+        "sourceUrl": "https://www.gstatic.com/social/photosui/images/logo/2025/favicon_alldp.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/google-photos.png"
@@ -495,7 +512,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/wordpress.png",
-        "sourceUrl": "https://s1.wp.com/i/favicon.ico?v=1713425267"
+        "sourceUrl": "https://s1.wp.com/i/favicon.ico?v=1713425267",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/wordpress.png"
@@ -521,7 +539,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/stackoverflow.png",
-        "sourceUrl": "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+        "sourceUrl": "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/stackoverflow.png",
@@ -559,7 +578,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/kimi.png",
-        "sourceUrl": "https://www.kimi.com/favicon.ico"
+        "sourceUrl": "https://www.kimi.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/kimi.png"
@@ -585,7 +605,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-drive.png",
-        "sourceUrl": "https://ssl.gstatic.com/images/branding/productlogos/drive_2026/v2/ico/drive_2026_32dp.ico"
+        "sourceUrl": "https://ssl.gstatic.com/images/branding/productlogos/drive_2026/v2/ico/drive_2026_32dp.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/google-drive.png"
@@ -608,7 +629,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-fonts.png",
-        "sourceUrl": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg"
+        "sourceUrl": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/google-fonts.png",
@@ -628,7 +650,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/googlecloud.png",
-        "sourceUrl": "https://www.gstatic.com/cgc/supercloud_favicon.ico"
+        "sourceUrl": "https://www.gstatic.com/cgc/supercloud_favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/googlecloud.png"
@@ -651,7 +674,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/digitalocean.png",
-        "sourceUrl": "https://www.digitalocean.com/_do-www-marketing/9221ebb1/_next/static/media/favicon.00b9c167.ico"
+        "sourceUrl": "https://www.digitalocean.com/_do-www-marketing/9221ebb1/_next/static/media/favicon.00b9c167.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/digitalocean.png",
@@ -674,7 +698,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-sheets.png",
-        "sourceUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico"
+        "sourceUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/google-sheets.png"
@@ -700,7 +725,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-slides.png",
-        "sourceUrl": "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico"
+        "sourceUrl": "https://ssl.gstatic.com/docs/presentations/images/favicon5.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/google-slides.png"
@@ -726,7 +752,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-docs.png",
-        "sourceUrl": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+        "sourceUrl": "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/google-docs.png"
@@ -749,7 +776,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/gmail.png",
-        "sourceUrl": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+        "sourceUrl": "https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/gmail.png"
@@ -771,7 +799,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/chatgpt.png",
-        "sourceUrl": "https://chatgpt.com/unauth-mweb/favicon.ico"
+        "sourceUrl": "https://chatgpt.com/unauth-mweb/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/chatgpt.png"
@@ -817,7 +846,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-meet.png",
-        "sourceUrl": "https://www.gstatic.com/meet/icons/favicon-2026-v2.png"
+        "sourceUrl": "https://www.gstatic.com/meet/icons/favicon-2026-v2.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/google-meet.png"
@@ -840,7 +870,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/google-keep.png",
-        "sourceUrl": "https://www.gstatic.com/keep/icon_2020q4v2_128.png"
+        "sourceUrl": "https://www.gstatic.com/keep/icon_2020q4v2_128.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/google-keep.png"
@@ -863,7 +894,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/proton-drive.png",
-        "sourceUrl": "https://drive.proton.me/assets/favicon.ico"
+        "sourceUrl": "https://drive.proton.me/assets/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/proton-drive.png"
@@ -887,7 +919,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/xiaohongshu.png",
-        "sourceUrl": "https://fe-video-qc.xhscdn.com/fe-platform/ed8fe781ce9e16c1bfac2cd962f0721edabe2e49.ico"
+        "sourceUrl": "https://fe-video-qc.xhscdn.com/fe-platform/ed8fe781ce9e16c1bfac2cd962f0721edabe2e49.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/xiaohongshu.png"
@@ -910,7 +943,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/applemusic.png",
-        "sourceUrl": "https://music.apple.com/favicon.ico"
+        "sourceUrl": "https://music.apple.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/applemusic.png"
@@ -936,7 +970,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/tripadvisor.png",
-        "sourceUrl": "https://www.tripadvisor.com/favicon.ico"
+        "sourceUrl": "https://www.tripadvisor.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/tripadvisor.png"
@@ -960,7 +995,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/hailuo.png",
-        "sourceUrl": "https://hailuoai.com/favicon.ico"
+        "sourceUrl": "https://hailuoai.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/hailuo.png"
@@ -1000,7 +1036,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/huggingface.png",
-        "sourceUrl": "https://huggingface.co/favicon.ico"
+        "sourceUrl": "https://huggingface.co/favicon.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/huggingface.png",
@@ -1020,7 +1057,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/artstation.png",
-        "sourceUrl": "https://www.artstation.com/favicon.ico"
+        "sourceUrl": "https://www.artstation.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/artstation.png"
@@ -1043,7 +1081,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/cloudflare.png",
-        "sourceUrl": "https://www.cloudflare.com/favicon.ico"
+        "sourceUrl": "https://www.cloudflare.com/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/cloudflare.png",
@@ -1063,7 +1102,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/aws.png",
-        "sourceUrl": "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico"
+        "sourceUrl": "https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/aws.png"
@@ -1103,7 +1143,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/soundcloud.png",
-        "sourceUrl": "https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-c93ce58b59.ico"
+        "sourceUrl": "https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-c93ce58b59.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/soundcloud.png"
@@ -1126,7 +1167,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/instagram.png",
-        "sourceUrl": "https://static.cdninstagram.com/rsrc.php/yw/r/icwX0xAk0pz.webp"
+        "sourceUrl": "https://static.cdninstagram.com/rsrc.php/yw/r/icwX0xAk0pz.webp",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/instagram.png"
@@ -1147,7 +1189,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/perplexity.png",
-        "sourceUrl": "https://www.perplexity.ai/favicon.ico"
+        "sourceUrl": "https://www.perplexity.ai/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/perplexity.png"
@@ -1170,7 +1213,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/elevenlabs.png",
-        "sourceUrl": "https://elevenlabs.io/favicon.ico"
+        "sourceUrl": "https://elevenlabs.io/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/elevenlabs.png",
@@ -1190,7 +1234,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/replicate.png",
-        "sourceUrl": "https://static.replicateassets.com/fe/ad7fe3a706abfe81d42a93a7659b4395ee36d386/favicon-CKiqAkf2.png"
+        "sourceUrl": "https://static.replicateassets.com/fe/ad7fe3a706abfe81d42a93a7659b4395ee36d386/favicon-CKiqAkf2.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/replicate.png",
@@ -1230,7 +1275,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/bitbucket.png",
-        "sourceUrl": "https://bitbucket.org/favicon.ico"
+        "sourceUrl": "https://bitbucket.org/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/bitbucket.png",
@@ -1251,7 +1297,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/wechat.png",
-        "sourceUrl": "https://newres.wechat.com/t/fed_upload/25d133b0-63d9-4102-857c-5cc84c752232/NTI4MWU5.ico"
+        "sourceUrl": "https://newres.wechat.com/t/fed_upload/25d133b0-63d9-4102-857c-5cc84c752232/NTI4MWU5.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/wechat.png"
@@ -1277,7 +1324,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/wikipedia.png",
-        "sourceUrl": "https://www.wikipedia.org/static/favicon/wikipedia.ico"
+        "sourceUrl": "https://www.wikipedia.org/static/favicon/wikipedia.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/wikipedia.png"
@@ -1317,7 +1365,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/bilibili.png",
-        "sourceUrl": "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico"
+        "sourceUrl": "https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/bilibili.png"
@@ -1341,7 +1390,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/deepseek.png",
-        "sourceUrl": "https://www.deepseek.com/favicon.ico"
+        "sourceUrl": "https://www.deepseek.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/deepseek.png"
@@ -1365,7 +1415,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/minimax.png",
-        "sourceUrl": "https://www.minimax.io/favicon.ico"
+        "sourceUrl": "https://www.minimax.io/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/minimax.png",
@@ -1405,7 +1456,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/stability.png",
-        "sourceUrl": "https://images.squarespace-cdn.com/content/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/Favicon_small.png?format=100w&content-type=image%2Fpng"
+        "sourceUrl": "https://images.squarespace-cdn.com/content/6213c340453c3f502425776e/804f0e8b-0028-4262-a8b0-b9f1c5de72c0/Favicon_small.png?format=100w&content-type=image%2Fpng",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/stability.png",
@@ -1425,7 +1477,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/windsurf.png",
-        "sourceUrl": "https://windsurf.com/favicon.ico"
+        "sourceUrl": "https://windsurf.com/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/windsurf.png",
@@ -1445,7 +1498,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/airtable.png",
-        "sourceUrl": "https://www.airtable.com/favicon.ico"
+        "sourceUrl": "https://www.airtable.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/airtable.png"
@@ -1468,7 +1522,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/evernote.png",
-        "sourceUrl": "https://evernote.com/images/evernote-logo-icon.svg"
+        "sourceUrl": "https://evernote.com/images/evernote-logo-icon.svg",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/evernote.png"
@@ -1494,7 +1549,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/typeform.png",
-        "sourceUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/68b6f02860110a77834d228b_favicon.ico"
+        "sourceUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/68b6f02860110a77834d228b_favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/typeform.png",
@@ -1530,7 +1586,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/unsplash.png",
-        "sourceUrl": "https://unsplash.com/favicon.ico"
+        "sourceUrl": "https://unsplash.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/unsplash.png"
@@ -1574,7 +1631,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/telegram.png",
-        "sourceUrl": "https://telegram.org/img/favicon-32x32.png"
+        "sourceUrl": "https://telegram.org/img/favicon-32x32.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/telegram.png"
@@ -1600,7 +1658,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/linkedin.png",
-        "sourceUrl": "https://www.linkedin.com/favicon.ico"
+        "sourceUrl": "https://www.linkedin.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/linkedin.png"
@@ -1623,7 +1682,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/facebook.png",
-        "sourceUrl": "https://facebook.com/favicon.ico"
+        "sourceUrl": "https://facebook.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/facebook.png"
@@ -1666,7 +1726,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/dingtalk.png",
-        "sourceUrl": "https://gw.alicdn.com/imgextra/i3/O1CN014ZbI6ZTEhdC0ttN2_!!6000000003783-2-tps-444-444.png"
+        "sourceUrl": "https://gw.alicdn.com/imgextra/i3/O1CN014ZbI6ZTEhdC0ttN2_!!6000000003783-2-tps-444-444.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/dingtalk.png"
@@ -1691,7 +1752,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/jianying.png",
-        "sourceUrl": "https://lf3-s.vlabstatic.com/obj/vilab-static/ies/ulike/web/resource/fe_official/assets/imgs/lv/favicon.ico"
+        "sourceUrl": "https://lf3-s.vlabstatic.com/obj/vilab-static/ies/ulike/web/resource/fe_official/assets/imgs/lv/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/jianying.png"
@@ -1717,7 +1779,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/x.png",
-        "sourceUrl": "https://x.com/favicon.ico"
+        "sourceUrl": "https://x.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/x.png"
@@ -1739,7 +1802,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/youtube.png",
-        "sourceUrl": "https://www.youtube.com/s/desktop/bb2198ae/img/favicon_144x144.png"
+        "sourceUrl": "https://www.youtube.com/s/desktop/bb2198ae/img/favicon_144x144.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/youtube.png"
@@ -1760,7 +1824,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/luma.png",
-        "sourceUrl": "https://lumalabs.ai/favicons/favicon-black.ico"
+        "sourceUrl": "https://lumalabs.ai/favicons/favicon-black.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/luma.png",
@@ -1780,7 +1845,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/ideogram.png",
-        "sourceUrl": "https://ideogram.ai/favicon.png?v=new-brand-20261020"
+        "sourceUrl": "https://ideogram.ai/favicon.png?v=new-brand-20261020",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/ideogram.png",
@@ -1802,7 +1868,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/vidu.png",
-        "sourceUrl": "https://www.vidu.com/logo.svg"
+        "sourceUrl": "https://www.vidu.com/logo.svg",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/vidu.png",
@@ -1823,7 +1890,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/comfyui.png",
-        "sourceUrl": "https://comfy.org/favicon-96x96.png"
+        "sourceUrl": "https://comfy.org/favicon-96x96.png",
+        "fill": true
       },
       "mac": {
         "path": "icons/mac/comfyui.png"
@@ -1846,7 +1914,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/civitai.png",
-        "sourceUrl": "https://civitai.com/favicon.ico"
+        "sourceUrl": "https://civitai.com/favicon.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/civitai.png",
@@ -1866,7 +1935,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/lmstudio.png",
-        "sourceUrl": "https://lmstudio.ai/assets/marketing/logo-192x192.png"
+        "sourceUrl": "https://lmstudio.ai/assets/marketing/logo-192x192.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/lmstudio.png",
@@ -1886,7 +1956,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/dropbox.png",
-        "sourceUrl": "https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon.ico"
+        "sourceUrl": "https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/dropbox.png"
@@ -1909,7 +1980,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/obsidian.png",
-        "sourceUrl": "https://obsidian.md/favicon.ico"
+        "sourceUrl": "https://obsidian.md/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/obsidian.png"
@@ -1932,7 +2004,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/todoist.png",
-        "sourceUrl": "https://www.todoist.com/favicon.ico"
+        "sourceUrl": "https://www.todoist.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/todoist.png"
@@ -1958,7 +2031,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/clickup.png",
-        "sourceUrl": "https://clickup.com/favicon.ico"
+        "sourceUrl": "https://clickup.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/clickup.png"
@@ -2001,7 +2075,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/webflow.png",
-        "sourceUrl": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/686d53ceda66a40cb6b6d546_favicon.png"
+        "sourceUrl": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/686d53ceda66a40cb6b6d546_favicon.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/webflow.png",
@@ -2021,7 +2096,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/pixabay.png",
-        "sourceUrl": "https://www.pixabay.com/favicon.ico"
+        "sourceUrl": "https://www.pixabay.com/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/pixabay.png",
@@ -2041,7 +2117,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/freepik.png",
-        "sourceUrl": "https://media.magnific.com/magnific-favicons/favicon.ico"
+        "sourceUrl": "https://media.magnific.com/magnific-favicons/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/freepik.png",
@@ -2061,7 +2138,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/netlify.png",
-        "sourceUrl": "https://www.netlify.com/favicon/favicon.ico"
+        "sourceUrl": "https://www.netlify.com/favicon/favicon.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/netlify.png",
@@ -2081,7 +2159,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/railway.png",
-        "sourceUrl": "https://railway.com/favicon-32x32.png"
+        "sourceUrl": "https://railway.com/favicon-32x32.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/railway.png",
@@ -2101,7 +2180,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/discord.png",
-        "sourceUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png"
+        "sourceUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/discord.png"
@@ -2124,7 +2204,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/netflix.png",
-        "sourceUrl": "https://www.netflix.com/favicon.ico"
+        "sourceUrl": "https://www.netflix.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/netflix.png"
@@ -2147,7 +2228,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/spotify.png",
-        "sourceUrl": "https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png"
+        "sourceUrl": "https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/spotify.png"
@@ -2170,7 +2252,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/booking.png",
-        "sourceUrl": "https://cf.bstatic.com/favicon.ico"
+        "sourceUrl": "https://cf.bstatic.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/booking.png"
@@ -2192,7 +2275,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/tencent-docs.png",
-        "sourceUrl": "https://docs.idqqimg.com/tim/docs/desktop/favicon.ico"
+        "sourceUrl": "https://docs.idqqimg.com/tim/docs/desktop/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/tencent-docs.png"
@@ -2214,7 +2298,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/douyin.png",
-        "sourceUrl": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico"
+        "sourceUrl": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/douyin.png"
@@ -2238,7 +2323,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/doubao.png",
-        "sourceUrl": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/new-doubao/64x64.png"
+        "sourceUrl": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/favicon/new-doubao/64x64.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/doubao.png"
@@ -2264,7 +2350,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/recraft.png",
-        "sourceUrl": "https://www.recraft.ai/apps/icon.png"
+        "sourceUrl": "https://www.recraft.ai/apps/icon.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/recraft.png",
@@ -2284,7 +2371,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/tripo.png",
-        "sourceUrl": "https://www.tripo3d.ai/favicon.ico"
+        "sourceUrl": "https://www.tripo3d.ai/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/tripo.png",
@@ -2305,7 +2393,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/cursor.png",
-        "sourceUrl": "https://cursor.com/marketing-static/icon-192x192-light.png"
+        "sourceUrl": "https://cursor.com/marketing-static/icon-192x192-light.png",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/cursor.png",
@@ -2326,7 +2415,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/notion.png",
-        "sourceUrl": "https://www.notion.com/front-static/favicon.ico"
+        "sourceUrl": "https://www.notion.com/front-static/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/notion.png"
@@ -2352,7 +2442,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/trello.png",
-        "sourceUrl": "https://trello.com/favicon.ico"
+        "sourceUrl": "https://trello.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/trello.png"
@@ -2378,7 +2469,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/linear.png",
-        "sourceUrl": "https://linear.app/favicon.ico"
+        "sourceUrl": "https://linear.app/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/linear.png"
@@ -2418,7 +2510,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/sketch.png",
-        "sourceUrl": "https://www.sketch.com/images/metadata/icon-32.png"
+        "sourceUrl": "https://www.sketch.com/images/metadata/icon-32.png",
+        "fill": false
       },
       "mac": {
         "path": "icons/mac/sketch.png"
@@ -2461,7 +2554,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/github.png",
-        "sourceUrl": "https://github.githubassets.com/favicons/favicon.svg"
+        "sourceUrl": "https://github.githubassets.com/favicons/favicon.svg",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/github.png"
@@ -2487,7 +2581,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/gitlab.png",
-        "sourceUrl": "https://about.gitlab.com/images/ico/favicon-32x32.png"
+        "sourceUrl": "https://about.gitlab.com/images/ico/favicon-32x32.png",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/gitlab.png",
@@ -2507,7 +2602,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/vercel.png",
-        "sourceUrl": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico"
+        "sourceUrl": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/vercel.png",
@@ -2527,7 +2623,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/docker.png",
-        "sourceUrl": "https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-32x32.png"
+        "sourceUrl": "https://www.docker.com/app/uploads/2024/02/cropped-docker-logo-favicon-32x32.png",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/docker.png",
@@ -2601,7 +2698,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/reddit.png",
-        "sourceUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png"
+        "sourceUrl": "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/reddit.png"
@@ -2624,7 +2722,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/douban.png",
-        "sourceUrl": "https://www.douban.com/favicon.ico"
+        "sourceUrl": "https://www.douban.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/douban.png"
@@ -2647,7 +2746,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/taobao.png",
-        "sourceUrl": "https://gw.alicdn.com/imgextra/i4/O1CN01qOI6vB1zaqrBKbyFr_!!6000000006731-73-tps-64-64.ico"
+        "sourceUrl": "https://gw.alicdn.com/imgextra/i4/O1CN01qOI6vB1zaqrBKbyFr_!!6000000006731-73-tps-64-64.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/taobao.png"
@@ -2670,7 +2770,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/alipay.png",
-        "sourceUrl": "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico"
+        "sourceUrl": "https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/alipay.png"
@@ -2693,7 +2794,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/paypal.png",
-        "sourceUrl": "https://www.paypal.com/favicon.ico"
+        "sourceUrl": "https://www.paypal.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/paypal.png"
@@ -2718,7 +2820,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/ebay.png",
-        "sourceUrl": "https://www.ebay.com/favicon.ico"
+        "sourceUrl": "https://www.ebay.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/ebay.png"
@@ -2742,7 +2845,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/airbnb.png",
-        "sourceUrl": "https://www.airbnb.com/favicon.ico"
+        "sourceUrl": "https://www.airbnb.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/airbnb.png"
@@ -2765,7 +2869,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/capcut.png",
-        "sourceUrl": "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/common/images/lv_web-2.ico"
+        "sourceUrl": "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/common/images/lv_web-2.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/capcut.png"
@@ -2788,7 +2893,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/libtv.png",
-        "sourceUrl": "https://www.liblib.tv/favicon.ico"
+        "sourceUrl": "https://www.liblib.tv/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/libtv.png"
@@ -2806,7 +2912,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/claude.png",
-        "sourceUrl": "https://claude.ai/favicon.ico"
+        "sourceUrl": "https://claude.ai/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/claude.png"
@@ -2832,7 +2939,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/slack.png",
-        "sourceUrl": "https://a.slack-edge.com/9cc0056/img/icons/favicon-32.png"
+        "sourceUrl": "https://a.slack-edge.com/9cc0056/img/icons/favicon-32.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/slack.png"
@@ -2858,7 +2966,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/asana.png",
-        "sourceUrl": "https://asana.com/favicon.ico"
+        "sourceUrl": "https://asana.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/asana.png"
@@ -2881,7 +2990,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/figma.png",
-        "sourceUrl": "https://www.figma.com/favicon.ico"
+        "sourceUrl": "https://www.figma.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/figma.png"
@@ -2925,7 +3035,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/weibo.png",
-        "sourceUrl": "https://weibo.com/favicon.ico"
+        "sourceUrl": "https://weibo.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/weibo.png"
@@ -2948,7 +3059,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/zhihu.png",
-        "sourceUrl": "https://static.zhihu.com/heifetz/favicon.ico"
+        "sourceUrl": "https://static.zhihu.com/heifetz/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/zhihu.png"
@@ -2971,7 +3083,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/quora.png",
-        "sourceUrl": "https://www.quora.com/favicon.ico"
+        "sourceUrl": "https://www.quora.com/favicon.ico",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/quora.png"
@@ -2994,7 +3107,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/twitch.png",
-        "sourceUrl": "https://assets.twitch.tv/assets/favicon-32-5c61aa63605bca4f740d.png"
+        "sourceUrl": "https://assets.twitch.tv/assets/favicon-32-5c61aa63605bca4f740d.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/twitch.png"
@@ -3017,7 +3131,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/vimeo.png",
-        "sourceUrl": "https://vimeo.com/favicon.ico"
+        "sourceUrl": "https://vimeo.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/vimeo.png"
@@ -3040,7 +3155,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/feishu.png",
-        "sourceUrl": "https://www.feishu.cn/favicon.ico"
+        "sourceUrl": "https://www.feishu.cn/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/feishu.png"
@@ -3066,7 +3182,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/canva.png",
-        "sourceUrl": "https://static.canva.com/domain-assets/canva/static/images/android-192x192-2.png"
+        "sourceUrl": "https://static.canva.com/domain-assets/canva/static/images/android-192x192-2.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/canva.png"
@@ -3108,7 +3225,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/manus.png",
-        "sourceUrl": "https://manus.im/favicon.ico?favicon.0xxlzaf8ul9ey.ico"
+        "sourceUrl": "https://manus.im/favicon.ico?favicon.0xxlzaf8ul9ey.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/manus.png"
@@ -3131,7 +3249,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/pika.png",
-        "sourceUrl": "https://pika.art/favicon.ico?favicon.03qzqgaru0by8.ico"
+        "sourceUrl": "https://pika.art/favicon.ico?favicon.03qzqgaru0by8.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/pika.png",
@@ -3152,7 +3271,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/suno.png",
-        "sourceUrl": "https://cdn-o.suno.com/favicon-192x192.png"
+        "sourceUrl": "https://cdn-o.suno.com/favicon-192x192.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/suno.png"
@@ -3175,7 +3295,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/udio.png",
-        "sourceUrl": "https://www.udio.com/favicon.ico"
+        "sourceUrl": "https://www.udio.com/favicon.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/udio.png",
@@ -3195,7 +3316,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/meshy.png",
-        "sourceUrl": "https://www.meshy.ai:443/favicon.ico"
+        "sourceUrl": "https://www.meshy.ai:443/favicon.ico",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/meshy.png",
@@ -3233,7 +3355,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/zoom.png",
-        "sourceUrl": "https://st1.zoom.us/homepage/20261112-1031/primary/favicon.ico"
+        "sourceUrl": "https://st1.zoom.us/homepage/20261112-1031/primary/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/zoom.png"
@@ -3256,7 +3379,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/miro.png",
-        "sourceUrl": "https://miro.com/favicon.ico"
+        "sourceUrl": "https://miro.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/miro.png"
@@ -3279,7 +3403,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/imdb.png",
-        "sourceUrl": "https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png"
+        "sourceUrl": "https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/imdb.png"
@@ -3321,7 +3446,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/poe.png",
-        "sourceUrl": "https://poe.com/favicon.ico"
+        "sourceUrl": "https://poe.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/poe.png"
@@ -3344,7 +3470,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/dify.png",
-        "sourceUrl": "https://dify.ai/favicon.svg"
+        "sourceUrl": "https://dify.ai/favicon.svg",
+        "fill": true
       },
       "optimized": {
         "path": "icons/optimized/dify.png",
@@ -3364,7 +3491,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/coda.png",
-        "sourceUrl": "https://cdn.coda.io/icons/png/color/coda-32.png"
+        "sourceUrl": "https://cdn.coda.io/icons/png/color/coda-32.png",
+        "fill": false
       },
       "iphone": {
         "path": "icons/iphone/coda.png"
@@ -3387,7 +3515,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/wix.png",
-        "sourceUrl": "https://www.wix.com/favicon.ico"
+        "sourceUrl": "https://www.wix.com/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/wix.png"
@@ -3411,7 +3540,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/wps.png",
-        "sourceUrl": "https://www.wps.cn/favicon.ico"
+        "sourceUrl": "https://www.wps.cn/favicon.ico",
+        "fill": true
       },
       "iphone": {
         "path": "icons/iphone/wps.png"
@@ -3436,7 +3566,8 @@ const ICON_LIBRARY=Object.freeze([
     "variants": {
       "original": {
         "preview": "icons/original/fal.png",
-        "sourceUrl": "https://fal.ai/favicon.ico"
+        "sourceUrl": "https://fal.ai/favicon.ico",
+        "fill": false
       },
       "optimized": {
         "path": "icons/optimized/fal.png",

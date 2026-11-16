@@ -43,6 +43,7 @@ function svgIcon(viewBox,attrs,inner){
 function globe(){return svgIcon('0 0 24 24',{fill:'none',stroke:'currentColor','stroke-width':'1.5'},'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/>')}
 function frame(e,v,size){
   const f=el('span',`frame s${size} ${v}`),path=assetPath(e,v);
+  if(v==='original'&&e.variants?.original?.fill)f.classList.add('fill');
   if(!path){f.append(globe());return f}
   const img=document.createElement('img');img.alt='';img.decoding='async';img.src=path;
   img.addEventListener('error',()=>img.replaceWith(globe()),{once:true});

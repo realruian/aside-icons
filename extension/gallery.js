@@ -142,7 +142,7 @@ function banner(text,{error=false,action=null,label=''}={}){
   b.hidden=false;b.classList.toggle('error',error);b.replaceChildren(document.createTextNode(text));
   if(action){const btn=document.createElement('button');btn.type='button';btn.className='btn';btn.textContent=label;btn.addEventListener('click',action);b.append(btn)}
 }
-function showToast(m,error=false){clearTimeout(toastTimer);const t=$('#toast');t.textContent=m;t.classList.toggle('error',error);t.hidden=false;toastTimer=setTimeout(()=>{t.hidden=true},5000)}
+function showToast(m,error=false){clearTimeout(toastTimer);const t=$('#toast');t.classList.add('show');t.classList.toggle('error',error);t.textContent=m;toastTimer=setTimeout(()=>t.classList.remove('show'),5000)}
 async function request(type,extra={}){
   const r=await chrome.runtime.sendMessage({target:'worker',type,...extra});
   if(!r||r.error)throw Error(r?.error||'暂时无法连接扩展');return r;

@@ -7,6 +7,7 @@
   --ink:#1d1d1f;--muted:#6a6a6f;--faint:#c7c7cc;
   --accent:#0a84ff;--accent-ink:#0066cc;--on-accent:#fff;--dirty:#c96a00;--danger:#d70015;
   --frame-bg:#fff;--frame-line:rgba(0,0,0,.1);--knob:#fff;
+  --ease-out:cubic-bezier(.23,1,.32,1);
   --col:780px;--gutter:20px;--cols:repeat(4,96px);
 }
 @media(prefers-color-scheme:dark){:root{
@@ -65,7 +66,7 @@ section:first-of-type{margin-top:16px}
 .mark.is-dirty::after{content:"";position:absolute;top:-3px;inset-inline-end:-3px;width:8px;height:8px;border-radius:50%;background:var(--dirty);box-shadow:0 0 0 2px var(--panel)}
 
 /* the one selection mark */
-.dot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--faint);flex:none;transition:border-width .12s,border-color .12s}
+.dot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--faint);flex:none;transition:border-width .12s ease,border-color .12s ease}
 [aria-checked="true"] .dot{border:5.5px solid var(--accent)}
 [aria-checked="true"].is-dirty .dot{border-color:var(--dirty)}
 :disabled .dot{opacity:.6}
@@ -103,8 +104,8 @@ mark{background:color-mix(in srgb,var(--accent) 22%,transparent);color:inherit;b
 .btn.primary{background:var(--accent);color:var(--on-accent);font-weight:600;padding:6px 20px}
 .btn.primary:hover:not(:disabled){background:var(--accent);filter:brightness(1.07)}
 .btn.primary:disabled{background:var(--fill);color:var(--muted);opacity:1}
-.switch{position:relative;width:42px;height:26px;border-radius:13px;border:0;background:var(--fill-hover);padding:0;cursor:pointer;flex:none;transition:background .18s}
-.switch::after{content:"";position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;background:var(--knob);box-shadow:0 2px 4px rgba(0,0,0,.2);transition:transform .18s ease-out}
+.switch{position:relative;width:42px;height:26px;border-radius:13px;border:0;background:var(--fill-hover);padding:0;cursor:pointer;flex:none;transition:background-color .18s ease}
+.switch::after{content:"";position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;background:var(--knob);box-shadow:0 2px 4px rgba(0,0,0,.2);transition:transform .18s var(--ease-out)}
 .switch[aria-checked="true"]{background:var(--accent)}.switch[aria-checked="true"]::after{transform:translateX(16px)}
 .switch:disabled{opacity:.5}
 .tools{display:flex;gap:8px}
@@ -128,10 +129,13 @@ select{border:0;background:var(--panel);border-radius:10px;padding:0 14px;cursor
 #bar-text{flex:1 1 10em;min-width:0;color:var(--muted);font-size:13px;display:flex;align-items:center;gap:8px}
 .savebar.is-dirty #bar-text{color:var(--ink)}
 .savebar.is-dirty #bar-text::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--dirty);flex:none}
-#toast{position:fixed;left:50%;bottom:calc(var(--bar-h,64px) + 12px);transform:translateX(-50%);background:var(--ink);color:var(--panel);border-radius:10px;padding:9px 16px;font-size:13px;max-width:calc(100% - 32px);z-index:7;box-shadow:0 6px 24px rgba(0,0,0,.2)}
+/* toast rises from the save bar and sinks back into it; a transition, so a second toast retargets instead of restarting */
+#toast{position:fixed;left:50%;bottom:calc(var(--bar-h,64px) + 12px);translate:-50% 0;opacity:0;transform:translateY(8px);visibility:hidden;transition:opacity .15s var(--ease-out),transform .15s var(--ease-out),visibility .15s;background:var(--ink);color:var(--panel);border-radius:10px;padding:9px 16px;font-size:13px;max-width:calc(100% - 32px);z-index:7;box-shadow:0 6px 24px rgba(0,0,0,.2)}
+#toast.show{opacity:1;transform:none;visibility:visible;transition-duration:.2s}
 #toast.error{background:var(--danger);color:#fff}
 
-@media(prefers-reduced-motion:reduce){.dot,.switch,.switch::after,.top{transition:none}}
+/* reduced motion: keep the fades and colour changes, drop anything that moves */
+@media(prefers-reduced-motion:reduce){.switch::after{transition:none}#toast{transform:none}}
 @media(max-width:600px){
   :root{--gutter:12px;--cols:repeat(4,64px)}
   .top-inner{padding-top:16px}

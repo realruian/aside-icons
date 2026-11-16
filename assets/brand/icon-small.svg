@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Small sizes (16, 32): full-bleed and pixel-aligned so the four tiles stay crisp in a tab. -->
+  <rect width="16" height="16" rx="3.5" fill="#141414"/>
+  <rect x="3" y="3" width="4" height="4" rx="1" fill="#f0923e"/>
+  <rect x="9" y="3" width="4" height="4" rx="1" fill="#fbfaf6"/>
+  <rect x="3" y="9" width="4" height="4" rx="1" fill="#fbfaf6"/>
+  <rect x="9" y="9" width="4" height="4" rx="1" fill="#fbfaf6"/>
+</svg>

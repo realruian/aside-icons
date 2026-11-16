@@ -2,7 +2,13 @@
   "manifest_version": 3,
   "name": "Aside 图标设置",
   "version": "1.2.14",
-  "description": "为每个网站选择原版、iPhone、Mac或优化版图标并调整大小，保存后固定页与普通网页一致。本地资源，不联网补库。",
+  "description": "为每个网站选择原版、iPhone、Mac或优化版图标，保存后固定页与普通网页一致。本地资源，不联网补库。",
+  "icons": {
+    "16": "brand/icon-16.png",
+    "32": "brand/icon-32.png",
+    "48": "brand/icon-48.png",
+    "128": "brand/icon-128.png"
+  },
   "permissions": [
     "tabs",
     "scripting",
@@ -16,6 +22,10 @@
     "service_worker": "background.js"
   },
   "action": {
+    "default_icon": {
+      "16": "brand/icon-16.png",
+      "32": "brand/icon-32.png"
+    },
     "default_popup": "popup.html",
     "default_title": "Aside 图标设置"
   },

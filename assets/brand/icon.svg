@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Large sizes (48, 128): Chrome expects ~16px of transparent padding around the artwork. -->
+  <rect x="8" y="8" width="112" height="112" rx="26" fill="#141414"/>
+  <rect x="30" y="30" width="30" height="30" rx="8" fill="#f0923e"/>
+  <rect x="68" y="30" width="30" height="30" rx="8" fill="#fbfaf6"/>
+  <rect x="30" y="68" width="30" height="30" rx="8" fill="#fbfaf6"/>
+  <rect x="68" y="68" width="30" height="30" rx="8" fill="#fbfaf6"/>
+</svg>

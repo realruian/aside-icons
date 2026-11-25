@@ -66,6 +66,15 @@ export const SPECS=[
   ['meshy','lobe:meshy-color.svg',W,.66],['sora','lobe:sora-color.svg',W,.66],['dify','lobe:dify-color.svg',W,.66],['fal','lobe:fal-color.svg',W,.66],
   ['tripadvisor','si:tripadvisor','#34E0A1',.72,K],['epicgames','si:epicgames','#313131',.60,W],['ebay','si:ebay',W,.80,'#E53238'],
   ['douban','si:douban','#2D963D',.62,W],['quora','si:quora','#B92B27',.60,W],['imdb','si:imdb','#F5C518',.74,K],
+  // 第三批：日常网站
+  ['google','L:google-icon',W,.62],['baidu','lobe:baidu-color.svg',W,.64],['bing','lobe:bing-color.svg',W,.60],
+  ['icloud','si:icloud','#3693F3',.66,W],['google-translate','si:googletranslate',W,.62],['deepl','si:deepl','#0F2B46',.60,W],
+  ['meituan','si:meituan','#FFD100',.72,'#111111'],['google-maps','L:google-maps',W,.62],['kuaishou','si:kuaishou','#FF4906',.62,W],
+  ['netease-music','si:neteasecloudmusic','#D43C33',.62,W],['tiktok','L:tiktok-icon',K,.60],['chatglm','lobe:chatglm-color.svg',W,.64],
+  ['wenxin','lobe:wenxin-color.svg',W,.66],['coze','si:coze',W,.60],['wechat-mp','si:wechat','#07C160',.66,W],
+  ['v2ex','si:v2ex','#1F1F1F',.58,W],['medium','si:medium',K,.62,W],['pinterest','L:pinterest',W,.66],['threads','si:threads',K,.58,W],
+  ['hackernews','si:ycombinator',W,.70],['juejin','si:juejin','#007FFF',.62,W],['csdn','si:csdn','#FC5531',.58,W],
+  ['leetcode','si:leetcode',W,.62],['jira','L:jira',W,.62],['confluence','L:confluence',W,.62],
 ];
 const siBySlug=new Map(Object.values(si).filter(x=>x&&x.slug).map(x=>[x.slug,x]));
 function mark(src,fg){

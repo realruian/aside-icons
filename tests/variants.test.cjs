@@ -120,7 +120,7 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   assert.equal(x.href(1),'/original.svg');assert.equal(x.href(2),'/original.svg');assert.ok(!x.messages.some(m=>m.type==='apply'),'a delayed optimized image must not overwrite original');assert.equal(x.stored().choices.alpha,'original');
  }
  {
-  const x=setup({useRealCatalog:true});const s=await x.settings();assert.equal(Object.keys(s.effectiveChoices).length,155);assert.equal(s.effectiveChoices.jimeng,'original');assert.equal(s.effectiveChoices.youtube,'iphone');assert.equal(s.effectiveChoices.claude,'mac');
+  const x=setup({useRealCatalog:true});const s=await x.settings();assert.equal(Object.keys(s.effectiveChoices).length,200);assert.equal(s.effectiveChoices.jimeng,'original');assert.equal(s.effectiveChoices.youtube,'iphone');assert.equal(s.effectiveChoices.claude,'mac');
   assert.ok(!Object.values(s.effectiveChoices).includes('optimized'),'new option must not change existing defaults');
   const ready=vm.runInContext('ICON_LIBRARY.filter(e=>e.variants?.optimized).map(e=>e.id)',x.context);
   if(ready.length){
@@ -136,7 +136,7 @@ function setup({stored={},existingDocuments={},useRealCatalog=false}={}){
   const result=await x.call('setIconChoice',{id:'youtube',variant:'mac'});assert.ok(result.error,'absent Mac asset cannot be selected through API');
   const saved=await x.call('setIconChoice',{id:'jimeng',variant:'iphone'});assert.equal(saved.choices.jimeng,'iphone');const restarted=setup({stored:x.stored(),useRealCatalog:true});assert.equal((await restarted.settings()).effectiveChoices.jimeng,'iphone','real catalog choice persists across worker restart');
  }
- console.log('PASS: four-way settings; persisted defaults; per-site pinned/ordinary updates; iPhone/Mac/optimized cache separation; original DOM restoration; worker restart; stale image/storage races; pause/resume; sender/path security; real 155-site catalog');
+ console.log('PASS: four-way settings; persisted defaults; per-site pinned/ordinary updates; iPhone/Mac/optimized cache separation; original DOM restoration; worker restart; stale image/storage races; pause/resume; sender/path security; real catalog (200 sites)');
 
  {
   const x=setup();

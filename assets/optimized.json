@@ -991,5 +991,260 @@
   {
     "id": "jianying",
     "source": "由 iphone/jianying.png 抠出标志重新排版"
+  },
+  {
+    "id": "google",
+    "source": "SVG Logos · google-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "baidu",
+    "source": "Lobe Icons · baidu-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "bing",
+    "source": "Lobe Icons · bing-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.6
+  },
+  {
+    "id": "icloud",
+    "source": "Simple Icons · icloud",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#3693F3",
+    "scale": 0.66
+  },
+  {
+    "id": "google-translate",
+    "source": "Simple Icons · googletranslate",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "deepl",
+    "source": "Simple Icons · deepl",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#0F2B46",
+    "scale": 0.6
+  },
+  {
+    "id": "meituan",
+    "source": "Simple Icons · meituan",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FFD100",
+    "scale": 0.72
+  },
+  {
+    "id": "google-maps",
+    "source": "SVG Logos · google-maps",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "kuaishou",
+    "source": "Simple Icons · kuaishou",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FF4906",
+    "scale": 0.62
+  },
+  {
+    "id": "netease-music",
+    "source": "Simple Icons · neteasecloudmusic",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#D43C33",
+    "scale": 0.62
+  },
+  {
+    "id": "tiktok",
+    "source": "SVG Logos · tiktok-icon",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#000000",
+    "scale": 0.6
+  },
+  {
+    "id": "chatglm",
+    "source": "Lobe Icons · chatglm-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.64
+  },
+  {
+    "id": "wenxin",
+    "source": "Lobe Icons · wenxin-color.svg",
+    "sourceUrl": "https://github.com/lobehub/lobe-icons",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "coze",
+    "source": "Simple Icons · coze",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.6
+  },
+  {
+    "id": "wechat-mp",
+    "source": "Simple Icons · wechat",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#07C160",
+    "scale": 0.66
+  },
+  {
+    "id": "v2ex",
+    "source": "Simple Icons · v2ex",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#1F1F1F",
+    "scale": 0.58
+  },
+  {
+    "id": "medium",
+    "source": "Simple Icons · medium",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.62
+  },
+  {
+    "id": "pinterest",
+    "source": "SVG Logos · pinterest",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.66
+  },
+  {
+    "id": "threads",
+    "source": "Simple Icons · threads",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#000000",
+    "scale": 0.58
+  },
+  {
+    "id": "hackernews",
+    "source": "Simple Icons · ycombinator",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.7
+  },
+  {
+    "id": "juejin",
+    "source": "Simple Icons · juejin",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#007FFF",
+    "scale": 0.62
+  },
+  {
+    "id": "csdn",
+    "source": "Simple Icons · csdn",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#FC5531",
+    "scale": 0.58
+  },
+  {
+    "id": "leetcode",
+    "source": "Simple Icons · leetcode",
+    "sourceUrl": "https://github.com/simple-icons/simple-icons",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "jira",
+    "source": "SVG Logos · jira",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "confluence",
+    "source": "SVG Logos · confluence",
+    "sourceUrl": "https://github.com/gilbarbara/logos",
+    "bg": "#ffffff",
+    "scale": 0.62
+  },
+  {
+    "id": "outlook",
+    "source": "由 iphone/outlook.png 抠出标志重新排版"
+  },
+  {
+    "id": "qqmail",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "mail163",
+    "source": "手绘矢量（按品牌标志简化）"
+  },
+  {
+    "id": "amazon",
+    "source": "由 iphone/amazon.png 抠出标志重新排版"
+  },
+  {
+    "id": "jd",
+    "source": "由 original/jd.png 抠出标志重新排版"
+  },
+  {
+    "id": "tmall",
+    "source": "由 original/tmall.png 抠出标志重新排版"
+  },
+  {
+    "id": "pinduoduo",
+    "source": "由 iphone/pinduoduo.png 抠出标志重新排版"
+  },
+  {
+    "id": "xianyu",
+    "source": "由 iphone/xianyu.png 抠出标志重新排版"
+  },
+  {
+    "id": "ctrip",
+    "source": "由 iphone/ctrip.png 抠出标志重新排版"
+  },
+  {
+    "id": "rail12306",
+    "source": "由 iphone/rail12306.png 抠出标志重新排版"
+  },
+  {
+    "id": "amap",
+    "source": "由 iphone/amap.png 抠出标志重新排版"
+  },
+  {
+    "id": "tencent-video",
+    "source": "由 original/tencent-video.png 抠出标志重新排版"
+  },
+  {
+    "id": "iqiyi",
+    "source": "由 original/iqiyi.png 抠出标志重新排版"
+  },
+  {
+    "id": "youku",
+    "source": "由 original/youku.png 抠出标志重新排版"
+  },
+  {
+    "id": "qqmusic",
+    "source": "由 iphone/qqmusic.png 抠出标志重新排版"
+  },
+  {
+    "id": "xiaoyuzhou",
+    "source": "由 iphone/xiaoyuzhou.png 抠出标志重新排版"
+  },
+  {
+    "id": "baidu-netdisk",
+    "source": "由 iphone/baidu-netdisk.png 抠出标志重新排版"
+  },
+  {
+    "id": "aliyundrive",
+    "source": "由 iphone/aliyundrive.png 抠出标志重新排版"
+  },
+  {
+    "id": "quark",
+    "source": "由 iphone/quark.png 抠出标志重新排版"
+  },
+  {
+    "id": "sspai",
+    "source": "由 iphone/sspai.png 抠出标志重新排版"
   }
 ]

@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {Resvg} from '@resvg/resvg-js';
 const src='assets/untrimmed',dst='extension/icons';
+// node scripts/bake-trim.mjs [id ...]  (no ids = rebake everything)
+const only=new Set(process.argv.slice(2));
 const report=[];
-for(const kind of ['iphone','mac','optimized'])for(const f of fs.readdirSync(path.join(src,kind)).filter(f=>f.endsWith('.png'))){
+for(const kind of ['iphone','mac','optimized'])for(const f of fs.readdirSync(path.join(src,kind)).filter(f=>f.endsWith('.png')&&(!only.size||only.has(f.slice(0,-4))))){
   const buf=fs.readFileSync(path.join(src,kind,f)),b64=buf.toString('base64');
   const W=buf.readUInt32BE(16),H=buf.readUInt32BE(20);
   const probe=new Resvg(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><image width="${W}" height="${H}" href="data:image/png;base64,${b64}"/></svg>`).render();

@@ -20,6 +20,10 @@ const DRAW={
   canva:()=>tile({fill:'url(#g)',defs:'<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C4CC"/><stop offset=".55" stop-color="#5A32FA"/><stop offset="1" stop-color="#7D2AE8"/></linearGradient>'},
     `<text x="124" y="178" text-anchor="middle" font-family="Snell Roundhand, Apple Chancery, Brush Script MT, cursive" font-weight="700" font-size="170" fill="#fff">C</text>`),
   typeform:()=>tile('#FFFFFF',`<rect x="58" y="92" width="38" height="72" rx="19" fill="#262627"/><rect x="108" y="92" width="92" height="72" rx="30" fill="#262627"/>`),
+  qqmail:()=>tile({fill:'url(#g)',defs:'<linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6A0A"/><stop offset=".55" stop-color="#FFB000"/><stop offset="1" stop-color="#E4E21C"/></linearGradient>'},
+    `<rect x="54" y="74" width="148" height="108" rx="16" fill="none" stroke="#fff" stroke-width="14"/><path d="M62 86 128 136 194 86" fill="none" stroke="#fff" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>`),
+  // The favicon is already a clean mark on transparency: place it, no cut-out needed.
+  mail163:()=>tile('#FFFFFF',`<image x="${S*.17}" y="${S*.17}" width="${S*.66}" height="${S*.66}" href="data:image/png;base64,${fs.readFileSync('extension/icons/original/mail163.png').toString('base64')}"/>`),
 };
 // [id, source image (relative to extension/), tile background ('auto' = source background), mark size]
 const REPLATE=[
@@ -30,6 +34,17 @@ const REPLATE=[
   ['wps','icons/iphone/wps.png','#FFFFFF',.66],
   ['jianying','icons/iphone/jianying.png','auto',.58],
   ['microsoft365','icons/original/microsoft365.png','#FFFFFF',.76],
+  // 第三批：日常网站（App Store 图标是促销版的，改用网站自己的 favicon）
+  ['outlook','icons/iphone/outlook.png','#FFFFFF',.66],
+  ['amazon','icons/iphone/amazon.png','auto',.66],
+  ['jd','icons/original/jd.png','auto',.62],['tmall','icons/original/tmall.png','auto',.58],
+  ['pinduoduo','icons/iphone/pinduoduo.png','auto',.64],['xianyu','icons/iphone/xianyu.png','auto',.70],
+  ['ctrip','icons/iphone/ctrip.png','auto',.66],['rail12306','icons/iphone/rail12306.png','auto',.64],
+  ['amap','icons/iphone/amap.png','auto',.66],['tencent-video','icons/original/tencent-video.png','#FFFFFF',.66],
+  ['iqiyi','icons/original/iqiyi.png','auto',.70],['youku','icons/original/youku.png','#FFFFFF',.66],
+  ['qqmusic','icons/iphone/qqmusic.png','auto',.62],['xiaoyuzhou','icons/iphone/xiaoyuzhou.png','auto',.64],
+  ['baidu-netdisk','icons/iphone/baidu-netdisk.png','#FFFFFF',.68],['aliyundrive','icons/iphone/aliyundrive.png','auto',.62],
+  ['quark','icons/iphone/quark.png','#FFFFFF',.64],['sspai','icons/iphone/sspai.png','auto',.62],
 ];
 
 function png(w,h,rgba){

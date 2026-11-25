@@ -3444,5 +3444,1102 @@
       }
     },
     "defaultVariant": "original"
+  },
+  {
+    "id": "google",
+    "label": "Google 搜索",
+    "category": "常用",
+    "domains": [
+      "google.com",
+      "google.com.hk"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=google.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/google.png",
+        "source": "App Store · Google · Google LLC"
+      },
+      "optimized": {
+        "path": "icons/optimized/google.png",
+        "source": "SVG Logos · google-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "baidu",
+    "label": "百度",
+    "category": "常用",
+    "domains": [
+      "baidu.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/baidu.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=baidu.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/baidu.png",
+        "source": "App Store · 百度-AI智能搜索 · Beijing Baidu Netcom Science & Technology Co.,Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/baidu.png",
+        "source": "Lobe Icons · baidu-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "bing",
+    "label": "Bing",
+    "category": "常用",
+    "domains": [
+      "bing.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/bing.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=bing.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/bing.png",
+        "source": "App Store · Microsoft Bing Search · Microsoft Corporation"
+      },
+      "optimized": {
+        "path": "icons/optimized/bing.png",
+        "source": "Lobe Icons · bing-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "outlook",
+    "label": "Outlook",
+    "category": "办公",
+    "domains": [
+      "outlook.live.com",
+      "outlook.office.com",
+      "outlook.office365.com",
+      "outlook.cloud.microsoft"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/outlook.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=outlook.live.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/outlook.png",
+        "source": "App Store · Microsoft Outlook · Microsoft Corporation"
+      },
+      "mac": {
+        "path": "icons/mac/outlook.png",
+        "source": "App Store · Microsoft Outlook · Microsoft Corporation"
+      },
+      "optimized": {
+        "path": "icons/optimized/outlook.png",
+        "source": "由 iphone/outlook.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "qqmail",
+    "label": "QQ 邮箱",
+    "category": "办公",
+    "domains": [
+      "mail.qq.com",
+      "wx.mail.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/qqmail.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=mail.qq.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/qqmail.png",
+        "source": "App Store · QQ邮箱 · Tencent Technology (Shenzhen) Company Limited"
+      },
+      "optimized": {
+        "path": "icons/optimized/qqmail.png",
+        "source": "手绘矢量（按品牌标志简化）"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "mail163",
+    "label": "网易邮箱",
+    "category": "办公",
+    "domains": [
+      "mail.163.com",
+      "mail.126.com",
+      "mail.yeah.net"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/mail163.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=mail.163.com&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/mail163.png",
+        "source": "手绘矢量（按品牌标志简化）"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "icloud",
+    "label": "iCloud",
+    "category": "办公",
+    "domains": [
+      "icloud.com",
+      "icloud.com.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/icloud.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=icloud.com&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/icloud.png",
+        "source": "Simple Icons · icloud",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "baidu-netdisk",
+    "label": "百度网盘",
+    "category": "办公",
+    "domains": [
+      "pan.baidu.com",
+      "yun.baidu.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/baidu-netdisk.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=pan.baidu.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/baidu-netdisk.png",
+        "source": "App Store · 百度网盘 · Beijing Duyou Science and Technology Co.,Ltd."
+      },
+      "mac": {
+        "path": "icons/mac/baidu-netdisk.png",
+        "source": "App Store · 百度网盘 · Beijing Duyou Science and Technology Co.,Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/baidu-netdisk.png",
+        "source": "由 iphone/baidu-netdisk.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "aliyundrive",
+    "label": "阿里云盘",
+    "category": "办公",
+    "domains": [
+      "alipan.com",
+      "aliyundrive.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/aliyundrive.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=alipan.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/aliyundrive.png",
+        "source": "App Store · 阿里云盘 · Hangzhou DuanquNetwork Media Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/aliyundrive.png",
+        "source": "由 iphone/aliyundrive.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "quark",
+    "label": "夸克",
+    "category": "办公",
+    "domains": [
+      "quark.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/quark.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=quark.cn&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/quark.png",
+        "source": "App Store · 夸克-AI旗舰应用 · Guangzhou Dongyue Information Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/quark.png",
+        "source": "由 iphone/quark.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-translate",
+    "label": "Google 翻译",
+    "category": "办公",
+    "domains": [
+      "translate.google.com",
+      "translate.google.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-translate.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=translate.google.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-translate.png",
+        "source": "App Store · Google Translate · Google LLC"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-translate.png",
+        "source": "Simple Icons · googletranslate",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "deepl",
+    "label": "DeepL",
+    "category": "办公",
+    "domains": [
+      "deepl.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/deepl.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=deepl.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/deepl.png",
+        "source": "App Store · DeepL Translate · DeepL SE"
+      },
+      "optimized": {
+        "path": "icons/optimized/deepl.png",
+        "source": "Simple Icons · deepl",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "jd",
+    "label": "京东",
+    "category": "生活",
+    "domains": [
+      "jd.com",
+      "jd.hk"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/jd.png",
+        "sourceUrl": "https://www.jd.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/jd.png",
+        "source": "App Store · 京东-又好又便宜 · Beijing Jingdong Century Trading Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/jd.png",
+        "source": "由 original/jd.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "tmall",
+    "label": "天猫",
+    "category": "生活",
+    "domains": [
+      "tmall.com",
+      "tmall.hk"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tmall.png",
+        "sourceUrl": "https://www.tmall.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/tmall.png",
+        "source": "App Store · 天猫 - 大牌折上折，下单返2% · Zhejiang tmall Network Co., Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/tmall.png",
+        "source": "由 original/tmall.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "pinduoduo",
+    "label": "拼多多",
+    "category": "生活",
+    "domains": [
+      "pinduoduo.com",
+      "yangkeduo.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/pinduoduo.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=pinduoduo.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/pinduoduo.png",
+        "source": "App Store · 拼多多 - 多多买菜，百亿补贴 · Shanghai Xunmeng Information Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/pinduoduo.png",
+        "source": "由 iphone/pinduoduo.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "xianyu",
+    "label": "闲鱼",
+    "category": "生活",
+    "domains": [
+      "goofish.com",
+      "2.taobao.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/xianyu.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=goofish.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/xianyu.png",
+        "source": "App Store · 闲鱼 - 上闲鱼，赚一笔 ! · Zhejiang Alibaba Xianyu Network Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/xianyu.png",
+        "source": "由 iphone/xianyu.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "meituan",
+    "label": "美团",
+    "category": "生活",
+    "domains": [
+      "meituan.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/meituan.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=meituan.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/meituan.png",
+        "source": "App Store · 美团-问美团，都安排 · Sankuai Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/meituan.png",
+        "source": "Simple Icons · meituan",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "ctrip",
+    "label": "携程旅行",
+    "category": "生活",
+    "domains": [
+      "ctrip.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/ctrip.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=ctrip.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/ctrip.png",
+        "source": "App Store · 携程旅行-订酒店机票火车票 · Shanghai Ctrip Commerce Co.,Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/ctrip.png",
+        "source": "由 iphone/ctrip.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "rail12306",
+    "label": "铁路 12306",
+    "category": "生活",
+    "domains": [
+      "12306.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/rail12306.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=12306.cn&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/rail12306.png",
+        "source": "App Store · 铁路12306 · ACADEMY OF RAILWAY SCIENCES CO., ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/rail12306.png",
+        "source": "由 iphone/rail12306.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "amap",
+    "label": "高德地图",
+    "category": "生活",
+    "domains": [
+      "amap.com",
+      "gaode.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/amap.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=amap.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/amap.png",
+        "source": "App Store · 高德地图-高德打车,导航公交地铁出行 · AutoNavi Information Technology Co. Ltd."
+      },
+      "mac": {
+        "path": "icons/mac/amap.png",
+        "source": "App Store · 高德地图-高德打车,导航公交地铁出行 · AutoNavi Information Technology Co. Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/amap.png",
+        "source": "由 iphone/amap.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "google-maps",
+    "label": "Google 地图",
+    "category": "生活",
+    "domains": [
+      "google.com",
+      "google.com.hk"
+    ],
+    "paths": [
+      "/maps"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/google-maps.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=maps.google.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/google-maps.png",
+        "source": "App Store · Google Maps · Google LLC"
+      },
+      "optimized": {
+        "path": "icons/optimized/google-maps.png",
+        "source": "SVG Logos · google-maps",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "amazon",
+    "label": "Amazon",
+    "category": "生活",
+    "domains": [
+      "amazon.com",
+      "amazon.co.jp",
+      "amazon.co.uk",
+      "amazon.de",
+      "amazon.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/amazon.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=amazon.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/amazon.png",
+        "source": "App Store · Amazon Shopping · AMZN Mobile LLC"
+      },
+      "optimized": {
+        "path": "icons/optimized/amazon.png",
+        "source": "由 iphone/amazon.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "tencent-video",
+    "label": "腾讯视频",
+    "category": "影音",
+    "domains": [
+      "v.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tencent-video.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=v.qq.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/tencent-video.png",
+        "source": "App Store · 腾讯视频-沈腾携《现在就出发4》爆笑回归 · Tencent Technology (Shenzhen) Company Limited"
+      },
+      "mac": {
+        "path": "icons/mac/tencent-video.png",
+        "source": "App Store · 腾讯视频-现在就出发4独播 · Tencent Technology (Shenzhen) Company Limited"
+      },
+      "optimized": {
+        "path": "icons/optimized/tencent-video.png",
+        "source": "由 original/tencent-video.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "iqiyi",
+    "label": "爱奇艺",
+    "category": "影音",
+    "domains": [
+      "iqiyi.com",
+      "iq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/iqiyi.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=iqiyi.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/iqiyi.png",
+        "source": "App Store · 爱奇艺-《折月亮》全网独播 · Beijing IQIYI Science & Technology Co., Ltd."
+      },
+      "mac": {
+        "path": "icons/mac/iqiyi.png",
+        "source": "App Store · 爱奇艺-折月亮 全网独播 · Beijing IQIYI Science & Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/iqiyi.png",
+        "source": "由 original/iqiyi.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "youku",
+    "label": "优酷",
+    "category": "影音",
+    "domains": [
+      "youku.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/youku.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=youku.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/youku.png",
+        "source": "App Store · 优酷视频-《谷雨》全网独播 · Youku.com Inc."
+      },
+      "mac": {
+        "path": "icons/mac/youku.png",
+        "source": "App Store · 优酷视频-九门 全网独播 · Youku.com Inc."
+      },
+      "optimized": {
+        "path": "icons/optimized/youku.png",
+        "source": "由 original/youku.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "kuaishou",
+    "label": "快手",
+    "category": "影音",
+    "domains": [
+      "kuaishou.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/kuaishou.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=kuaishou.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/kuaishou.png",
+        "source": "App Store · 快手 · Beijing Kwai Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/kuaishou.png",
+        "source": "Simple Icons · kuaishou",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "netease-music",
+    "label": "网易云音乐",
+    "category": "影音",
+    "domains": [
+      "music.163.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/netease-music.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=music.163.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/netease-music.png",
+        "source": "App Store · 网易云音乐-数亿音乐畅听 · Hangzhou Netease Cloud Music Technology Co., Ltd."
+      },
+      "mac": {
+        "path": "icons/mac/netease-music.png",
+        "source": "App Store · 网易云音乐 · Hangzhou Netease Cloud Music Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/netease-music.png",
+        "source": "Simple Icons · neteasecloudmusic",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "qqmusic",
+    "label": "QQ 音乐",
+    "category": "影音",
+    "domains": [
+      "y.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/qqmusic.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=y.qq.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/qqmusic.png",
+        "source": "App Store · QQ音乐 - 听我想听 · Tencent Technology (Shenzhen) Company Limited"
+      },
+      "mac": {
+        "path": "icons/mac/qqmusic.png",
+        "source": "App Store · QQ音乐 - #听我想听# · Tencent Technology (Shanghai) Company Limited"
+      },
+      "optimized": {
+        "path": "icons/optimized/qqmusic.png",
+        "source": "由 iphone/qqmusic.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "xiaoyuzhou",
+    "label": "小宇宙",
+    "category": "影音",
+    "domains": [
+      "xiaoyuzhoufm.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/xiaoyuzhou.png",
+        "sourceUrl": "https://www.xiaoyuzhoufm.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/xiaoyuzhou.png",
+        "source": "App Store · 小宇宙·一起听播客 · Ningbo Zhuiguang Network Technology Co., Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/xiaoyuzhou.png",
+        "source": "由 iphone/xiaoyuzhou.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "tiktok",
+    "label": "TikTok",
+    "category": "影音",
+    "domains": [
+      "tiktok.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/tiktok.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=tiktok.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/tiktok.png",
+        "source": "App Store · TikTok - Videos, Shop & LIVE · TIKTOK PTE. LTD."
+      },
+      "optimized": {
+        "path": "icons/optimized/tiktok.png",
+        "source": "SVG Logos · tiktok-icon",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "chatglm",
+    "label": "智谱清言",
+    "category": "AI 工具",
+    "domains": [
+      "chatglm.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/chatglm.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=chatglm.cn&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/chatglm.png",
+        "source": "App Store · 智谱清言 - 一站式解放AI生产力 · Beijing Knowledge Atlas Technology Joint Stock Company Limited"
+      },
+      "optimized": {
+        "path": "icons/optimized/chatglm.png",
+        "source": "Lobe Icons · chatglm-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "wenxin",
+    "label": "文心一言",
+    "category": "AI 工具",
+    "domains": [
+      "yiyan.baidu.com"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/wenxin.png",
+        "source": "App Store · 文心 - 百度旗下全能AI助手 · Beijing Baidu Netcom Science & Technology Co.,Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/wenxin.png",
+        "source": "Lobe Icons · wenxin-color.svg",
+        "sourceUrl": "https://github.com/lobehub/lobe-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "coze",
+    "label": "扣子",
+    "category": "AI 工具",
+    "domains": [
+      "coze.cn",
+      "coze.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/coze.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=coze.cn&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/coze.png",
+        "source": "App Store · 扣子 - 开启全新 Agent 体验 · Beijing Chuntian Zhiyun Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/coze.png",
+        "source": "Simple Icons · coze",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "wechat-mp",
+    "label": "微信公众号",
+    "category": "社交",
+    "domains": [
+      "mp.weixin.qq.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/wechat-mp.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=mp.weixin.qq.com&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/wechat-mp.png",
+        "source": "Simple Icons · wechat",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "sspai",
+    "label": "少数派",
+    "category": "社交",
+    "domains": [
+      "sspai.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/sspai.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=sspai.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/sspai.png",
+        "source": "App Store · 少数派 · Shenzhen Shaomai Network Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/sspai.png",
+        "source": "由 iphone/sspai.png 抠出标志重新排版"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "v2ex",
+    "label": "V2EX",
+    "category": "社交",
+    "domains": [
+      "v2ex.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/v2ex.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=v2ex.com&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/v2ex.png",
+        "source": "Simple Icons · v2ex",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "medium",
+    "label": "Medium",
+    "category": "社交",
+    "domains": [
+      "medium.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/medium.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=medium.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/medium.png",
+        "source": "App Store · Medium: Read & Write Stories · A Medium Corporation"
+      },
+      "optimized": {
+        "path": "icons/optimized/medium.png",
+        "source": "Simple Icons · medium",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "pinterest",
+    "label": "Pinterest",
+    "category": "社交",
+    "domains": [
+      "pinterest.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/pinterest.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=pinterest.com&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/pinterest.png",
+        "source": "App Store · Pinterest · Pinterest, Inc."
+      },
+      "optimized": {
+        "path": "icons/optimized/pinterest.png",
+        "source": "SVG Logos · pinterest",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "threads",
+    "label": "Threads",
+    "category": "社交",
+    "domains": [
+      "threads.net",
+      "threads.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/threads.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=threads.net&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/threads.png",
+        "source": "App Store · Threads · Instagram, Inc."
+      },
+      "optimized": {
+        "path": "icons/optimized/threads.png",
+        "source": "Simple Icons · threads",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "hackernews",
+    "label": "Hacker News",
+    "category": "社交",
+    "domains": [
+      "news.ycombinator.com"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/hackernews.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/hackernews.png",
+        "source": "Simple Icons · ycombinator",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "juejin",
+    "label": "稀土掘金",
+    "category": "开发",
+    "domains": [
+      "juejin.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/juejin.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=juejin.cn&sz=128"
+      },
+      "iphone": {
+        "path": "icons/iphone/juejin.png",
+        "source": "App Store · 稀土掘金 · Beijing Beibi Information Technology Co., Ltd."
+      },
+      "optimized": {
+        "path": "icons/optimized/juejin.png",
+        "source": "Simple Icons · juejin",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "csdn",
+    "label": "CSDN",
+    "category": "开发",
+    "domains": [
+      "csdn.net"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/csdn.png",
+        "sourceUrl": "https://www.google.com/s2/favicons?domain=csdn.net&sz=128"
+      },
+      "optimized": {
+        "path": "icons/optimized/csdn.png",
+        "source": "Simple Icons · csdn",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "original"
+  },
+  {
+    "id": "leetcode",
+    "label": "LeetCode",
+    "category": "开发",
+    "domains": [
+      "leetcode.com",
+      "leetcode.cn"
+    ],
+    "variants": {
+      "original": {
+        "preview": "icons/original/leetcode.png",
+        "sourceUrl": "https://leetcode.com/favicon.ico"
+      },
+      "iphone": {
+        "path": "icons/iphone/leetcode.png",
+        "source": "App Store · LeetCode · LeetCode LLC"
+      },
+      "optimized": {
+        "path": "icons/optimized/leetcode.png",
+        "source": "Simple Icons · leetcode",
+        "sourceUrl": "https://github.com/simple-icons/simple-icons"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "jira",
+    "label": "Jira",
+    "category": "开发",
+    "domains": [
+      "atlassian.net"
+    ],
+    "paths": [
+      "/jira",
+      "/browse",
+      "/secure",
+      "/projects",
+      "/issues"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/jira.png",
+        "source": "App Store · Jira Cloud by Atlassian · Atlassian Pty Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/jira.png",
+        "source": "SVG Logos · jira",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
+  },
+  {
+    "id": "confluence",
+    "label": "Confluence",
+    "category": "开发",
+    "domains": [
+      "atlassian.net"
+    ],
+    "paths": [
+      "/wiki"
+    ],
+    "variants": {
+      "original": {},
+      "iphone": {
+        "path": "icons/iphone/confluence.png",
+        "source": "App Store · Confluence Cloud · Atlassian Pty Ltd"
+      },
+      "optimized": {
+        "path": "icons/optimized/confluence.png",
+        "source": "SVG Logos · confluence",
+        "sourceUrl": "https://github.com/gilbarbara/logos"
+      }
+    },
+    "defaultVariant": "iphone"
   }
 ]
